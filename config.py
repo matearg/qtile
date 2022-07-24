@@ -218,8 +218,6 @@ layouts = [
 
 widgets_screen1 = userBar.init_widgets_screen1()
 widgets_screen2 = userBar.init_widgets_screen2()
-# widgets_screen1 = userBar.init_widgets_screen1()
-# widgets_screen2 = userBar.init_widgets_screen2()
 
 def init_screens():
     return [

@@ -37,12 +37,6 @@ def init_widgets_list():
                         foreground = colors[2],
                         background = colors[1]
                         ),
-                # widget.CurrentLayoutIcon(
-                #         custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons/wmicons")],
-                #         background = colors[1],
-                #         padding = 0,
-                #         scale = 0.7
-                #         ),
                 widget.TextBox(
                         font = "Hack NF Bold",
                         fontsize = 16,
@@ -65,19 +59,7 @@ def init_widgets_list():
                         background = colors[1],
                         padding = 0,
                         ),
-                widget.TextBox(
-                        font = "Hack NF Bold",
-                        fontsize = 14,
-                        text = " ",
-                        background = colors[1],
-                        padding = 0,
-                        ),
-                widget.WindowName(
-                        font = "Hack NF Italic",
-                        fontsize = 14,
-                        foreground = colors[5],
-                        background = colors[1],
-                        ),
+                widget.Spacer(background = colors[1]),
                 widget.DF(
                         font = "Hack NF Bold",
                         fontsize = 12,
@@ -181,10 +163,10 @@ widgets_list = init_widgets_list()
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    del widgets_screen1[18:20]
+    del widgets_screen1[17:20]
     return widgets_screen1
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[16:20]
+    del widgets_screen2[17:20]
     return widgets_screen2
