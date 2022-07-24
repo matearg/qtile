@@ -3,7 +3,7 @@ import subprocess
 from libqtile import layout, bar, hook
 from libqtile.config import Drag, Group, Key, Match, Screen
 from libqtile.command import lazy
-import bar1, bar2
+import bar1, bar2, bar3
 
 #mod4 or mod = super key
 mod = "mod4"
@@ -195,12 +195,13 @@ for i in groups:
         # Key([mod, "shift"], i.name, lazy.window.togroup(i.name) , lazy.group[i.name].toscreen()),
     ])
 
+userBar = bar1
 
 def init_layout_theme():
     return {"margin": 8,
             "border_width": 2,
-            "border_focus": "#83a598",
-            "border_normal": "#3c3836"
+            "border_focus": userBar.colors[4],
+            "border_normal": userBar.colors[1]
             }
 
 layout_theme = init_layout_theme()
@@ -215,10 +216,10 @@ layouts = [
     layout.Max(**layout_theme)
 ]
 
-widgets_screen1 = bar1.init_widgets_screen1()
-widgets_screen2 = bar1.init_widgets_screen2()
-# widgets_screen1 = bar2.init_widgets_screen1()
-# widgets_screen2 = bar2.init_widgets_screen2()
+widgets_screen1 = userBar.init_widgets_screen1()
+widgets_screen2 = userBar.init_widgets_screen2()
+# widgets_screen1 = userBar.init_widgets_screen1()
+# widgets_screen2 = userBar.init_widgets_screen2()
 
 def init_screens():
     return [

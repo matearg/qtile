@@ -1,10 +1,10 @@
-import colors
+from colors import gruvbox, nord
 from libqtile import widget
 from unicodes import left_half_circle, right_half_circle
 import os
 
 # COLORS FOR THE BAR
-colors = colors.gruvbox()
+colors = nord()
 
 def init_widgets_defaults():
     return dict(font = "Hack NF",
@@ -28,14 +28,14 @@ def init_widgets_list():
                         inactive = colors[1],
                         rounded = False,
                         highlight_method = "text",
-                        this_current_screen_border = colors[9],
+                        this_current_screen_border = colors[4],
                         foreground = colors[2],
                         background = colors[7]
                         ),
-                right_half_circle(colors[6], colors[7]),
+                right_half_circle(colors[4], colors[7]),
                 widget.CurrentLayoutIcon(
                         custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons/wmicons")],
-                        background = colors[6],
+                        background = colors[4],
                         padding = 0,
                         scale = 0.7
                         ),
@@ -44,24 +44,24 @@ def init_widgets_list():
                         fontsize = 16,
                         text = "[",
                         foreground = "#ffffff",
-                        background = colors[6],
+                        background = colors[4],
                         padding = 0,
                         ),
                 widget.CurrentLayout(
                         font = "Hack NF Bold",
                         fontsize = 14,
                         foreground = "#ffffff",
-                        background = colors[6]
+                        background = colors[4]
                         ),
                 widget.TextBox(
                         font = "Hack NF Bold",
                         fontsize = 16,
                         text = "]",
                         foreground = "#ffffff",
-                        background = colors[6],
+                        background = colors[4],
                         padding = 0,
                         ),
-                right_half_circle(colors[1], colors[6]),
+                right_half_circle(colors[1], colors[4]),
                 widget.TextBox(
                         font = "Hack NF Bold",
                         fontsize = 14,
@@ -75,12 +75,12 @@ def init_widgets_list():
                         foreground = colors[5],
                         background = colors[1],
                         ),
-                left_half_circle(colors[1], colors[6]),
+                left_half_circle(colors[1], colors[4]),
                 widget.DF(
                         font = "Hack NF Bold",
                         fontsize = 12,
                         foreground = "#ffffff",
-                        background = colors[6],
+                        background = colors[4],
                         format = '{uf} {m}b',
                         visible_on_warn = False
                         ),
@@ -88,14 +88,13 @@ def init_widgets_list():
                         font = "FontAwesome",
                         text = "  ",
                         foreground = "#ffffff",
-                        background = colors[6],
+                        background = colors[4],
                         padding = 0,
                         fontsize = 16
                         ),
-                left_half_circle(colors[6], colors [7]),
+                left_half_circle(colors[4], colors [7]),
                 widget.Memory(
                         font = "Hack NF Bold",
-                        # format = '{MemUsed: .2f} Gb /{MemTotal: .2f} Gb',
                         format = '{MemUsed: .2f} Gb',
                         measure_mem = 'G',
                         update_interval = 1,
@@ -111,11 +110,11 @@ def init_widgets_list():
                         padding = 0,
                         fontsize = 16
                         ),
-                left_half_circle(colors[7], colors[6]),
+                left_half_circle(colors[7], colors[4]),
                 widget.KeyboardLayout(
                         font = "Hack NF Bold",
                         foreground = "#ffffff",
-                        background = colors[6],
+                        background = colors[4],
                         padding = 0,
                         fontsize = 12,
                         max_chars = 2,
@@ -126,11 +125,11 @@ def init_widgets_list():
                         font = "FontAwesome",
                         text = "  ",
                         foreground = "#ffffff",
-                        background = colors[6],
+                        background = colors[4],
                         padding = 0,
                         fontsize = 16
                         ),
-                left_half_circle(colors[6], colors[7]),
+                left_half_circle(colors[4], colors[7]),
                 widget.Clock(
                         font = "Hack NF Bold",
                         foreground = colors[1],
@@ -146,18 +145,18 @@ def init_widgets_list():
                         padding = 0,
                         fontsize = 16
                         ),
-                left_half_circle(colors[7], colors[6]),
+                left_half_circle(colors[7], colors[4]),
                 widget.Systray(
-                        background = colors[6],
+                        background = colors[4],
                         icon_size = 20,
-                        padding = 4
+                        padding = 0
                         ),
-                left_half_circle(colors[7], colors[6]),
-                left_half_circle(colors[6], colors[1]),
+                left_half_circle(colors[7], colors[4]),
+                left_half_circle(colors[4], colors[1]),
                 widget.TextBox(
                         font = "Hack NF Bold",
                         text = prompt,
-                        foreground = colors[6],
+                        foreground = colors[4],
                         background = colors[1],
                         padding = 0,
                         fontsize = 16
@@ -165,7 +164,7 @@ def init_widgets_list():
                 widget.TextBox(
                         font = "FontAwesome",
                         text = "  ",
-                        foreground = colors[6],
+                        foreground = colors[4],
                         background = colors[1],
                         padding = 0,
                         fontsize = 16

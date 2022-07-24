@@ -1,10 +1,9 @@
-import colors
+from colors import gruvbox, nord
 from libqtile import widget
-from unicodes import left_arrow, right_arrow
 import os
 
 # COLORS FOR THE BAR
-colors = colors.gruvbox()
+colors = nord()
 
 def init_widgets_defaults():
     return dict(font = "Hack NF",
@@ -25,55 +24,47 @@ def init_widgets_list():
                         borderwidth = 0,
                         disable_drag = True,
                         active = colors[6],
-                        inactive = colors[1],
+                        inactive = "#ffffff",
                         rounded = False,
                         highlight_method = "text",
-                        this_current_screen_border = colors[9],
+                        this_current_screen_border = colors[4],
                         foreground = colors[2],
-                        background = colors[7]
+                        background = colors[1]
                         ),
-                right_arrow(colors[6], colors[7]),
-                # widget.Sep(
-                #         linewidth = 1,
-                #         padding = 10,
-                #         foreground = colors[2],
-                #         background = colors[1]
+                widget.Sep(
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors[2],
+                        background = colors[1]
+                        ),
+                # widget.CurrentLayoutIcon(
+                #         custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons/wmicons")],
+                #         background = colors[1],
+                #         padding = 0,
+                #         scale = 0.7
                 #         ),
-                widget.CurrentLayoutIcon(
-                        custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons/wmicons")],
-                        background = colors[6],
-                        padding = 0,
-                        scale = 0.7
-                        ),
                 widget.TextBox(
                         font = "Hack NF Bold",
                         fontsize = 16,
                         text = "[",
                         foreground = "#ffffff",
-                        background = colors[6],
+                        background = colors[1],
                         padding = 0,
                         ),
                 widget.CurrentLayout(
                         font = "Hack NF Bold",
                         fontsize = 14,
                         foreground = "#ffffff",
-                        background = colors[6]
+                        background = colors[1]
                         ),
                 widget.TextBox(
                         font = "Hack NF Bold",
                         fontsize = 16,
                         text = "]",
                         foreground = "#ffffff",
-                        background = colors[6],
+                        background = colors[1],
                         padding = 0,
                         ),
-                right_arrow(colors[1], colors[6]),
-                # widget.Sep(
-                #         linewidth = 1,
-                #         padding = 10,
-                #         foreground = colors[2],
-                #         background = colors[1]
-                #         ),
                 widget.TextBox(
                         font = "Hack NF Bold",
                         fontsize = 14,
@@ -87,49 +78,11 @@ def init_widgets_list():
                         foreground = colors[5],
                         background = colors[1],
                         ),
-                # widget.TextBox(
-                #         font = "Hack NF",
-                #         text = "",
-                #         foreground = colors[2],
-                #         background = colors[1],
-                #         padding = 0,
-                #         fontsize = 16
-                #         ),
-                # widget.ThermalSensor(
-                #         font = "Hack NF Bold",
-                #         foreground = colors[5],
-                #         foreground_alert = colors[6],
-                #         background = colors[1],
-                #         metric = True,
-                #         padding = 3,
-                #         threshold = 80
-                #         ),
-                # battery option 2  from Qtile
-                # widget.Sep(
-                #         linewidth = 1,
-                #         padding = 10,
-                #         foreground = colors[2],
-                #         background = colors[1]
-                #         ),
-                # widget.Battery(
-                #         font = "Hack NF",
-                #         update_interval = 10,
-                #         fontsize = 12,
-                #         foreground = colors[5],
-                #         background = colors[1],
-	            #         ),
-                # widget.Sep(
-                #         linewidth = 1,
-                #         padding = 10,
-                #         foreground = colors[2],
-                #         background = colors[1]
-                #         ),
-                left_arrow(colors[1], colors[6]),
                 widget.DF(
                         font = "Hack NF Bold",
                         fontsize = 12,
                         foreground = "#ffffff",
-                        background = colors[6],
+                        background = colors[1],
                         format = '{uf} {m}b',
                         visible_on_warn = False
                         ),
@@ -137,109 +90,83 @@ def init_widgets_list():
                         font = "FontAwesome",
                         text = "  ",
                         foreground = "#ffffff",
-                        background = colors[6],
+                        background = colors[1],
                         padding = 0,
                         fontsize = 16
                         ),
-                left_arrow(colors[6], colors [7]),
+                widget.Sep(
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors[2],
+                        background = colors[1]
+                        ),
                 widget.Memory(
                         font = "Hack NF Bold",
-                        # format = '{MemUsed: .2f} Gb /{MemTotal: .2f} Gb',
                         format = '{MemUsed: .2f} Gb',
                         measure_mem = 'G',
                         update_interval = 1,
                         fontsize = 12,
-                        foreground = colors[1],
-                        background = colors[7],
+                        foreground = "#ffffff",
+                        background = colors[1],
                         ),
                 widget.TextBox(
                         font = "FontAwesome",
                         text = "  ",
-                        foreground = colors[1],
-                        background = colors[7],
+                        foreground = "#ffffff",
+                        background = colors[1],
                         padding = 0,
                         fontsize = 16
                         ),
-                # widget.Sep(
-                #         linewidth = 1,
-                #         padding = 10,
-                #         foreground = colors[2],
-                #         background = colors[1]
-                #         ),
-                left_arrow(colors[7], colors[6]),
+                widget.Sep(
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors[2],
+                        background = colors[1]
+                        ),
                 widget.KeyboardLayout(
                         font = "Hack NF Bold",
                         foreground = "#ffffff",
-                        background = colors[6],
+                        background = colors[1],
                         padding = 0,
                         fontsize = 12,
                         max_chars = 2,
                         configured_keyboards = ['latam', 'us'],
                         display_map = {'latam': 'LA', 'us': 'US'}
                        ),
-                widget.TextBox(
-                        font = "FontAwesome",
-                        text = "  ",
-                        foreground = "#ffffff",
-                        background = colors[6],
-                        padding = 0,
-                        fontsize = 16
+                widget.Sep(
+                        font = "Hack NF Bold",
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors[2],
+                        background = colors[1]
                         ),
-                # widget.Sep(
-                #         font = "Hack NF Bold",
-                #         linewidth = 1,
-                #         padding = 10,
-                #         foreground = colors[2],
-                #         background = colors[1]
-                #         ),
-                left_arrow(colors[6], colors[7]),
                 widget.Clock(
                         font = "Hack NF Bold",
-                        foreground = colors[1],
-                        background = colors[7],
+                        foreground = "#ffffff",
+                        background = colors[1],
                         fontsize = 14,
-                        # format = "%a %d/%m/%y %H:%M",
                         format = "%a %d/%m %H:%M",
                         ),
-                widget.TextBox(
-                        font = "FontAwesome",
-                        text = "  ",
-                        foreground = colors[1],
-                        background = colors[7],
-                        padding = 0,
-                        fontsize = 16
+                widget.Sep(
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors[2],
+                        background = colors[1]
                         ),
-                # widget.Sep(
-                #         linewidth = 1,
-                #         padding = 10,
-                #         foreground = colors[2],
-                #         background = colors[1]
-                #         ),
-                left_arrow(colors[7], colors[6]),
                 widget.Systray(
-                        background = colors[6],
+                        background = colors[1],
                         icon_size = 20,
                         padding = 4
                         ),
-                # widget.Sep(
-                #         linewidth = 1,
-                #         padding = 10,
-                #         foreground = colors[2],
-                #         background = colors[1]
-                #         ),
-                left_arrow(colors[7], colors[6]),
-                left_arrow(colors[6], colors[1]),
+                widget.Sep(
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors[2],
+                        background = colors[1]
+                        ),
                 widget.TextBox(
                         font = "Hack NF Bold",
                         text = prompt,
-                        foreground = colors[6],
-                        background = colors[1],
-                        padding = 0,
-                        fontsize = 16
-                        ),
-                widget.TextBox(
-                        font = "FontAwesome",
-                        text = "  ",
                         foreground = colors[6],
                         background = colors[1],
                         padding = 0,
@@ -254,10 +181,10 @@ widgets_list = init_widgets_list()
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    # del widgets_screen1[23:27]
+    del widgets_screen1[18:20]
     return widgets_screen1
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    # del widgets_screen2[21:27]
+    del widgets_screen2[16:20]
     return widgets_screen2
