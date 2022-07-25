@@ -1,7 +1,6 @@
-import libqtile
-from colors import gruvbox, nord
-from libqtile import widget
-from unicodes import left_arrow, right_arrow
+from libqtile import widget, bar
+from .colors import gruvbox, nord
+from .unicodes import left_arrow, right_arrow
 
 # COLORS FOR THE BAR
 colors = nord()
@@ -42,7 +41,7 @@ def init_widgets_list():
                         disable_drag = True,
                         active = "#ffffff",
                         inactive = "#ffffff",
-                        rounded = True,
+                        rounded = False,
                         highlight_method = "line",
                         this_current_screen_border = "#ffffff",
                         other_current_screen_border = "#ffffff",
@@ -87,7 +86,7 @@ def init_widgets_list():
                         fontsize = 14,
                         foreground = colors[5],
                         background = colors[1],
-                        width = libqtile.bar.CALCULATED,
+                        width = bar.CALCULATED,
                         empty_group_string = "Desktop",
                         max_chars = 40,
                         parse_text = parse_window_name,

@@ -3,7 +3,7 @@ import subprocess
 from libqtile import layout, bar, hook
 from libqtile.config import Drag, Group, Key, Match, Screen
 from libqtile.command import lazy
-import bar1
+from utils import bar1, bar2
 
 #mod4 or mod = super key
 mod = "mod4"
@@ -178,7 +178,7 @@ for i in groups:
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
     ])
 
-userBar = bar1
+userBar = bar2
 
 def init_layout_theme():
     return {"margin": 8,
