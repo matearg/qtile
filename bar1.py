@@ -7,6 +7,15 @@ import os
 # COLORS FOR THE BAR
 colors = nord()
 
+def parse_window_name(text):
+    """Simplifies the names of a few windows, to be displayed in the bar"""
+    target_names = [
+        "Mozilla Firefox",
+        "Visual Studio Code",
+        "Discord",
+    ]
+    return next(filter(lambda name: name in text, target_names), text)
+
 def init_widgets_defaults():
     return dict(font = "Hack NF",
                 fontsize = 12,
@@ -14,8 +23,14 @@ def init_widgets_defaults():
                 background = colors[1])
 
 def init_widgets_list():
-    prompt = "{0}".format(os.environ["USER"])
     widgets_list = [
+                widget.TextBox(
+                        font = "Hack NF Bold",
+                        fontsize = 14,
+                        text = " ",
+                        background = colors[7],
+                        padding = 0,
+                        ),
                 widget.GroupBox(
                         font = "Hack NF",
                         fontsize = 25,
@@ -38,7 +53,7 @@ def init_widgets_list():
                         custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons/wmicons")],
                         background = colors[4],
                         padding = 0,
-                        scale = 0.7
+                        scale = 0.65
                         ),
                 widget.TextBox(
                         font = "Hack NF Bold",
@@ -63,19 +78,18 @@ def init_widgets_list():
                         padding = 0,
                         ),
                 right_arrow(colors[1], colors[4]),
-                widget.TextBox(
-                        font = "Hack NF Bold",
-                        fontsize = 14,
-                        text = " ",
-                        background = colors[1],
-                        padding = 0,
-                        ),
+                widget.Spacer(background = colors[1]),
                 widget.WindowName(
                         font = "Hack NF Italic",
                         fontsize = 14,
                         foreground = colors[5],
                         background = colors[1],
+                        width = libqtile.bar.CALCULATED,
+                        empty_group_string = "Desktop",
+                        max_chars = 40,
+                        parse_text = parse_window_name,
                         ),
+                widget.Spacer(background = colors[1]),
                 left_arrow(colors[1], colors[4]),
                 widget.DF(
                         font = "Hack NF Bold",
@@ -146,29 +160,25 @@ def init_widgets_list():
                         padding = 0,
                         fontsize = 16
                         ),
+                widget.TextBox(
+                        font = "Hack NF Bold",
+                        fontsize = 14,
+                        text = " ",
+                        background = colors[7],
+                        padding = 0,
+                        ),
                 left_arrow(colors[7], colors[4]),
                 widget.Systray(
                         background = colors[4],
                         icon_size = 20,
                         padding = 4
                         ),
-                left_arrow(colors[7], colors[4]),
-                left_arrow(colors[4], colors[1]),
                 widget.TextBox(
                         font = "Hack NF Bold",
-                        text = prompt,
-                        foreground = colors[6],
-                        background = colors[1],
+                        fontsize = 14,
+                        text = " ",
+                        background = colors[4],
                         padding = 0,
-                        fontsize = 16
-                        ),
-                widget.TextBox(
-                        font = "FontAwesome",
-                        text = "  ",
-                        foreground = colors[6],
-                        background = colors[1],
-                        padding = 0,
-                        fontsize = 16
                         ),
     ]
     return widgets_list
@@ -179,10 +189,10 @@ widgets_list = init_widgets_list()
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    del widgets_screen1[23:27]
+    del widgets_screen1[23]
     return widgets_screen1
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[21:27]
+    del widgets_screen2[24:27]
     return widgets_screen2

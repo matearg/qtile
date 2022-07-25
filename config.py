@@ -3,7 +3,7 @@ import subprocess
 from libqtile import layout, bar, hook
 from libqtile.config import Drag, Group, Key, Match, Screen
 from libqtile.command import lazy
-import bar1, bar2, bar3
+import bar1
 
 #mod4 or mod = super key
 mod = "mod4"
@@ -101,15 +101,8 @@ keys = [
         lazy.layout.increase_nmaster(),
         ),
 
-
 # FLIP LAYOUT FOR MONADTALL/MONADWIDE
-    # Key([mod, "shift"], "f", lazy.layout.flip()),
-
-# FLIP LAYOUT FOR BSP
-    # Key([mod, "mod1"], "k", lazy.layout.flip_up()),
-    # Key([mod, "mod1"], "j", lazy.layout.flip_down()),
-    # Key([mod, "mod1"], "l", lazy.layout.flip_right()),
-    # Key([mod, "mod1"], "h", lazy.layout.flip_left()),
+    Key([mod, "mod1"], "f", lazy.layout.flip()),
 
 # MOVE WINDOWS UP OR DOWN BSP LAYOUT
     Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
@@ -124,7 +117,7 @@ keys = [
     Key([mod, "shift"], "Right", lazy.layout.swap_right()),
 
 # TOGGLE FLOATIN LAYOUT
-    # Key([mod, "shift"], "space", lazy.window.toggle_floating()),
+    Key([mod, "mod1"], "space", lazy.window.toggle_floating()),
 
 # CHANGE KEYBOARD LAYOUT
     Key([mod, "shift"], "space", lazy.widget["keyboardlayout"].next_keyboard()),
@@ -158,14 +151,11 @@ keys.extend([
 groups = []
 
 # FOR QWERTY KEYBOARDS
-group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
+# group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
+group_names = ["1", "2", "3", "4", "5",]
 
-# FOR AZERTY KEYBOARDS
-#group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
-
-# group_labels = [" 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9", " 0",]
-group_labels = ["", "", "", "", "", "", "", "", "", "",]
-# group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
+# group_labels = [" 1", " 2", " 3", " 4", " 5",]
+group_labels = ["", "", "", "", "",]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
 # group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
@@ -209,10 +199,7 @@ layout_theme = init_layout_theme()
 layouts = [
     layout.MonadTall(**layout_theme),
     layout.MonadWide(**layout_theme),
-    # layout.Matrix(**layout_theme),
-    # layout.Bsp(**layout_theme),
     # layout.Floating(**layout_theme),
-    # layout.RatioTile(**layout_theme),
     # layout.Max(**layout_theme)
 ]
 
@@ -221,8 +208,8 @@ widgets_screen2 = userBar.init_widgets_screen2()
 
 def init_screens():
     return [
-            Screen(top=bar.Bar(widgets = widgets_screen1, size=26, opacity=0.8, margin = [5, 8, 0, 8])),
-            Screen(top=bar.Bar(widgets = widgets_screen2, size=26, opacity=0.8, margin = [5, 8, 0, 8]))
+            Screen(top=bar.Bar(widgets = widgets_screen1, size=26, opacity=0.9, margin = [5, 8, 0, 8])),
+            Screen(top=bar.Bar(widgets = widgets_screen2, size=26, opacity=0.9, margin = [5, 8, 0, 8]))
             ]
 screens = init_screens()
 
@@ -291,4 +278,4 @@ auto_fullscreen = True
 
 focus_on_window_activation = "focus" # or smart
 
-wmname = "Qtile"
+wmname = "qtile"
