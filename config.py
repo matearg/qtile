@@ -276,6 +276,6 @@ floating_layout = layout.Floating(float_rules=[
 ],  fullscreen_border_width = 0, border_width = 0)
 auto_fullscreen = True
 
-focus_on_window_activation = "focus" # or smart
+focus_on_window_activation = "smart" # or smart
 
 wmname = "qtile"
