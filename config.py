@@ -188,7 +188,7 @@ for i in groups:
 userBar = bar1
 
 def init_layout_theme():
-    return {"margin": 8,
+    return {"margin": 5,
             "border_width": 2,
             "border_focus": userBar.colors[4],
             "border_normal": userBar.colors[1]
@@ -208,8 +208,8 @@ widgets_screen2 = userBar.init_widgets_screen2()
 
 def init_screens():
     return [
-            Screen(top=bar.Bar(widgets = widgets_screen1, size=26, opacity=0.9, margin = [5, 8, 0, 8])),
-            Screen(top=bar.Bar(widgets = widgets_screen2, size=26, opacity=0.9, margin = [5, 8, 0, 8]))
+            Screen(top=bar.Bar(widgets = widgets_screen1, size=26, opacity=0.9, margin = [5, 5, 0, 5])),
+            Screen(top=bar.Bar(widgets = widgets_screen2, size=26, opacity=0.9, margin = [5, 5, 0, 5]))
             ]
 screens = init_screens()
 
