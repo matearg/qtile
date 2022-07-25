@@ -175,8 +175,8 @@ for i in groups:
         Key([mod], i.name, lazy.group[i.name].toscreen()),
         Key([mod], "Tab", lazy.screen.next_group()),
         Key([mod, "shift" ], "Tab", lazy.screen.prev_group()),
-        Key(["mod1"], "Tab", lazy.screen.next_group()),
-        Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
+        # Key(["mod1"], "Tab", lazy.screen.next_group()),
+        # Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
 
 # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
@@ -188,7 +188,7 @@ for i in groups:
 userBar = bar1
 
 def init_layout_theme():
-    return {"margin": 5,
+    return {"margin": 8,
             "border_width": 2,
             "border_focus": userBar.colors[4],
             "border_normal": userBar.colors[1]
@@ -208,8 +208,8 @@ widgets_screen2 = userBar.init_widgets_screen2()
 
 def init_screens():
     return [
-            Screen(top=bar.Bar(widgets = widgets_screen1, size=26, opacity=0.9, margin = [5, 5, 0, 5])),
-            Screen(top=bar.Bar(widgets = widgets_screen2, size=26, opacity=0.9, margin = [5, 5, 0, 5]))
+            Screen(top=bar.Bar(widgets = widgets_screen1, size=26, opacity=0.9, margin = [5, 8, 0, 8])),
+            Screen(top=bar.Bar(widgets = widgets_screen2, size=26, opacity=0.9, margin = [5, 8, 0, 8]))
             ]
 screens = init_screens()
 

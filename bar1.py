@@ -5,7 +5,7 @@ from unicodes import left_arrow, right_arrow
 import os
 
 # COLORS FOR THE BAR
-colors = nord()
+colors = gruvbox()
 
 def parse_window_name(text):
     """Simplifies the names of a few windows, to be displayed in the bar"""
@@ -28,7 +28,7 @@ def init_widgets_list():
                         font = "Hack NF Bold",
                         fontsize = 14,
                         text = " ",
-                        background = colors[7],
+                        background = colors[4],
                         padding = 0,
                         ),
                 widget.GroupBox(
@@ -40,45 +40,53 @@ def init_widgets_list():
                         padding_x = 5,
                         borderwidth = 0,
                         disable_drag = True,
-                        active = colors[6],
-                        inactive = colors[1],
+                        active = colors[2],
+                        inactive = "#ffffff",
                         rounded = False,
                         highlight_method = "text",
-                        this_current_screen_border = colors[9],
-                        foreground = colors[2],
-                        background = colors[7]
+                        this_current_screen_border = colors[1],
+                        foreground = "#ffffff",
+                        background = colors[4]
                         ),
-                right_arrow(colors[4], colors[7]),
-                widget.CurrentLayoutIcon(
-                        # custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons/wmicons")],
-                        background = colors[4],
+                right_arrow(colors[7], colors[4]),
+                widget.TextBox(
+                        font = "Hack NF Bold",
+                        fontsize = 14,
+                        text = " ",
+                        background = colors[7],
                         padding = 0,
-                        scale = 0.65,
-                        use_mask = True,
                         ),
+                # widget.CurrentLayoutIcon(
+                #         custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons/wmicons")],
+                #         background = colors[7],
+                #         foreground = colors[1],
+                #         padding = 0,
+                #         scale = 0.65,
+                #         use_mask = False,
+                #         ),
                 widget.TextBox(
                         font = "Hack NF Bold",
                         fontsize = 16,
                         text = "[",
-                        foreground = "#ffffff",
-                        background = colors[4],
+                        foreground = colors[1],
+                        background = colors[7],
                         padding = 0,
                         ),
                 widget.CurrentLayout(
                         font = "Hack NF Bold",
                         fontsize = 14,
-                        foreground = "#ffffff",
-                        background = colors[4]
+                        foreground = colors[1],
+                        background = colors[7]
                         ),
                 widget.TextBox(
                         font = "Hack NF Bold",
                         fontsize = 16,
                         text = "]",
-                        foreground = "#ffffff",
-                        background = colors[4],
+                        foreground = colors[1],
+                        background = colors[7],
                         padding = 0,
                         ),
-                right_arrow(colors[1], colors[4]),
+                right_arrow(colors[1], colors[7]),
                 widget.Spacer(background = colors[1]),
                 widget.WindowName(
                         font = "Hack NF Italic",
