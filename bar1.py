@@ -50,10 +50,11 @@ def init_widgets_list():
                         ),
                 right_arrow(colors[4], colors[7]),
                 widget.CurrentLayoutIcon(
-                        custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons/wmicons")],
+                        # custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons/wmicons")],
                         background = colors[4],
                         padding = 0,
-                        scale = 0.65
+                        scale = 0.65,
+                        use_mask = True,
                         ),
                 widget.TextBox(
                         font = "Hack NF Bold",
