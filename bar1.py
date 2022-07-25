@@ -44,7 +44,7 @@ def init_widgets_list():
                         inactive = colors[1],
                         rounded = False,
                         highlight_method = "text",
-                        this_current_screen_border = colors[4],
+                        this_current_screen_border = colors[9],
                         foreground = colors[2],
                         background = colors[7]
                         ),
