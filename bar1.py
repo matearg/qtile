@@ -2,10 +2,9 @@ import libqtile
 from colors import gruvbox, nord
 from libqtile import widget
 from unicodes import left_arrow, right_arrow
-import os
 
 # COLORS FOR THE BAR
-colors = gruvbox()
+colors = nord()
 
 def parse_window_name(text):
     """Simplifies the names of a few windows, to be displayed in the bar"""
@@ -36,15 +35,17 @@ def init_widgets_list():
                         fontsize = 25,
                         margin_y = 3,
                         margin_x = 0,
-                        padding_y = 6,
-                        padding_x = 5,
-                        borderwidth = 0,
+                        padding_y = 8,
+                        padding_x = 7,
+                        borderwidth = 3,
                         disable_drag = True,
-                        active = colors[2],
+                        active = "#ffffff",
                         inactive = "#ffffff",
-                        rounded = False,
-                        highlight_method = "text",
-                        this_current_screen_border = colors[1],
+                        rounded = True,
+                        highlight_method = "line",
+                        this_current_screen_border = "#ffffff",
+                        other_current_screen_border = "#ffffff",
+                        highlight_color = colors[4],
                         foreground = "#ffffff",
                         background = colors[4]
                         ),
@@ -56,14 +57,6 @@ def init_widgets_list():
                         background = colors[7],
                         padding = 0,
                         ),
-                # widget.CurrentLayoutIcon(
-                #         custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons/wmicons")],
-                #         background = colors[7],
-                #         foreground = colors[1],
-                #         padding = 0,
-                #         scale = 0.65,
-                #         use_mask = False,
-                #         ),
                 widget.TextBox(
                         font = "Hack NF Bold",
                         fontsize = 16,
