@@ -163,7 +163,7 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
 # FOR AZERTY KEYBOARDS
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
-# group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
+# group_labels = [" 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9", " 0",]
 group_labels = ["", "", "", "", "", "", "", "", "", "",]
 # group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
@@ -208,12 +208,12 @@ layout_theme = init_layout_theme()
 
 layouts = [
     layout.MonadTall(**layout_theme),
-    # layout.MonadWide(**layout_theme),
+    layout.MonadWide(**layout_theme),
     # layout.Matrix(**layout_theme),
     # layout.Bsp(**layout_theme),
     # layout.Floating(**layout_theme),
     # layout.RatioTile(**layout_theme),
-    layout.Max(**layout_theme)
+    # layout.Max(**layout_theme)
 ]
 
 widgets_screen1 = userBar.init_widgets_screen1()
@@ -221,8 +221,8 @@ widgets_screen2 = userBar.init_widgets_screen2()
 
 def init_screens():
     return [
-            Screen(top=bar.Bar(widgets = widgets_screen1, size=26, opacity=0.9)),
-            Screen(top=bar.Bar(widgets = widgets_screen2, size=26, opacity=0.9))
+            Screen(top=bar.Bar(widgets = widgets_screen1, size=26, opacity=0.8, margin = [5, 8, 0, 8])),
+            Screen(top=bar.Bar(widgets = widgets_screen2, size=26, opacity=0.8, margin = [5, 8, 0, 8]))
             ]
 screens = init_screens()
 

@@ -1,3 +1,4 @@
+import libqtile
 from colors import gruvbox, nord
 from libqtile import widget
 from unicodes import left_arrow, right_arrow
