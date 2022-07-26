@@ -152,7 +152,7 @@ groups = []
 
 group_names = ["1", "2", "3", "4", "5",]
 
-group_labels = ["", "", "", "", "",]
+group_labels = ["", "", "", "阮", "",]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
 
@@ -176,13 +176,13 @@ for i in groups:
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
     ])
 
-userBar = bar2
+userBar = bar1
 
 def init_layout_theme():
     return {"margin": 8,
             "border_width": 2,
             "border_focus": "#ffffff",
-            "border_normal": userBar.colors[1]
+            "border_normal": "#2E2E2E"
             }
 
 layout_theme = init_layout_theme()

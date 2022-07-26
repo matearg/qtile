@@ -1,28 +1,25 @@
 # COLORS FOR THE BAR
-# Theme name : ArcoLinux Gruvbox
-def gruvbox():
-    return [["#282828", "#282828"], # color 0
-            ["#3c3836", "#3c3836"], # color 1
-            ["#98971a", "#98971a"], # color 2
-            ["#d79921", "#d79921"], # color 3
-            ["#458588", "#458588"], # color 4
-            ["#ebdbb2", "#ebdbb2"], # color 5
-            ["#83a598", "#83a598"], # color 6
-            ["#fbf1c7", "#fbf1c7"], # color 7
-            ["#1d2021", "#1d2021"], # color 8
-            ["#cc241d", "#cc241d"], # color 9
-            ["#2E2E2E", "#2E2E2E"]] # color 9
-
-# Theme name : ArcoLinux Nord
-def nord():
-    return [["#2e3440", "#2e3440"], # color 0
-            ["#3B4252", "#3B4252"], # color 1
-            ["#A3BE8C", "#A3BE8C"], # color 2
-            ["#EBCB8B", "#EBCB8B"], # color 3
-            ["#81A1C1", "#81A1C1"], # color 4
-            ["#D8DEE9", "#D8DEE9"], # color 5
-            ["#88C0D0", "#88C0D0"], # color 6
-            ["#E5E9F0", "#E5E9F0"], # color 7
-            ["#4C566A", "#4C566A"], # color 8
-            ["#BF616A", "#BF616A"],
-            ["#2E2E2E", "#2E2E2E"]] # color 9
+# Theme name : Catppuccin
+catppuccin = [
+    ["#DDB6F2", "#DDB6F2"],  #  0 mauve
+    ["#F5C2E7", "#F5C2E7"],  #  1 pink
+    ["#E8A2AF", "#E8A2AF"],  #  2 maroon
+    ["#F28FAD", "#F28FAD"],  #  3 red
+    ["#F8BD96", "#F8BD96"],  #  4 peach
+    ["#FAE3B0", "#FAE3B0"],  #  5 yellow
+    ["#ABE9B3", "#ABE9B3"],  #  6 green
+    ["#B5E8E0", "#B5E8E0"],  #  7 teal
+    ["#96CDFB", "#96CDFB"],  #  8 blue
+    ["#89DCEB", "#89DCEB"],  #  9 sky
+    ["#161320", "#161320"],  # 10 black 0
+    ["#1A1826", "#1A1826"],  # 11 black 1
+    ["#1E1E2E", "#1E1E2E"],  # 12 black 2
+    ["#302D41", "#302D41"],  # 13 black 3
+    ["#575268", "#575268"],  # 14 black 4
+    ["#6E6C7E", "#6E6C7E"],  # 15 gray 0
+    ["#988BA2", "#988BA2"],  # 16 gray 1
+    ["#C3BAC6", "#C3BAC6"],  # 17 gray 2
+    ["#D9E0EE", "#D9E0EE"],  # 18 white
+    ["#C9CBFF", "#C9CBFF"],  # 19 lavender
+    ["#F5E0DC", "#F5E0DC"],  # 20 rosewater
+]

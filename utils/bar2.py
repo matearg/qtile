@@ -1,8 +1,8 @@
 from libqtile import widget, bar
-from .colors import nord, gruvbox
+from .colors import catppuccin
 from .spotify import Spotify
 
-colors = nord()
+colors = catppuccin
 
 def parse_window_name(text):
     """Simplifies the names of a few windows, to be displayed in the bar"""
@@ -98,6 +98,7 @@ def init_widgets_list():
                         play_icon = " ",
                         pause_icon = " ",
                         format = "{icon} {artist} - {track} ",
+                        max_chars = 25,
                         ),
                 widget.Sep(
                     foreground = "#ffffff",
