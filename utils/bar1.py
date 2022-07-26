@@ -15,7 +15,7 @@ def parse_window_name(text):
     return next(filter(lambda name: name in text, target_names), text)
 
 def init_widgets_defaults():
-    return dict(font = "Hack NF",
+    return dict(font = "Hack Nerd Font",
                 fontsize = 12,
                 padding = 2,
                 background = colors[1])
@@ -23,8 +23,8 @@ def init_widgets_defaults():
 def init_widgets_list():
     widgets_list = [
                 widget.GroupBox(
-                        font = "Hack NF",
-                        fontsize = 20,
+                        font = "Hack Nerd Font",
+                        fontsize = 15,
                         margin_y = 3,
                         margin_x = 0,
                         padding_y = 8,
@@ -44,14 +44,14 @@ def init_widgets_list():
                         ),
                 right_arrow(colors[7], colors[4]),
                 widget.TextBox(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         fontsize = 14,
                         text = " ",
                         background = colors[7],
                         padding = 0,
                         ),
                 widget.TextBox(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         fontsize = 16,
                         text = "[",
                         foreground = colors[1],
@@ -59,13 +59,13 @@ def init_widgets_list():
                         padding = 0,
                         ),
                 widget.CurrentLayout(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         fontsize = 14,
                         foreground = colors[1],
                         background = colors[7]
                         ),
                 widget.TextBox(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         fontsize = 16,
                         text = "]",
                         foreground = colors[1],
@@ -75,7 +75,7 @@ def init_widgets_list():
                 right_arrow(colors[1], colors[7]),
                 widget.Spacer(background = colors[1]),
                 widget.WindowName(
-                        font = "Hack NF Italic",
+                        font = "Hack Nerd Font Italic",
                         fontsize = 14,
                         foreground = colors[5],
                         background = colors[1],
@@ -87,7 +87,7 @@ def init_widgets_list():
                 widget.Spacer(background = colors[1]),
                 left_arrow(colors[1], colors[4]),
                 widget.DF(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         fontsize = 12,
                         foreground = "#ffffff",
                         background = colors[4],
@@ -95,7 +95,7 @@ def init_widgets_list():
                         visible_on_warn = False
                         ),
                 widget.TextBox(
-                        font = "FontAwesome",
+                        font = "Hack Nerd Font",
                         text = "  ",
                         foreground = "#ffffff",
                         background = colors[4],
@@ -104,7 +104,7 @@ def init_widgets_list():
                         ),
                 left_arrow(colors[4], colors [7]),
                 widget.Memory(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         format = '{MemUsed: .2f} Gb',
                         measure_mem = 'G',
                         update_interval = 1,
@@ -113,7 +113,7 @@ def init_widgets_list():
                         background = colors[7],
                         ),
                 widget.TextBox(
-                        font = "FontAwesome",
+                        font = "Hack Nerd Font",
                         text = "  ",
                         foreground = colors[1],
                         background = colors[7],
@@ -122,7 +122,7 @@ def init_widgets_list():
                         ),
                 left_arrow(colors[7], colors[4]),
                 widget.KeyboardLayout(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         foreground = "#ffffff",
                         background = colors[4],
                         padding = 0,
@@ -132,7 +132,7 @@ def init_widgets_list():
                         display_map = {'latam': 'LA', 'us': 'US'}
                        ),
                 widget.TextBox(
-                        font = "FontAwesome",
+                        font = "Hack Nerd Font",
                         text = "  ",
                         foreground = "#ffffff",
                         background = colors[4],
@@ -141,14 +141,14 @@ def init_widgets_list():
                         ),
                 left_arrow(colors[4], colors[7]),
                 widget.Clock(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         foreground = colors[1],
                         background = colors[7],
                         fontsize = 14,
                         format = "%a %d/%m %H:%M",
                         ),
                 widget.TextBox(
-                        font = "FontAwesome",
+                        font = "Hack Nerd Font",
                         text = "  ",
                         foreground = colors[1],
                         background = colors[7],
@@ -162,7 +162,7 @@ def init_widgets_list():
                         padding = 4
                         ),
                 widget.TextBox(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         fontsize = 12,
                         text = " ",
                         background = colors[4],

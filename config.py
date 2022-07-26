@@ -150,10 +150,8 @@ keys.extend([
 
 groups = []
 
-# FOR QWERTY KEYBOARDS
 group_names = ["1", "2", "3", "4", "5",]
 
-# group_labels = ["", "", "", "", "",]
 group_labels = ["", "", "", "", "",]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
@@ -183,7 +181,7 @@ userBar = bar2
 def init_layout_theme():
     return {"margin": 8,
             "border_width": 2,
-            "border_focus": userBar.colors[4],
+            "border_focus": "#ffffff",
             "border_normal": userBar.colors[1]
             }
 
@@ -199,8 +197,8 @@ widgets_screen2 = userBar.init_widgets_screen2()
 
 def init_screens():
     return [
-            Screen(top=bar.Bar(widgets = widgets_screen1, size=26, opacity=0.9, margin = [8, 8, 0, 8])),
-            # Screen(top=bar.Bar(widgets = widgets_screen2, size=26, opacity=0.9, margin = [8, 8, 0, 8]))
+            Screen(top=bar.Bar(widgets = widgets_screen1, size=28, opacity=1, margin = [8, 8, 0, 8])),
+            # Screen(top=bar.Bar(widgets = widgets_screen2, size=28, opacity=1, margin = [8, 8, 0, 8]))
             ]
 screens = init_screens()
 
@@ -263,6 +261,8 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='Galculator'),
     Match(wm_class='archlinux-logout'),
     Match(wm_class='xfce4-terminal'),
+    Match(wm_class='nitrogen'),
+    Match(wm_class='ristretto'),
 
 ],  fullscreen_border_width = 0, border_width = 0)
 auto_fullscreen = True

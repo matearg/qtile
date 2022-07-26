@@ -13,7 +13,7 @@ def parse_window_name(text):
     return next(filter(lambda name: name in text, target_names), text)
 
 def init_widgets_defaults():
-    return dict(font = "Hack NF",
+    return dict(font = "Hack Nerd Font",
                 fontsize = 12,
                 padding = 2,
                 background = colors[10])
@@ -21,12 +21,12 @@ def init_widgets_defaults():
 def init_widgets_list():
     widgets_list = [
                 widget.GroupBox(
-                        font = "Hack NF",
-                        fontsize = 20,
+                        font = "Hack Nerd Font",
+                        fontsize = 15,
                         margin_y = 3,
                         margin_x = 0,
-                        padding_y = 8,
-                        padding_x = 7,
+                        padding_y = 9,
+                        padding_x = 9,
                         borderwidth = 3,
                         center_aligned = True,
                         disable_drag = True,
@@ -45,14 +45,14 @@ def init_widgets_list():
                     background = colors[10]
                     ),
                 widget.TextBox(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         fontsize = 12,
                         text = " ",
                         background = colors[10],
                         padding = 0,
                         ),
                 widget.TextBox(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         fontsize = 16,
                         text = "[",
                         foreground = "#ffffff",
@@ -60,13 +60,13 @@ def init_widgets_list():
                         padding = 0,
                         ),
                 widget.CurrentLayout(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         fontsize = 14,
                         foreground = "#ffffff",
                         background = colors[10],
                         ),
                 widget.TextBox(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         fontsize = 16,
                         text = "]",
                         foreground = "#ffffff",
@@ -77,7 +77,7 @@ def init_widgets_list():
                         background = colors[10]
                         ),
                 widget.WindowName(
-                        font = "Hack NF Italic",
+                        font = "Hack Nerd Font Italic",
                         fontsize = 14,
                         foreground = "#ffffff",
                         background = colors[10],
@@ -90,7 +90,7 @@ def init_widgets_list():
                         background = colors[10]
                         ),
                 widget.KeyboardLayout(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         foreground = "#ffffff",
                         background = colors[10],
                         padding = 3,
@@ -104,7 +104,7 @@ def init_widgets_list():
                     background = colors[10]
                     ),
                 widget.Clock(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         foreground = "#ffffff",
                         background = colors[10],
                         fontsize = 14,
@@ -120,7 +120,7 @@ def init_widgets_list():
                         padding = 5
                         ),
                 widget.TextBox(
-                        font = "Hack NF Bold",
+                        font = "Hack Nerd Font",
                         fontsize = 12,
                         text = " ",
                         background = colors[10],
@@ -139,5 +139,4 @@ def init_widgets_screen1():
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[24:27]
     return widgets_screen2

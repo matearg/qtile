@@ -31,7 +31,8 @@ super + x
 
 #Rofi
 super + p
-    rofi -show drun
+    rofi -show run
+    # rofi -show drun
 
 #Pavucontrol
 super + v
