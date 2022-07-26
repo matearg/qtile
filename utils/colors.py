@@ -10,7 +10,8 @@ def gruvbox():
             ["#83a598", "#83a598"], # color 6
             ["#fbf1c7", "#fbf1c7"], # color 7
             ["#1d2021", "#1d2021"], # color 8
-            ["#cc241d", "#cc241d"]] # color 9
+            ["#cc241d", "#cc241d"], # color 9
+            ["#2E2E2E", "#2E2E2E"]] # color 9
 
 # Theme name : ArcoLinux Nord
 def nord():
@@ -23,4 +24,5 @@ def nord():
             ["#88C0D0", "#88C0D0"], # color 6
             ["#E5E9F0", "#E5E9F0"], # color 7
             ["#4C566A", "#4C566A"], # color 8
-            ["#BF616A", "#BF616A"]] # color 9
+            ["#BF616A", "#BF616A"],
+            ["#2E2E2E", "#2E2E2E"]] # color 9

@@ -22,13 +22,6 @@ def init_widgets_defaults():
 
 def init_widgets_list():
     widgets_list = [
-                widget.TextBox(
-                        font = "Hack NF Bold",
-                        fontsize = 14,
-                        text = " ",
-                        background = colors[4],
-                        padding = 0,
-                        ),
                 widget.GroupBox(
                         font = "Hack NF",
                         fontsize = 20,
@@ -162,13 +155,6 @@ def init_widgets_list():
                         padding = 0,
                         fontsize = 16
                         ),
-                widget.TextBox(
-                        font = "Hack NF Bold",
-                        fontsize = 14,
-                        text = " ",
-                        background = colors[7],
-                        padding = 0,
-                        ),
                 left_arrow(colors[7], colors[4]),
                 widget.Systray(
                         background = colors[4],
@@ -177,7 +163,7 @@ def init_widgets_list():
                         ),
                 widget.TextBox(
                         font = "Hack NF Bold",
-                        fontsize = 14,
+                        fontsize = 12,
                         text = " ",
                         background = colors[4],
                         padding = 0,
@@ -191,7 +177,6 @@ widgets_list = init_widgets_list()
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    del widgets_screen1[23]
     return widgets_screen1
 
 def init_widgets_screen2():
