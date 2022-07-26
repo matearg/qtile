@@ -22,8 +22,8 @@ def init_widgets_defaults():
 def init_widgets_list():
     widgets_list = [
                 widget.GroupBox(
-                        font = "Hack Nerd Font",
-                        fontsize = 15,
+                        font = "Hack Nerd Font Mono",
+                        fontsize = 25,
                         margin_y = 3,
                         margin_x = 0,
                         padding_y = 9,
@@ -52,27 +52,12 @@ def init_widgets_list():
                         background = colors[10],
                         padding = 0,
                         ),
-                widget.TextBox(
-                        font = "Hack Nerd Font",
-                        fontsize = 16,
-                        text = "[",
-                        foreground = "#ffffff",
-                        background = colors[10],
-                        padding = 0,
-                        ),
+                widget.CurrentLayoutIcon(scale = 0.8),
                 widget.CurrentLayout(
                         font = "Hack Nerd Font",
                         fontsize = 14,
                         foreground = "#ffffff",
                         background = colors[10],
-                        ),
-                widget.TextBox(
-                        font = "Hack Nerd Font",
-                        fontsize = 16,
-                        text = "]",
-                        foreground = "#ffffff",
-                        background = colors[10],
-                        padding = 0,
                         ),
                 widget.Spacer(
                         background = colors[10]
@@ -95,8 +80,8 @@ def init_widgets_list():
                         fontsize = 14,
                         foreground = "#ffffff",
                         background = colors[10],
-                        play_icon = " ",
-                        pause_icon = " ",
+                        play_icon = "  ",
+                        pause_icon = "  ",
                         format = "{icon} {artist} - {track} ",
                         max_chars = 25,
                         ),
@@ -123,7 +108,7 @@ def init_widgets_list():
                         foreground = "#ffffff",
                         background = colors[10],
                         fontsize = 14,
-                        format = " %a %d/%m %H:%M ",
+                        format="%b %d, %H:%M",
                         ),
                 widget.Sep(
                     foreground = "#ffffff",

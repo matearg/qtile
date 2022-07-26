@@ -42,7 +42,7 @@ keys = [
 
 # QTILE LAYOUT KEYS
     Key([mod], "n", lazy.layout.normalize()),
-    Key([mod], "space", lazy.next_layout()),
+    Key([mod, "shift"], "space", lazy.next_layout()),
 
 # CHANGE FOCUS
     Key([mod], "Up", lazy.layout.up()),
@@ -120,7 +120,7 @@ keys = [
     Key([mod, "mod1"], "space", lazy.window.toggle_floating()),
 
 # CHANGE KEYBOARD LAYOUT
-    Key([mod, "shift"], "space", lazy.widget["keyboardlayout"].next_keyboard()),
+    Key([mod], "space", lazy.widget["keyboardlayout"].next_keyboard()),
 
    ]
 
@@ -198,7 +198,7 @@ widgets_screen2 = userBar.init_widgets_screen2()
 def init_screens():
     return [
             Screen(top=bar.Bar(widgets = widgets_screen1, size=30, opacity=1, margin = [8, 8, 0, 8])),
-            # Screen(top=bar.Bar(widgets = widgets_screen2, size=28, opacity=1, margin = [8, 8, 0, 8]))
+            Screen(top=bar.Bar(widgets = widgets_screen2, size=30, opacity=1, margin = [8, 8, 0, 8]))
             ]
 screens = init_screens()
 
