@@ -197,7 +197,7 @@ widgets_screen2 = userBar.init_widgets_screen2()
 
 def init_screens():
     return [
-            Screen(top=bar.Bar(widgets = widgets_screen1, size=28, opacity=1, margin = [8, 8, 0, 8])),
+            Screen(top=bar.Bar(widgets = widgets_screen1, size=30, opacity=1, margin = [8, 8, 0, 8])),
             # Screen(top=bar.Bar(widgets = widgets_screen2, size=28, opacity=1, margin = [8, 8, 0, 8]))
             ]
 screens = init_screens()

@@ -27,7 +27,7 @@ def init_widgets_list():
                         margin_x=14,
                         margin_y=3,
                         mouse_callbacks={"Button1": lazy.spawn("alacritty")},
-                        filename="~/.config/qtile/icons/hkskull.png",
+                        filename="~/.config/qtile/icons/arch.png",
                         ),
                 widget.GroupBox(
                         active = colors[0],
