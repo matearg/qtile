@@ -181,8 +181,8 @@ userBar = bar1
 def init_layout_theme():
     return {"margin": 8,
             "border_width": 2,
-            "border_focus": "#ffffff",
-            "border_normal": "#2E2E2E"
+            "border_focus": userBar.colors[0],
+            "border_normal": userBar.colors[13] 
             }
 
 layout_theme = init_layout_theme()
