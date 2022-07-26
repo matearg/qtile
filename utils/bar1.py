@@ -1,6 +1,7 @@
 from libqtile import widget, bar
 from .colors import gruvbox, nord
 from .unicodes import left_arrow, right_arrow
+from .spotify import Spotify
 
 # COLORS FOR THE BAR
 colors = nord()
@@ -85,41 +86,51 @@ def init_widgets_list():
                         parse_text = parse_window_name,
                         ),
                 widget.Spacer(background = colors[1]),
-                left_arrow(colors[1], colors[4]),
-                widget.DF(
+                left_arrow(colors[1], colors[7]),
+                Spotify(
                         font = "Hack Nerd Font",
-                        fontsize = 12,
-                        foreground = "#ffffff",
-                        background = colors[4],
-                        format = '{uf} {m}b',
-                        visible_on_warn = False
-                        ),
-                widget.TextBox(
-                        font = "Hack Nerd Font",
-                        text = "  ",
-                        foreground = "#ffffff",
-                        background = colors[4],
-                        padding = 0,
-                        fontsize = 16
-                        ),
-                left_arrow(colors[4], colors [7]),
-                widget.Memory(
-                        font = "Hack Nerd Font",
-                        format = '{MemUsed: .2f} Gb',
-                        measure_mem = 'G',
-                        update_interval = 1,
-                        fontsize = 12,
+                        fontsize = 14,
                         foreground = colors[1],
                         background = colors[7],
+                        play_icon = " ",
+                        pause_icon = " ",
+                        format = "{icon} {artist} - {track} ",
                         ),
-                widget.TextBox(
-                        font = "Hack Nerd Font",
-                        text = "  ",
-                        foreground = colors[1],
-                        background = colors[7],
-                        padding = 0,
-                        fontsize = 16
-                        ),
+                # left_arrow(colors[1], colors[4]),
+                # widget.DF(
+                #         font = "Hack Nerd Font",
+                #         fontsize = 12,
+                #         foreground = "#ffffff",
+                #         background = colors[4],
+                #         format = '{uf} {m}b',
+                #         visible_on_warn = False
+                #         ),
+                # widget.TextBox(
+                #         font = "Hack Nerd Font",
+                #         text = "  ",
+                #         foreground = "#ffffff",
+                #         background = colors[4],
+                #         padding = 0,
+                #         fontsize = 16
+                #         ),
+                # left_arrow(colors[4], colors [7]),
+                # widget.Memory(
+                #         font = "Hack Nerd Font",
+                #         format = '{MemUsed: .2f} Gb',
+                #         measure_mem = 'G',
+                #         update_interval = 1,
+                #         fontsize = 12,
+                #         foreground = colors[1],
+                #         background = colors[7],
+                #         ),
+                # widget.TextBox(
+                #         font = "Hack Nerd Font",
+                #         text = "  ",
+                #         foreground = colors[1],
+                #         background = colors[7],
+                #         padding = 0,
+                #         fontsize = 16
+                #         ),
                 left_arrow(colors[7], colors[4]),
                 widget.KeyboardLayout(
                         font = "Hack Nerd Font",

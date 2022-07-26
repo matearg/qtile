@@ -1,5 +1,6 @@
 from libqtile import widget, bar
 from .colors import nord, gruvbox
+from .spotify import Spotify
 
 colors = nord()
 
@@ -89,6 +90,19 @@ def init_widgets_list():
                 widget.Spacer(
                         background = colors[10]
                         ),
+                Spotify(
+                        font = "Hack Nerd Font",
+                        fontsize = 14,
+                        foreground = "#ffffff",
+                        background = colors[10],
+                        play_icon = " ",
+                        pause_icon = " ",
+                        format = "{icon} {artist} - {track} ",
+                        ),
+                widget.Sep(
+                    foreground = "#ffffff",
+                    background = colors[10]
+                    ),
                 widget.KeyboardLayout(
                         font = "Hack Nerd Font",
                         foreground = "#ffffff",
