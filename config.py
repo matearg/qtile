@@ -32,9 +32,9 @@ keys = [
     Key([mod], "e", lazy.spawn('thunar')),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "i", lazy.spawn('archlinux-tweak-tool')),
-    Key([mod], "p", lazy.spawn("dmenu_run -i -nb '#302D41' -nf '#DDB6F2' -sb '#DDB6F2' -sf '#302D41' -fn 'Hack NF:bold:pixelsize=20'")),
+    Key([mod], "p", lazy.spawn("dmenu_run -i -nb '#302D41' -nf '#DDB6F2' -sb '#DDB6F2' -sf '#302D41' -fn 'Hack NF:bold:pixelsize=18'")),
     Key([mod], "q", lazy.window.kill()),
-    Key([mod], "v", lazy.spawn('pavucontrol')),
+    Key([mod], "v", lazy.spawn('alacritty -e nvim')),
     Key([mod], "x", lazy.spawn('archlinux-logout')),
 
 # SUPER + SHIFT KEYS
@@ -53,6 +53,7 @@ keys = [
     Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
     Key(["mod1", "control"], "s", lazy.spawn('spotify')),
     Key(["mod1", "control"], "t", lazy.spawn('alacritty')),
+    Key(["mod1", "control"], "v", lazy.spawn('pavucontrol')),
 
 # QTILE LAYOUT KEYS
     Key([mod, "shift"], "space", lazy.next_layout()),
