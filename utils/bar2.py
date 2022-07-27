@@ -58,7 +58,11 @@ def init_widgets_list():
                     foreground = colors[18],
                     background = colors[10]
                     ),
-                widget.CurrentLayoutIcon(scale = 0.65),
+                widget.CurrentLayoutIcon(
+                    scale = 0.65,
+                    foreground = colors[18],
+                    background = colors[10],
+                    ),
                 widget.CurrentLayout(
                         font = regular_font,
                         fontsize = 14,
@@ -98,7 +102,7 @@ def init_widgets_list():
                         background = colors[10],
                         foreground = colors[18],
                         coordinates = {"longitude": "-57.5575", "latitude": "-38.0023"},
-                        format = "{main_temp}°{units_temperature}",
+                        format = "{main_temp:.0f}°{units_temperature}",
                         padding_y=4,
                         padding_x=0,
                         padding=8,
@@ -107,6 +111,17 @@ def init_widgets_list():
                     foreground = colors[18],
                     background = colors[10]
                     ),
+                widget.TextBox(
+                        text="阮",
+                        font = mono_font,
+                        fontsize=25,
+                        foreground=colors[18],  # blue
+                        background = colors[10],
+                        filled = True,
+                        padding_y=4,
+                        padding_x=0,
+                        padding=8,
+                        ),
                 Spotify(
                         font = regular_font,
                         fontsize = 14,
@@ -121,6 +136,16 @@ def init_widgets_list():
                     foreground = colors[18],
                     background = colors[10]
                     ),
+                widget.TextBox(
+                        font = regular_font,
+                        text = " ",
+                        foreground = colors[18],
+                        background = colors[10],
+                        padding = 8,
+                        padding_x = 4,
+                        padding_y = 0,
+                        fontsize = 14
+                        ),
                 widget.KeyboardLayout(
                         font = regular_font,
                         foreground = colors[18],
@@ -135,6 +160,18 @@ def init_widgets_list():
                     foreground = colors[18],
                     background = colors[10]
                     ),
+                widget.TextBox(
+                        text="",
+                        font = mono_font,
+                        fontsize=25,
+                        foreground=colors[18],  # blue
+                        background = colors[10],
+                        radius = 4,
+                        filled = True,
+                        padding_y=4,
+                        padding_x=0,
+                        padding=8,
+                        ),
                 widget.Clock(
                         font = regular_font,
                         foreground = colors[18],

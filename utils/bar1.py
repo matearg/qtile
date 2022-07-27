@@ -89,7 +89,7 @@ def init_widgets_list():
                         background = colors[13],
                         foreground = colors[3],
                         coordinates = {"longitude": "-57.5575", "latitude": "-38.0023"},
-                        format = "{main_temp}°{units_temperature}",
+                        format = "{main_temp:.0f}°{units_temperature}",
                         padding_y=4,
                         padding_x=0,
                         padding=8,
