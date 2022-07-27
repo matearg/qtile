@@ -104,6 +104,7 @@ def init_widgets_list():
                         padding_y=4,
                         padding_x=0,
                         padding=8,
+                        mouse_callbacks={"Button1": lazy.spawn("spotify")},
                         ),
                 Spotify(
                         font = regular_font,
