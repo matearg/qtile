@@ -4,6 +4,10 @@ from .colors import catppuccin
 from .spotify import Spotify
 
 colors = catppuccin
+regular_font = "FantasqueSansMono Nerd Font"
+mono_font = "FantasqueSansMono Nerd Font Mono"
+italic_font = "FantasqueSansMono Nerd Font Italic"
+bold_font = "FantasqueSansMono Nerd Font Bold"
 
 def parse_window_name(text):
     """Simplifies the names of a few windows, to be displayed in the bar"""
@@ -15,7 +19,7 @@ def parse_window_name(text):
     return next(filter(lambda name: name in text, target_names), text)
 
 def init_widgets_defaults():
-    return dict(font = "Hack Nerd Font",
+    return dict(font = regular_font,
                 fontsize = 12,
                 padding = 2,
                 background = colors[1])
@@ -43,44 +47,22 @@ def init_widgets_list():
                         foreground = colors[18],
                         borderwidth = 2,
                         disable_drag = True,
-                        font = "Hack Nerd Font Mono",
+                        font = mono_font,
                         fontsize = 25,
                         highlight_method = "line",
                         padding_x = 10,
                         padding_y = 16,
                         rounded = False,
                         ),
-                # widget.TextBox(
-                #         font = "Hack Nerd Font",
-                #         fontsize = 16,
-                #         text = "[",
-                #         foreground = colors[13],
-                #         background = colors[0],
-                #         padding = 0,
-                #         ),
-                # widget.CurrentLayout(
-                #         font = "Hack Nerd Font",
-                #         fontsize = 14,
-                #         foreground = colors[13],
-                #         background = colors[0]
-                #         ),
-                # widget.TextBox(
-                #         font = "Hack Nerd Font",
-                #         fontsize = 16,
-                #         text = "]",
-                #         foreground = colors[13],
-                #         background = colors[0],
-                #         padding = 0,
-                #         ),
                 widget.Spacer(background = colors[13]),
                 widget.TextBox(
                         text = " ",
                         foreground = "#ffffff",
                         background = colors[13],
-                        font = "Hack Nerd Font",
+                        font = regular_font,
                         ),
                 widget.WindowName(
-                        font = "Hack Nerd Font Italic",
+                        font = italic_font,
                         fontsize = 14,
                         foreground = "#ffffff",
                         background = colors[13],
@@ -91,7 +73,7 @@ def init_widgets_list():
                         ),
                 widget.Spacer(background = colors[13]),
                 widget.OpenWeather(
-                        font = "Hack Nerd Font Mono",
+                        font = mono_font,
                         fontsize = 20,
                         background = colors[3],
                         foreground = colors[13],
@@ -102,7 +84,7 @@ def init_widgets_list():
                         padding=8,
                         ),
                 widget.OpenWeather(
-                        font = "Hack Nerd Font Mono",
+                        font = mono_font,
                         fontsize = 14,
                         background = colors[13],
                         foreground = colors[3],
@@ -114,7 +96,7 @@ def init_widgets_list():
                         ),
                 widget.TextBox(
                         text="阮",
-                        font = "Hack Nerd Font Mono",
+                        font = mono_font,
                         fontsize=25,
                         foreground=colors[13],  # blue
                         background = colors[7],
@@ -124,7 +106,7 @@ def init_widgets_list():
                         padding=8,
                         ),
                 Spotify(
-                        font = "Hack Nerd Font",
+                        font = regular_font,
                         fontsize = 14,
                         foreground = colors[7],
                         background = colors[13],
@@ -134,7 +116,7 @@ def init_widgets_list():
                         max_chars = 20,
                         ),
                 widget.TextBox(
-                        font = "Hack Nerd Font",
+                        font = regular_font,
                         text = " ",
                         foreground = colors[13],
                         background = colors[4],
@@ -144,7 +126,7 @@ def init_widgets_list():
                         fontsize = 14
                         ),
                 widget.KeyboardLayout(
-                        font = "Hack Nerd Font",
+                        font = mono_font,
                         foreground = colors[4],
                         background = colors[13],
                         padding = 8,
@@ -157,7 +139,7 @@ def init_widgets_list():
                        ),
                 widget.TextBox(
                         text="",
-                        font = "Hack Nerd Font Mono",
+                        font = mono_font,
                         fontsize=25,
                         foreground=colors[10],  # blue
                         background = colors[8],
@@ -168,7 +150,7 @@ def init_widgets_list():
                         padding=8,
                         ),
                 widget.Clock(
-                        font = "Hack Nerd Font",
+                        font = regular_font,
                         fontsize = 14,
                         format="%b %d, %H:%M",
                         foreground=colors[8],
@@ -178,7 +160,7 @@ def init_widgets_list():
                 widget.TextBox(
                         text="墳",
                         foreground=colors[10],
-                        font="Hack Nerd Font Mono",
+                        font=mono_font,
                         fontsize=25,
                         padding=8,
                         background=colors[6],
@@ -187,7 +169,7 @@ def init_widgets_list():
                         padding_y=4,
                         ),
                 widget.PulseVolume(
-                        font = "Hack Nerd Font Mono",
+                        font = mono_font,
                         fontsize = 14,
                         foreground=colors[6],
                         limit_max_volume="True",
@@ -202,7 +184,7 @@ def init_widgets_list():
                         text="⏻",
                         background=colors[0],
                         foreground="#000000",
-                        font="Hack Nerd Font Mono",
+                        font=mono_font,
                         fontsize=20,
                         padding=16,
                         mouse_callbacks={"Button1": lazy.spawn("archlinux-logout")},

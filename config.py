@@ -177,12 +177,20 @@ for i in groups:
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
     ])
 
-userBar = bar2
+userBar = bar1
+
+def border_colors(bar):
+    if bar == bar1:
+        color = 0
+    else:
+        color = 18
+
+    return color
 
 def init_layout_theme():
     return {"margin": 8,
             "border_width": 2,
-            "border_focus": userBar.colors[0],
+            "border_focus": userBar.colors[border_colors(userBar)],
             "border_normal": userBar.colors[13] 
             }
 
@@ -198,18 +206,18 @@ layouts = [
 widgets_screen1 = userBar.init_widgets_screen1()
 widgets_screen2 = userBar.init_widgets_screen2()
 
-def ifBar(bar):
+def if_bar(bar):
     if bar == bar1:
-        marginVal = [8, 8, 0, 8]
+        margin_val = [8, 8, 0, 8]
     else:
-        marginVal = 0
+        margin_val = 0
 
-    return marginVal
+    return margin_val
 
 def init_screens():
     return [
-            Screen(top=bar.Bar(widgets = widgets_screen1, size=30, opacity=1, margin = ifBar(userBar))),
-            Screen(top=bar.Bar(widgets = widgets_screen2, size=30, opacity=1, margin = ifBar(userBar)))
+            Screen(top=bar.Bar(widgets = widgets_screen1, size=30, opacity=1, margin = if_bar(userBar))),
+            Screen(top=bar.Bar(widgets = widgets_screen2, size=30, opacity=1, margin = if_bar(userBar)))
             ]
 screens = init_screens()
 
