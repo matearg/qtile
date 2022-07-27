@@ -4,10 +4,10 @@ from .colors import catppuccin
 from .spotify import Spotify
 
 colors = catppuccin
-regular_font = "FantasqueSansMono Nerd Font"
-mono_font = "FantasqueSansMono Nerd Font Mono"
-italic_font = "FantasqueSansMono Nerd Font Italic"
-bold_font = "FantasqueSansMono Nerd Font Bold"
+regular_font = "Iosevka Nerd Font"
+mono_font = "Iosevka Nerd Font Mono"
+italic_font = "Iosevka Nerd Font Italic"
+bold_font = "Iosevka Nerd Font Bold"
 
 def parse_window_name(text):
     """Simplifies the names of a few windows, to be displayed in the bar"""

@@ -27,21 +27,21 @@ def window_to_next_group(qtile):
 keys = [
 
 # SUPER + NORMAL KEYS
-    Key([mod], "f", lazy.window.toggle_fullscreen()),
-    Key([mod], "q", lazy.window.kill()),
     Key([mod], "Escape", lazy.spawn('xkill')),
     Key([mod], "Return", lazy.spawn('alacritty')),
-    Key([mod], "x", lazy.spawn('archlinux-logout')),
-    Key([mod], "v", lazy.spawn('pavucontrol')),
     Key([mod], "e", lazy.spawn('thunar')),
+    Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "i", lazy.spawn('archlinux-tweak-tool')),
-    Key([mod], "p", lazy.spawn('rofi -show run')),
+    Key([mod], "p", lazy.spawn("dmenu_run -i -nb '#302D41' -nf '#DDB6F2' -sb '#DDB6F2' -sf '#302D41' -fn 'Hack NF:bold:pixelsize=20'")),
+    Key([mod], "q", lazy.window.kill()),
+    Key([mod], "v", lazy.spawn('pavucontrol')),
+    Key([mod], "x", lazy.spawn('archlinux-logout')),
 
 # SUPER + SHIFT KEYS
     Key([mod, "shift"], "c", lazy.window.kill()),
+    Key([mod, "shift"], "d", lazy.spawn('rofi -show run')),
+    Key([mod, "shift"], "f", lazy.spawn('firefox')),
     Key([mod, "shift"], "r", lazy.restart()),
-    Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#302D41' -nf '#DDB6F2' -sb '#DDB6F2' -sf '#302D41' -fn 'Hack NF:bold:pixelsize=20'")),
-    Key([mod, "shift"], "f", lazy.spawn("firefox")),
 
 # SUPER + FUNCTION KEYS
     Key([mod], "F1", lazy.spawn('amixer set Master 5%+')),
@@ -49,14 +49,14 @@ keys = [
     Key([mod], "F11", lazy.spawn('rofi-theme-selector')),
 
 # CONTROL + ALT KEYS
+    Key(["mod1", "control"], "i", lazy.spawn('nitrogen')),
     Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
     Key(["mod1", "control"], "s", lazy.spawn('spotify')),
     Key(["mod1", "control"], "t", lazy.spawn('alacritty')),
-    Key(["mod1", "control"], "i", lazy.spawn('nitrogen')),
 
 # QTILE LAYOUT KEYS
-    Key([mod], "n", lazy.layout.normalize()),
     Key([mod, "shift"], "space", lazy.next_layout()),
+    Key([mod], "n", lazy.layout.normalize()),
 
 # CHANGE FOCUS
     Key([mod], "Up", lazy.layout.up()),
@@ -184,7 +184,6 @@ def border_colors(bar):
         color = 0
     else:
         color = 18
-
     return color
 
 def init_layout_theme():
@@ -211,7 +210,6 @@ def if_bar(bar):
         margin_val = [8, 8, 0, 8]
     else:
         margin_val = 0
-
     return margin_val
 
 def init_screens():
