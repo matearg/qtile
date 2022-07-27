@@ -32,7 +32,7 @@ keys = [
     Key([mod], "e", lazy.spawn('thunar')),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "i", lazy.spawn('archlinux-tweak-tool')),
-    Key([mod], "p", lazy.spawn('rofi -show run')),
+    Key([mod], "p", lazy.spawn('rofi -show drun')),
     Key([mod], "q", lazy.window.kill()),
     Key([mod], "v", lazy.spawn('alacritty -e nvim')),
     Key([mod], "x", lazy.spawn('archlinux-logout')),
