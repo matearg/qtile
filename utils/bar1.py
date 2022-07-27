@@ -114,7 +114,7 @@ def init_widgets_list():
                         play_icon = "  ",
                         pause_icon = "  ",
                         format = "{icon} {artist} - {track} ",
-                        max_chars = 20,
+                        # max_chars = 20,
                         ),
                 widget.TextBox(
                         font = regular_font,
