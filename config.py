@@ -49,6 +49,7 @@ keys = [
     Key([mod], "F11", lazy.spawn('rofi-theme-selector')),
 
 # CONTROL + ALT KEYS
+    Key(["mod1", "control"], "h", lazy.spawn('alacritty -e btm')),
     Key(["mod1", "control"], "i", lazy.spawn('nitrogen')),
     Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
     Key(["mod1", "control"], "s", lazy.spawn('spotify')),
@@ -68,6 +69,12 @@ keys = [
     Key([mod], "j", lazy.layout.down()),
     Key([mod], "h", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),
+
+# SHUFLE WINDOWS ORDER
+    Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
+    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
 
 # RESIZE UP, DOWN, LEFT, RIGHT
     Key([mod, "control"], "l",
@@ -144,8 +151,8 @@ def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
 
 keys.extend([
     # MOVE WINDOW TO NEXT SCREEN
-    Key([mod, "shift"], "Left", lazy.function(window_to_next_screen, switch_screen=True)),
-    Key([mod, "shift"], "Right", lazy.function(window_to_previous_screen, switch_screen=True)),
+    Key([mod, "mod1"], "Left", lazy.function(window_to_next_screen, switch_screen=True)),
+    Key([mod, "mod1"], "Right", lazy.function(window_to_previous_screen, switch_screen=True)),
     Key([mod, "mod1"], "h", lazy.function(window_to_next_screen, switch_screen=True)),
     Key([mod, "mod1"], "l", lazy.function(window_to_previous_screen, switch_screen=True)),
 ])
