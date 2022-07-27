@@ -1,5 +1,5 @@
 from libqtile import widget, bar
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 from .colors import catppuccin
 from .spotify import Spotify
 

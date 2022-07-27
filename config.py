@@ -2,7 +2,7 @@ import os
 import subprocess
 from libqtile import layout, bar, hook
 from libqtile.config import Drag, Group, Key, Match, Screen
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 from utils import bar1, bar2
 
 #mod4 or mod = super key
@@ -32,14 +32,14 @@ keys = [
     Key([mod], "e", lazy.spawn('thunar')),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "i", lazy.spawn('archlinux-tweak-tool')),
-    Key([mod], "p", lazy.spawn("dmenu_run -i -nb '#302D41' -nf '#DDB6F2' -sb '#DDB6F2' -sf '#302D41' -fn 'Hack NF:bold:pixelsize=18'")),
+    Key([mod], "p", lazy.spawn('rofi -show run')),
     Key([mod], "q", lazy.window.kill()),
     Key([mod], "v", lazy.spawn('alacritty -e nvim')),
     Key([mod], "x", lazy.spawn('archlinux-logout')),
 
 # SUPER + SHIFT KEYS
     Key([mod, "shift"], "c", lazy.window.kill()),
-    Key([mod, "shift"], "d", lazy.spawn('rofi -show run')),
+    Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#302D41' -nf '#DDB6F2' -sb '#DDB6F2' -sf '#302D41' -fn 'Iosevka Nerd Font Mono:pixelsize=18'")),
     Key([mod, "shift"], "f", lazy.spawn('firefox')),
     Key([mod, "shift"], "r", lazy.restart()),
 
@@ -187,6 +187,13 @@ def border_colors(bar):
         color = 18
     return color
 
+def if_bar(bar):
+    if bar == bar1:
+        margin_val = [8, 8, 0, 8]
+    else:
+        margin_val = 0
+    return margin_val
+
 def init_layout_theme():
     return {"margin": 8,
             "border_width": 2,
@@ -198,25 +205,16 @@ layout_theme = init_layout_theme()
 
 layouts = [
     layout.MonadTall(**layout_theme),
-    # layout.MonadWide(**layout_theme),
-    # layout.MonadThreeCol(**layout_theme),
     layout.Max(**layout_theme),
 ]
 
 widgets_screen1 = userBar.init_widgets_screen1()
 widgets_screen2 = userBar.init_widgets_screen2()
 
-def if_bar(bar):
-    if bar == bar1:
-        margin_val = [8, 8, 0, 8]
-    else:
-        margin_val = 0
-    return margin_val
-
 def init_screens():
     return [
-            Screen(top=bar.Bar(widgets = widgets_screen1, size=30, opacity=1, margin = if_bar(userBar))),
-            Screen(top=bar.Bar(widgets = widgets_screen2, size=30, opacity=1, margin = if_bar(userBar)))
+            Screen(top=bar.Bar(widgets = widgets_screen1, opacity = 1, size = 30, margin = if_bar(userBar))),
+            # Screen(top=bar.Bar(widgets = widgets_screen2, opacity = 1, size = 30, margin = if_bar(userBar)))
             ]
 screens = init_screens()
 
