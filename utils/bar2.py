@@ -1,4 +1,5 @@
 from libqtile import widget, bar
+from libqtile.command import lazy
 from .colors import catppuccin
 from .spotify import Spotify
 
@@ -21,42 +22,43 @@ def init_widgets_defaults():
 
 def init_widgets_list():
     widgets_list = [
+                widget.Image(
+                        background=colors[18],
+                        margin_x=14,
+                        margin_y=3,
+                        mouse_callbacks={"Button1": lazy.spawn("alacritty")},
+                        filename="~/.config/qtile/icons/arch.png",
+                        ),
                 widget.GroupBox(
+                        active = colors[18],
+                        block_highlight_text_color = colors[18],
+                        this_current_screen_border = colors[18],
+                        this_screen_border = colors[18],
+                        urgent_border = colors[3],
+                        background = colors[10],  # background is [10-12]
+                        other_current_screen_border = colors[13],
+                        other_screen_border = colors[13],
+                        highlight_color = colors[13],
+                        inactive = colors[14],
+                        foreground = colors[18],
+                        borderwidth = 2,
+                        disable_drag = True,
                         font = "Hack Nerd Font Mono",
                         fontsize = 25,
-                        margin_y = 3,
-                        margin_x = 0,
-                        padding_y = 9,
-                        padding_x = 9,
-                        borderwidth = 3,
-                        center_aligned = True,
-                        disable_drag = True,
-                        active = "#ffffff",
-                        inactive = "#ffffff",
-                        rounded = False,
                         highlight_method = "line",
-                        this_current_screen_border = "#ffffff",
-                        other_current_screen_border = "#ffffff",
-                        highlight_color = colors[10],
-                        foreground = "#ffffff",
-                        background = colors[10]
+                        padding_x = 10,
+                        padding_y = 16,
+                        rounded = False,
                         ),
                 widget.Sep(
-                    foreground = "#ffffff",
+                    foreground = colors[18],
                     background = colors[10]
                     ),
-                widget.TextBox(
-                        font = "Hack Nerd Font",
-                        fontsize = 12,
-                        text = " ",
-                        background = colors[10],
-                        padding = 0,
-                        ),
-                widget.CurrentLayoutIcon(scale = 0.8),
+                widget.CurrentLayoutIcon(scale = 0.65),
                 widget.CurrentLayout(
                         font = "Hack Nerd Font",
                         fontsize = 14,
-                        foreground = "#ffffff",
+                        foreground = colors[18],
                         background = colors[10],
                         ),
                 widget.Spacer(
@@ -65,7 +67,7 @@ def init_widgets_list():
                 widget.WindowName(
                         font = "Hack Nerd Font Italic",
                         fontsize = 14,
-                        foreground = "#ffffff",
+                        foreground = colors[18],
                         background = colors[10],
                         width = bar.CALCULATED,
                         empty_group_string = "Desktop",
@@ -75,10 +77,36 @@ def init_widgets_list():
                 widget.Spacer(
                         background = colors[10]
                         ),
+                widget.OpenWeather(
+                        font = "Hack Nerd Font Mono",
+                        fontsize = 20,
+                        background = colors[10],
+                        foreground = colors[18],
+                        coordinates = {"longitude": "-57.5575", "latitude": "-38.0023"},
+                        format = "{icon}",
+                        padding_y=4,
+                        padding_x=0,
+                        padding=8,
+                        ),
+                widget.OpenWeather(
+                        font = "Hack Nerd Font Mono",
+                        fontsize = 14,
+                        background = colors[10],
+                        foreground = colors[18],
+                        coordinates = {"longitude": "-57.5575", "latitude": "-38.0023"},
+                        format = "{main_temp}°{units_temperature}",
+                        padding_y=4,
+                        padding_x=0,
+                        padding=8,
+                        ),
+                widget.Sep(
+                    foreground = colors[18],
+                    background = colors[10]
+                    ),
                 Spotify(
                         font = "Hack Nerd Font",
                         fontsize = 14,
-                        foreground = "#ffffff",
+                        foreground = colors[18],
                         background = colors[10],
                         play_icon = "  ",
                         pause_icon = "  ",
@@ -86,12 +114,12 @@ def init_widgets_list():
                         max_chars = 25,
                         ),
                 widget.Sep(
-                    foreground = "#ffffff",
+                    foreground = colors[18],
                     background = colors[10]
                     ),
                 widget.KeyboardLayout(
                         font = "Hack Nerd Font",
-                        foreground = "#ffffff",
+                        foreground = colors[18],
                         background = colors[10],
                         padding = 3,
                         fontsize = 14,
@@ -100,31 +128,51 @@ def init_widgets_list():
                         display_map = {'latam': ' LA ', 'us': ' US '}
                        ),
                 widget.Sep(
-                    foreground = "#ffffff",
+                    foreground = colors[18],
                     background = colors[10]
                     ),
                 widget.Clock(
                         font = "Hack Nerd Font",
-                        foreground = "#ffffff",
+                        foreground = colors[18],
                         background = colors[10],
                         fontsize = 14,
                         format="%b %d, %H:%M",
                         ),
                 widget.Sep(
-                    foreground = "#ffffff",
+                    foreground = colors[18],
                     background = colors[10]
                     ),
-                widget.Systray(
-                        background = colors[10],
-                        icon_size = 20,
-                        padding = 5
+                widget.TextBox(
+                        text="墳",
+                        foreground=colors[18],
+                        font="Hack Nerd Font Mono",
+                        fontsize=25,
+                        padding=8,
+                        background=colors[10],
+                        filled=True,
+                        padding_x=None,
+                        padding_y=4,
+                        ),
+                widget.PulseVolume(
+                        font = "Hack Nerd Font Mono",
+                        fontsize = 14,
+                        foreground=colors[18],
+                        limit_max_volume="True",
+                        padding=8,
+                        step = 5,
+                        background=colors[10],
+                        filled=True,
+                        padding_y=4,
+                        padding_x=0,
                         ),
                 widget.TextBox(
-                        font = "Hack Nerd Font",
-                        fontsize = 12,
-                        text = " ",
-                        background = colors[10],
-                        padding = 0,
+                        text="⏻",
+                        background=colors[18],
+                        foreground="#000000",
+                        font="Hack Nerd Font Mono",
+                        fontsize=20,
+                        padding=16,
+                        mouse_callbacks={"Button1": lazy.spawn("archlinux-logout")},
                         ),
     ]
     return widgets_list

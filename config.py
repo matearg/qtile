@@ -26,19 +26,33 @@ def window_to_next_group(qtile):
 
 keys = [
 
-# Most of our keybindings are in sxhkd file - except these
-
-# SUPER + FUNCTION KEYS
-
+# SUPER + NORMAL KEYS
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "q", lazy.window.kill()),
-
+    Key([mod], "Escape", lazy.spawn('xkill')),
+    Key([mod], "Return", lazy.spawn('alacritty')),
+    Key([mod], "x", lazy.spawn('archlinux-logout')),
+    Key([mod], "v", lazy.spawn('pavucontrol')),
+    Key([mod], "e", lazy.spawn('thunar')),
+    Key([mod], "i", lazy.spawn('archlinux-tweak-tool')),
+    Key([mod], "p", lazy.spawn('rofi -show run')),
 
 # SUPER + SHIFT KEYS
-
     Key([mod, "shift"], "c", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
+    Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#302D41' -nf '#DDB6F2' -sb '#DDB6F2' -sf '#302D41' -fn 'Hack NF:bold:pixelsize=20'")),
+    Key([mod, "shift"], "f", lazy.spawn("firefox")),
 
+# SUPER + FUNCTION KEYS
+    Key([mod], "F1", lazy.spawn('amixer set Master 5%+')),
+    Key([mod], "F2", lazy.spawn('amixer set Master 5%-')),
+    Key([mod], "F11", lazy.spawn('rofi-theme-selector')),
+
+# CONTROL + ALT KEYS
+    Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
+    Key(["mod1", "control"], "s", lazy.spawn('spotify')),
+    Key(["mod1", "control"], "t", lazy.spawn('alacritty')),
+    Key(["mod1", "control"], "i", lazy.spawn('nitrogen')),
 
 # QTILE LAYOUT KEYS
     Key([mod], "n", lazy.layout.normalize()),
@@ -53,7 +67,6 @@ keys = [
     Key([mod], "j", lazy.layout.down()),
     Key([mod], "h", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),
-
 
 # RESIZE UP, DOWN, LEFT, RIGHT
     Key([mod, "control"], "l",
@@ -103,18 +116,6 @@ keys = [
 
 # FLIP LAYOUT FOR MONADTALL/MONADWIDE
     Key([mod, "mod1"], "f", lazy.layout.flip()),
-
-# MOVE WINDOWS UP OR DOWN BSP LAYOUT
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
-
-# MOVE WINDOWS UP OR DOWN MONADTALL/MONADWIDE LAYOUT
-    Key([mod, "shift"], "Up", lazy.layout.shuffle_up()),
-    Key([mod, "shift"], "Down", lazy.layout.shuffle_down()),
-    Key([mod, "shift"], "Left", lazy.layout.swap_left()),
-    Key([mod, "shift"], "Right", lazy.layout.swap_right()),
 
 # TOGGLE FLOATIN LAYOUT
     Key([mod, "mod1"], "space", lazy.window.toggle_floating()),
@@ -176,7 +177,7 @@ for i in groups:
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
     ])
 
-userBar = bar1
+userBar = bar2
 
 def init_layout_theme():
     return {"margin": 8,
@@ -189,16 +190,26 @@ layout_theme = init_layout_theme()
 
 layouts = [
     layout.MonadTall(**layout_theme),
-    layout.MonadWide(**layout_theme),
+    # layout.MonadWide(**layout_theme),
+    # layout.MonadThreeCol(**layout_theme),
+    layout.Max(**layout_theme),
 ]
 
 widgets_screen1 = userBar.init_widgets_screen1()
 widgets_screen2 = userBar.init_widgets_screen2()
 
+def ifBar(bar):
+    if bar == bar1:
+        marginVal = [8, 8, 0, 8]
+    else:
+        marginVal = 0
+
+    return marginVal
+
 def init_screens():
     return [
-            Screen(top=bar.Bar(widgets = widgets_screen1, size=30, opacity=1, margin = [8, 8, 0, 8])),
-            Screen(top=bar.Bar(widgets = widgets_screen2, size=30, opacity=1, margin = [8, 8, 0, 8]))
+            Screen(top=bar.Bar(widgets = widgets_screen1, size=30, opacity=1, margin = ifBar(userBar))),
+            Screen(top=bar.Bar(widgets = widgets_screen2, size=30, opacity=1, margin = ifBar(userBar)))
             ]
 screens = init_screens()
 
@@ -263,6 +274,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='xfce4-terminal'),
     Match(wm_class='nitrogen'),
     Match(wm_class='ristretto'),
+    Match(wm_class='pavucontrol'),
 
 ],  fullscreen_border_width = 0, border_width = 0)
 auto_fullscreen = True

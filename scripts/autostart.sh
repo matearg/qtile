@@ -13,9 +13,6 @@ if [ $keybLayout = "be" ]; then
   cp $HOME/.config/qtile/config-azerty.py $HOME/.config/qtile/config.py
 fi
 
-#start sxhkd to replace Qtile native key-bindings
-run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
-
 #starting utility applications at boot time
 run nm-applet &
 run pamac-tray &
