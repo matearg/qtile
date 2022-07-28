@@ -8,6 +8,7 @@ mod1 = "alt"
 mod2 = "control"
 home = os.path.expanduser('~')
 
+# START_KEYS
 keys = [
 # SUPER + NORMAL KEYS
     Key([mod], "Escape", lazy.spawn('xkill')),
@@ -115,6 +116,7 @@ keys = [
     Key([mod], "space", lazy.widget["keyboardlayout"].next_keyboard()),
 
     ]
+# END_KEYS
 
 @lazy.function
 def window_to_prev_group(qtile):

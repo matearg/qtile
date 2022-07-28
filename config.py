@@ -3,7 +3,7 @@ import subprocess
 from libqtile import layout, bar, hook
 from libqtile.config import Drag, Match, Screen
 from libqtile.lazy import lazy
-from utils import bar1, bar2, keybinds
+from modules import bar1, bar2, keybinds
 
 mod = "mod4"
 keys = keybinds.keys
