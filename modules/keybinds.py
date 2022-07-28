@@ -1,6 +1,8 @@
 import os
 from libqtile.lazy import lazy
-from libqtile.config import Key, Group
+from libqtile.config import Key, Drag
+from .functions import window_to_next_screen, window_to_previous_screen
+from .groups import groups
 
 #mod4 or mod = super key
 mod = "mod4"
@@ -8,7 +10,6 @@ mod1 = "alt"
 mod2 = "control"
 home = os.path.expanduser('~')
 
-# START_KEYS
 keys = [
 # SUPER + NORMAL KEYS
     Key([mod], "Escape", lazy.spawn('xkill')),
@@ -115,37 +116,7 @@ keys = [
 # CHANGE KEYBOARD LAYOUT
     Key([mod], "space", lazy.widget["keyboardlayout"].next_keyboard()),
 
-    ]
-# END_KEYS
-
-@lazy.function
-def window_to_prev_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
-
-@lazy.function
-def window_to_next_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
-
-
-def window_to_previous_screen(qtile, switch_group=False, switch_screen=False):
-    i = qtile.screens.index(qtile.current_screen)
-    if i != 0:
-        group = qtile.screens[i - 1].group.name
-        qtile.current_window.togroup(group, switch_group=switch_group)
-        if switch_screen == True:
-            qtile.cmd_to_screen(i - 1)
-
-def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
-    i = qtile.screens.index(qtile.current_screen)
-    if i + 1 != len(qtile.screens):
-        group = qtile.screens[i + 1].group.name
-        qtile.current_window.togroup(group, switch_group=switch_group)
-        if switch_screen == True:
-            qtile.cmd_to_screen(i + 1)
+]
 
 keys.extend([
     # MOVE WINDOW TO NEXT SCREEN
@@ -155,26 +126,8 @@ keys.extend([
     Key([mod, "mod1"], "l", lazy.function(window_to_previous_screen, switch_screen=True)),
 ])
 
-groups = []
-
-group_names = ["1", "2", "3", "4", "5",]
-
-# group_labels = ["", "", "", "阮", "",]
-group_labels = ["I", "II", "III", "IV", "V",]
-
-group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
-
-for i in range(len(group_names)):
-    groups.append(
-        Group(
-            name=group_names[i],
-            layout=group_layouts[i].lower(),
-            label=group_labels[i],
-        ))
-
 for i in groups:
     keys.extend([
-
 #CHANGE WORKSPACES
         Key([mod], i.name, lazy.group[i.name].toscreen()),
         Key([mod], "Tab", lazy.screen.next_group()),
@@ -183,3 +136,11 @@ for i in groups:
 # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
     ])
+
+# MOUSE CONFIGURATION
+mouse = [
+    Drag([mod], "Button1", lazy.window.set_position_floating(),
+         start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(),
+         start=lazy.window.get_size())
+]
