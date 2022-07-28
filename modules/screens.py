@@ -1,9 +1,6 @@
 from libqtile import bar
 from libqtile.config import Screen
-from . import bar1
-
-widgets_screen1 = bar1.init_widgets_screen1()
-widgets_screen2 = bar1.init_widgets_screen2()
+from .widgets import widgets_screen1, widgets_screen2
 
 def init_screens():
     return [

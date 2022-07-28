@@ -3,10 +3,10 @@ from libqtile.lazy import lazy
 from .colors import catppuccin
 from .spotify import Spotify
 
-regular_font = "Iosevka Nerd Font"
-mono_font = "Iosevka Nerd Font Mono"
-italic_font = "Iosevka Nerd Font Italic"
-bold_font = "Iosevka Nerd Font Bold"
+regular_font = "FantasqueSansMono Nerd Font"
+mono_font = regular_font + " Mono"
+italic_font = regular_font + " Italic"
+bold_font = regular_font + " Bold"
 
 def parse_window_name(text):
     """Simplifies the names of a few windows, to be displayed in the bar"""
@@ -122,7 +122,8 @@ def init_widgets_list():
                         padding = 8,
                         padding_x = None,
                         padding_y = 4,
-                        fontsize = 14
+                        fontsize = 14,
+                        mouse_callbacks = {"Button1": lazy.widget["keyboardlayout"].next_keyboard()}
                         ),
                 widget.KeyboardLayout(
                         font = mono_font,
@@ -202,3 +203,6 @@ def init_widgets_screen1():
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
     return widgets_screen2
+
+widgets_screen1 = init_widgets_screen1()
+widgets_screen2 = init_widgets_screen2()
