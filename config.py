@@ -6,10 +6,9 @@ from libqtile.lazy import lazy
 from utils import bar1, bar2, keybinds
 
 mod = "mod4"
-
 keys = keybinds.keys
 groups = keybinds.groups
-userBar = bar1
+userBar = bar2
 
 def border_colors(bar):
     if bar == bar1:

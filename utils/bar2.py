@@ -26,13 +26,6 @@ def init_widgets_defaults():
 
 def init_widgets_list():
     widgets_list = [
-                widget.Image(
-                        background=colors[18],
-                        margin_x=14,
-                        margin_y=3,
-                        mouse_callbacks={"Button1": lazy.spawn("alacritty")},
-                        filename="~/.config/qtile/icons/arch.png",
-                        ),
                 widget.GroupBox(
                         active = colors[18],
                         block_highlight_text_color = colors[18],
@@ -48,30 +41,29 @@ def init_widgets_list():
                         borderwidth = 2,
                         disable_drag = True,
                         font = mono_font,
-                        fontsize = 25,
+                        fontsize = 16,
                         highlight_method = "line",
                         padding_x = 10,
                         padding_y = 16,
                         rounded = False,
                         ),
                 widget.Sep(
-                    foreground = colors[18],
+                    foreground = colors[15],
                     background = colors[10]
-                    ),
-                widget.CurrentLayoutIcon(
-                    scale = 0.65,
-                    foreground = colors[18],
-                    background = colors[10],
                     ),
                 widget.CurrentLayout(
                         font = regular_font,
                         fontsize = 14,
                         foreground = colors[18],
                         background = colors[10],
+                        padding = 8,
+                        padding_y = 4,
+                        padding_x = 0,
                         ),
-                widget.Spacer(
-                        background = colors[10]
-                        ),
+                widget.Sep(
+                    foreground = colors[15],
+                    background = colors[10]
+                    ),
                 widget.WindowName(
                         font = italic_font,
                         fontsize = 14,
@@ -81,72 +73,43 @@ def init_widgets_list():
                         empty_group_string = "Desktop",
                         max_chars = 40,
                         parse_text = parse_window_name,
+                        padding = 8,
+                        padding_y = 4,
+                        padding_x = 0,
                         ),
-                widget.Spacer(
-                        background = colors[10]
-                        ),
-                widget.OpenWeather(
-                        font = mono_font,
-                        fontsize = 20,
+                widget.Spacer(background = colors[10]),
+                widget.Memory(
                         background = colors[10],
                         foreground = colors[18],
-                        coordinates = {"longitude": "-57.5575", "latitude": "-38.0023"},
-                        format = "{icon}",
-                        padding_y=4,
-                        padding_x=0,
-                        padding=8,
-                        ),
-                widget.OpenWeather(
                         font = mono_font,
                         fontsize = 14,
-                        background = colors[10],
-                        foreground = colors[18],
-                        coordinates = {"longitude": "-57.5575", "latitude": "-38.0023"},
-                        format = "{main_temp:.0f}°{units_temperature}",
-                        padding_y=4,
-                        padding_x=0,
-                        padding=8,
+                        format = "{MemUsed:.1f}Gb/{MemTotal:.0f}Gb",
+                        measure_mem = 'G',
+                        padding = 8,
+                        padding_y = 4,
+                        padding_x = 0,
+                        mouse_callbacks = {"Button1": lazy.spawn("alacritty -e htop")},
                         ),
                 widget.Sep(
-                    foreground = colors[18],
+                    foreground = colors[15],
                     background = colors[10]
                     ),
-                widget.TextBox(
-                        text="阮",
-                        font = mono_font,
-                        fontsize=25,
-                        foreground=colors[18],  # blue
-                        background = colors[10],
-                        filled = True,
-                        padding_y=4,
-                        padding_x=0,
-                        padding=8,
-                        mouse_callbacks={"Button1": lazy.spawn("spotify")},
-                        ),
                 Spotify(
                         font = regular_font,
                         fontsize = 14,
                         foreground = colors[18],
                         background = colors[10],
-                        play_icon = "  ",
-                        pause_icon = "  ",
-                        format = "{icon} {artist} - {track} ",
-                        # max_chars = 20,
+                        play_icon = " ",
+                        pause_icon = " ",
+                        format = "{icon} {artist} - {track}",
+                        padding = 8,
+                        padding_y = 4,
+                        padding_x = 0,
                         ),
                 widget.Sep(
-                    foreground = colors[18],
+                    foreground = colors[15],
                     background = colors[10]
                     ),
-                widget.TextBox(
-                        font = regular_font,
-                        text = " ",
-                        foreground = colors[18],
-                        background = colors[10],
-                        padding = 8,
-                        padding_x = 4,
-                        padding_y = 0,
-                        fontsize = 14
-                        ),
                 widget.KeyboardLayout(
                         font = regular_font,
                         foreground = colors[18],
@@ -158,43 +121,23 @@ def init_widgets_list():
                         display_map = {'latam': ' LA ', 'us': ' US '}
                        ),
                 widget.Sep(
-                    foreground = colors[18],
+                    foreground = colors[15],
                     background = colors[10]
                     ),
-                widget.TextBox(
-                        text="",
-                        font = mono_font,
-                        fontsize=25,
-                        foreground=colors[18],  # blue
-                        background = colors[10],
-                        radius = 4,
-                        filled = True,
-                        padding_y=4,
-                        padding_x=0,
-                        padding=8,
-                        ),
                 widget.Clock(
                         font = regular_font,
                         foreground = colors[18],
                         background = colors[10],
                         fontsize = 14,
                         format="%b %d, %H:%M",
+                        padding = 8,
+                        padding_y = 4,
+                        padding_x = 0,
                         ),
                 widget.Sep(
-                    foreground = colors[18],
+                    foreground = colors[15],
                     background = colors[10]
                     ),
-                widget.TextBox(
-                        text="墳",
-                        foreground=colors[18],
-                        font=mono_font,
-                        fontsize=25,
-                        padding=8,
-                        background=colors[10],
-                        filled=True,
-                        padding_x=None,
-                        padding_y=4,
-                        ),
                 widget.PulseVolume(
                         font = mono_font,
                         fontsize = 14,
@@ -207,12 +150,16 @@ def init_widgets_list():
                         padding_y=4,
                         padding_x=0,
                         ),
+                widget.Sep(
+                    foreground = colors[15],
+                    background = colors[10]
+                    ),
                 widget.TextBox(
-                        text="⏻",
-                        background=colors[18],
-                        foreground="#000000",
-                        font=mono_font,
-                        fontsize=20,
+                        text="[X]",
+                        background=colors[10],
+                        foreground=colors[18],
+                        font=bold_font,
+                        fontsize=18,
                         padding=16,
                         mouse_callbacks={"Button1": lazy.spawn("archlinux-logout")},
                         ),

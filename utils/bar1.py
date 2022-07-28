@@ -57,14 +57,14 @@ def init_widgets_list():
                 widget.Spacer(background = colors[13]),
                 widget.TextBox(
                         text = " ",
-                        foreground = "#ffffff",
+                        foreground = colors[18],
                         background = colors[13],
                         font = regular_font,
                         ),
                 widget.WindowName(
                         font = italic_font,
                         fontsize = 14,
-                        foreground = "#ffffff",
+                        foreground = colors[18],
                         background = colors[13],
                         width = bar.CALCULATED,
                         empty_group_string = "Desktop",
@@ -114,7 +114,6 @@ def init_widgets_list():
                         play_icon = "  ",
                         pause_icon = "  ",
                         format = "{icon} {artist} - {track} ",
-                        # max_chars = 20,
                         ),
                 widget.TextBox(
                         font = regular_font,
@@ -184,7 +183,7 @@ def init_widgets_list():
                 widget.TextBox(
                         text="⏻",
                         background=colors[0],
-                        foreground="#000000",
+                        foreground=colors[13],
                         font=mono_font,
                         fontsize=20,
                         padding=16,
@@ -203,5 +202,4 @@ def init_widgets_screen1():
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[24:27]
     return widgets_screen2
