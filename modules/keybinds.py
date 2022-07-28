@@ -1,7 +1,6 @@
 import os
 from libqtile.lazy import lazy
-from libqtile.config import Key, Drag
-from .functions import window_to_next_screen, window_to_previous_screen
+from libqtile.config import Key
 from .groups import groups
 
 #mod4 or mod = super key
@@ -118,6 +117,35 @@ keys = [
 
 ]
 
+@lazy.function
+def window_to_prev_group(qtile):
+    if qtile.currentWindow is not None:
+        i = qtile.groups.index(qtile.currentGroup)
+        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
+
+@lazy.function
+def window_to_next_group(qtile):
+    if qtile.currentWindow is not None:
+        i = qtile.groups.index(qtile.currentGroup)
+        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
+
+
+def window_to_previous_screen(qtile, switch_group=False, switch_screen=False):
+    i = qtile.screens.index(qtile.current_screen)
+    if i != 0:
+        group = qtile.screens[i - 1].group.name
+        qtile.current_window.togroup(group, switch_group=switch_group)
+        if switch_screen == True:
+            qtile.cmd_to_screen(i - 1)
+
+def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
+    i = qtile.screens.index(qtile.current_screen)
+    if i + 1 != len(qtile.screens):
+        group = qtile.screens[i + 1].group.name
+        qtile.current_window.togroup(group, switch_group=switch_group)
+        if switch_screen == True:
+            qtile.cmd_to_screen(i + 1)
+
 keys.extend([
     # MOVE WINDOW TO NEXT SCREEN
     Key([mod, "mod1"], "Left", lazy.function(window_to_next_screen, switch_screen=True)),
@@ -136,11 +164,3 @@ for i in groups:
 # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
     ])
-
-# MOUSE CONFIGURATION
-mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
-         start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
-         start=lazy.window.get_size())
-]

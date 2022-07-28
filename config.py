@@ -1,14 +1,12 @@
+from libqtile import hook
 import os
 import subprocess
-from libqtile import hook
-from modules import keybinds, groups, displays, matches, layouts
 
-keys = keybinds.keys
-mouse = keybinds.mouse
-groups = groups.groups
-screens = displays.init_screens()
-floating_layout = matches.floating_matches
-layouts = layouts.layouts_list
+from modules.groups import groups
+from modules.keybinds import keys
+from modules.mouse import mouse
+from modules.screens import screens
+from modules.layouts import layouts, floating_layout
 
 dgroups_key_binder = None
 dgroups_app_rules = []

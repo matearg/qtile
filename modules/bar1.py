@@ -3,7 +3,6 @@ from libqtile.lazy import lazy
 from .colors import catppuccin
 from .spotify import Spotify
 
-colors = catppuccin
 regular_font = "Iosevka Nerd Font"
 mono_font = "Iosevka Nerd Font Mono"
 italic_font = "Iosevka Nerd Font Italic"
@@ -22,29 +21,29 @@ def init_widgets_defaults():
     return dict(font = regular_font,
                 fontsize = 12,
                 padding = 2,
-                background = colors[1])
+                background = catppuccin[1])
 
 def init_widgets_list():
     widgets_list = [
                 widget.Image(
-                        background=colors[0],
+                        background=catppuccin[0],
                         margin_x=14,
                         margin_y=3,
                         mouse_callbacks={"Button1": lazy.spawn("alacritty")},
                         filename="~/.config/qtile/icons/arch.png",
                         ),
                 widget.GroupBox(
-                        active = colors[0],
-                        block_highlight_text_color = colors[0],
-                        this_current_screen_border = colors[0],
-                        this_screen_border = colors[0],
-                        urgent_border = colors[3],
-                        background = colors[12],  # background is [10-12]
-                        other_current_screen_border = colors[12],
-                        other_screen_border = colors[12],
-                        highlight_color = colors[13],
-                        inactive = colors[14],
-                        foreground = colors[18],
+                        active = catppuccin[0],
+                        block_highlight_text_color = catppuccin[0],
+                        this_current_screen_border = catppuccin[0],
+                        this_screen_border = catppuccin[0],
+                        urgent_border = catppuccin[3],
+                        background = catppuccin[12],  # background is [10-12]
+                        other_current_screen_border = catppuccin[12],
+                        other_screen_border = catppuccin[12],
+                        highlight_color = catppuccin[13],
+                        inactive = catppuccin[14],
+                        foreground = catppuccin[18],
                         borderwidth = 2,
                         disable_drag = True,
                         font = mono_font,
@@ -54,29 +53,29 @@ def init_widgets_list():
                         padding_y = 16,
                         rounded = False,
                         ),
-                widget.Spacer(background = colors[13]),
+                widget.Spacer(background = catppuccin[13]),
                 widget.TextBox(
                         text = " ",
-                        foreground = colors[18],
-                        background = colors[13],
+                        foreground = catppuccin[18],
+                        background = catppuccin[13],
                         font = regular_font,
                         ),
                 widget.WindowName(
                         font = italic_font,
                         fontsize = 14,
-                        foreground = colors[18],
-                        background = colors[13],
+                        foreground = catppuccin[18],
+                        background = catppuccin[13],
                         width = bar.CALCULATED,
                         empty_group_string = "Desktop",
                         max_chars = 40,
                         parse_text = parse_window_name,
                         ),
-                widget.Spacer(background = colors[13]),
+                widget.Spacer(background = catppuccin[13]),
                 widget.OpenWeather(
                         font = mono_font,
                         fontsize = 20,
-                        background = colors[3],
-                        foreground = colors[13],
+                        background = catppuccin[3],
+                        foreground = catppuccin[13],
                         coordinates = {"longitude": "-57.5575", "latitude": "-38.0023"},
                         format = "{icon}",
                         padding_y=4,
@@ -86,8 +85,8 @@ def init_widgets_list():
                 widget.OpenWeather(
                         font = mono_font,
                         fontsize = 14,
-                        background = colors[13],
-                        foreground = colors[3],
+                        background = catppuccin[13],
+                        foreground = catppuccin[3],
                         coordinates = {"longitude": "-57.5575", "latitude": "-38.0023"},
                         format = "{main_temp:.0f}°{units_temperature}",
                         padding_y=4,
@@ -98,8 +97,8 @@ def init_widgets_list():
                         text="阮",
                         font = mono_font,
                         fontsize=25,
-                        foreground=colors[13],  # blue
-                        background = colors[7],
+                        foreground=catppuccin[13],  # blue
+                        background = catppuccin[7],
                         filled = True,
                         padding_y=4,
                         padding_x=0,
@@ -109,8 +108,8 @@ def init_widgets_list():
                 Spotify(
                         font = regular_font,
                         fontsize = 14,
-                        foreground = colors[7],
-                        background = colors[13],
+                        foreground = catppuccin[7],
+                        background = catppuccin[13],
                         play_icon = "  ",
                         pause_icon = "  ",
                         format = "{icon} {artist} - {track} ",
@@ -118,8 +117,8 @@ def init_widgets_list():
                 widget.TextBox(
                         font = regular_font,
                         text = " ",
-                        foreground = colors[13],
-                        background = colors[4],
+                        foreground = catppuccin[13],
+                        background = catppuccin[4],
                         padding = 8,
                         padding_x = None,
                         padding_y = 4,
@@ -127,8 +126,8 @@ def init_widgets_list():
                         ),
                 widget.KeyboardLayout(
                         font = mono_font,
-                        foreground = colors[4],
-                        background = colors[13],
+                        foreground = catppuccin[4],
+                        background = catppuccin[13],
                         padding = 8,
                         padding_x = 0,
                         padding_y = 4,
@@ -141,8 +140,8 @@ def init_widgets_list():
                         text="",
                         font = mono_font,
                         fontsize=25,
-                        foreground=colors[10],  # blue
-                        background = colors[8],
+                        foreground=catppuccin[10],  # blue
+                        background = catppuccin[8],
                         radius = 4,
                         filled = True,
                         padding_y=4,
@@ -153,17 +152,17 @@ def init_widgets_list():
                         font = regular_font,
                         fontsize = 14,
                         format="%b %d, %H:%M",
-                        foreground=colors[8],
-                        background=colors[13],
+                        foreground=catppuccin[8],
+                        background=catppuccin[13],
                         padding=8,
                         ),
                 widget.TextBox(
                         text="墳",
-                        foreground=colors[10],
+                        foreground=catppuccin[10],
                         font=mono_font,
                         fontsize=25,
                         padding=8,
-                        background=colors[6],
+                        background=catppuccin[6],
                         filled=True,
                         padding_x=None,
                         padding_y=4,
@@ -171,19 +170,19 @@ def init_widgets_list():
                 widget.PulseVolume(
                         font = mono_font,
                         fontsize = 14,
-                        foreground=colors[6],
+                        foreground=catppuccin[6],
                         limit_max_volume="True",
                         padding=8,
                         step = 5,
-                        background=colors[13],
+                        background=catppuccin[13],
                         filled=True,
                         padding_y=4,
                         padding_x=0,
                         ),
                 widget.TextBox(
                         text="⏻",
-                        background=colors[0],
-                        foreground=colors[13],
+                        background=catppuccin[0],
+                        foreground=catppuccin[13],
                         font=mono_font,
                         fontsize=20,
                         padding=16,
