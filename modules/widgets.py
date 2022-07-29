@@ -3,7 +3,7 @@ from libqtile.lazy import lazy
 from .colors import catppuccin
 from .spotify import Spotify
 
-regular_font = "FantasqueSansMono Nerd Font"
+regular_font = "Hack Nerd Font"
 mono_font = regular_font + " Mono"
 italic_font = regular_font + " Italic"
 bold_font = regular_font + " Bold"
@@ -55,10 +55,11 @@ def init_widgets_list():
                         ),
                 widget.Spacer(background = catppuccin[13]),
                 widget.TextBox(
-                        text = " ",
+                        text = "",
                         foreground = catppuccin[18],
                         background = catppuccin[13],
-                        font = regular_font,
+                        font = mono_font,
+                        fontsize = 20,
                         ),
                 widget.WindowName(
                         font = italic_font,
@@ -83,7 +84,7 @@ def init_widgets_list():
                         padding=8,
                         ),
                 widget.OpenWeather(
-                        font = mono_font,
+                        font = regular_font,
                         fontsize = 14,
                         background = catppuccin[13],
                         foreground = catppuccin[3],
@@ -113,20 +114,21 @@ def init_widgets_list():
                         play_icon = "  ",
                         pause_icon = "  ",
                         format = "{icon} {artist} - {track} ",
+                        max_chars = 30,
                         ),
                 widget.TextBox(
-                        font = regular_font,
-                        text = " ",
+                        font = mono_font,
+                        text = "",
                         foreground = catppuccin[13],
                         background = catppuccin[4],
                         padding = 8,
                         padding_x = None,
                         padding_y = 4,
-                        fontsize = 14,
+                        fontsize = 25,
                         mouse_callbacks = {"Button1": lazy.widget["keyboardlayout"].next_keyboard()}
                         ),
                 widget.KeyboardLayout(
-                        font = mono_font,
+                        font = regular_font,
                         foreground = catppuccin[4],
                         background = catppuccin[13],
                         padding = 8,
@@ -169,7 +171,7 @@ def init_widgets_list():
                         padding_y=4,
                         ),
                 widget.PulseVolume(
-                        font = mono_font,
+                        font = regular_font,
                         fontsize = 14,
                         foreground=catppuccin[6],
                         limit_max_volume="True",

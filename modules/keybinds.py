@@ -7,18 +7,19 @@ from .groups import groups
 mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
+terminal = "alacritty"
 home = os.path.expanduser('~')
 
 keys = [
 # SUPER + NORMAL KEYS
     Key([mod], "Escape", lazy.spawn('xkill')),
-    Key([mod], "Return", lazy.spawn('alacritty')),
+    Key([mod], "Return", lazy.spawn(terminal)),
     Key([mod], "e", lazy.spawn('thunar')),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "i", lazy.spawn('archlinux-tweak-tool')),
     Key([mod], "p", lazy.spawn('rofi -show drun')),
     Key([mod], "q", lazy.window.kill()),
-    Key([mod], "v", lazy.spawn('alacritty -e nvim')),
+    Key([mod], "v", lazy.spawn(terminal + ' -e nvim')),
     Key([mod], "x", lazy.spawn('archlinux-logout')),
 
 # SUPER + SHIFT KEYS
@@ -33,11 +34,11 @@ keys = [
     Key([mod], "F11", lazy.spawn('rofi-theme-selector')),
 
 # CONTROL + ALT KEYS
-    Key(["mod1", "control"], "h", lazy.spawn('alacritty -e btm')),
+    Key(["mod1", "control"], "h", lazy.spawn(terminal + ' -e btm')),
     Key(["mod1", "control"], "i", lazy.spawn('nitrogen')),
     Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
     Key(["mod1", "control"], "s", lazy.spawn('spotify')),
-    Key(["mod1", "control"], "t", lazy.spawn('alacritty')),
+    Key(["mod1", "control"], "t", lazy.spawn(terminal)),
     Key(["mod1", "control"], "v", lazy.spawn('pavucontrol')),
 
 # QTILE LAYOUT KEYS
@@ -150,8 +151,8 @@ keys.extend([
     # MOVE WINDOW TO NEXT SCREEN
     Key([mod, "mod1"], "Left", lazy.function(window_to_next_screen, switch_screen=True)),
     Key([mod, "mod1"], "Right", lazy.function(window_to_previous_screen, switch_screen=True)),
-    Key([mod, "mod1"], "h", lazy.function(window_to_next_screen, switch_screen=True)),
-    Key([mod, "mod1"], "l", lazy.function(window_to_previous_screen, switch_screen=True)),
+    Key([mod, "mod1"], "h", lazy.function(window_to_next_screen, switch_screen=False)),
+    Key([mod, "mod1"], "l", lazy.function(window_to_previous_screen, switch_screen=False)),
 ])
 
 for i in groups:
