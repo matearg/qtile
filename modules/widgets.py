@@ -3,10 +3,11 @@ from libqtile.lazy import lazy
 from .colors import catppuccin
 from .spotify import Spotify
 
-regular_font = "Hack Nerd Font"
+regular_font = "Iosevka Nerd Font"
 mono_font = regular_font + " Mono"
 italic_font = regular_font + " Italic"
 bold_font = regular_font + " Bold"
+font_size = 16
 
 def parse_window_name(text):
     """Simplifies the names of a few windows, to be displayed in the bar"""
@@ -61,23 +62,41 @@ def init_widgets_list():
                         padding_y = 16,
                         rounded = False,
                         ),
-                widget.Spacer(background = catppuccin[13]),
+                # widget.Spacer(background = catppuccin[13]),
                 widget.TextBox(
-                        text = "",
-                        foreground = catppuccin[18],
-                        background = catppuccin[13],
+                        background = catppuccin[18],
+                        foreground = catppuccin[12],
                         font = mono_font,
-                        fontsize = 20,
+                        text = "",
+                        fontsize = 30,
+                        padding = 0,
                         ),
+                # widget.TextBox(
+                #         text = "",
+                #         foreground = catppuccin[18],
+                #         background = catppuccin[13],
+                #         font = mono_font,
+                #         fontsize = 20,
+                #         ),
                 widget.WindowName(
                         font = italic_font,
-                        fontsize = 14,
-                        foreground = catppuccin[18],
-                        background = catppuccin[13],
+                        fontsize = font_size,
+                        # foreground = catppuccin[18],
+                        # background = catppuccin[13],
+                        background = catppuccin[18],
+                        foreground = catppuccin[13],
                         width = bar.CALCULATED,
                         empty_group_string = "Desktop",
                         max_chars = 40,
                         parse_text = parse_window_name,
+                        ),
+                widget.TextBox(
+                        background = catppuccin[13],
+                        foreground = catppuccin[18],
+                        font = mono_font,
+                        text = "",
+                        fontsize = 30,
+                        padding = 0,
                         ),
                 widget.Spacer(background = catppuccin[13]),
                 widget.TextBox(
@@ -101,7 +120,7 @@ def init_widgets_list():
                         ),
                 widget.OpenWeather(
                         font = regular_font,
-                        fontsize = 14,
+                        fontsize = font_size,
                         # background = catppuccin[13],
                         # foreground = catppuccin[3],
                         background = catppuccin[3],
@@ -134,7 +153,7 @@ def init_widgets_list():
                         ),
                 Spotify(
                         font = regular_font,
-                        fontsize = 14,
+                        fontsize = font_size,
                         # foreground = catppuccin[7],
                         # background = catppuccin[13],
                         background = catppuccin[7],
@@ -172,7 +191,7 @@ def init_widgets_list():
                         padding = 8,
                         padding_x = 0,
                         padding_y = 4,
-                        fontsize = 14,
+                        fontsize = font_size,
                         max_chars = 2,
                         configured_keyboards = ['latam', 'us'],
                         display_map = {'latam': 'LA', 'us': 'US'}
@@ -199,7 +218,7 @@ def init_widgets_list():
                         ),
                 widget.Clock(
                         font = regular_font,
-                        fontsize = 14,
+                        fontsize = font_size,
                         format="%b %d, %H:%M",
                         # foreground=catppuccin[8],
                         # background=catppuccin[13],
@@ -228,7 +247,7 @@ def init_widgets_list():
                         ),
                 widget.PulseVolume(
                         font = regular_font,
-                        fontsize = 14,
+                        fontsize = font_size,
                         limit_max_volume="True",
                         padding=8,
                         step = 5,
