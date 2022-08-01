@@ -3,11 +3,11 @@ from libqtile.lazy import lazy
 from .colors import catppuccin
 from .spotify import Spotify
 
-regular_font = "FantasqueSansMono Nerd Font"
+regular_font = "JetBrainsMono Nerd Font"
 mono_font = regular_font + " Mono"
 italic_font = regular_font + " Italic"
 bold_font = regular_font + " Bold"
-font_size = 16
+font_size = 15
 
 def parse_window_name(text):
     """Simplifies the names of a few windows, to be displayed in the bar"""
