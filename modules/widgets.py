@@ -20,9 +20,12 @@ def parse_window_name(text):
 
 def init_widgets_defaults():
     return dict(font = regular_font,
-                fontsize = 12,
-                padding = 2,
-                background = catppuccin[1])
+                fontsize = font_size,
+                padding = 8,
+                padding_y = 4,
+                padding_x = 0,
+                foreground = catppuccin[13],
+                background = catppuccin[18])
 
 def init_widgets_list():
     widgets_list = [
@@ -89,6 +92,46 @@ def init_widgets_list():
                         empty_group_string = "Desktop",
                         max_chars = 40,
                         parse_text = parse_window_name,
+                        ),
+                widget.TextBox(
+                        background = catppuccin[18],
+                        foreground = catppuccin[18],
+                        font = mono_font,
+                        text = "",
+                        fontsize = 30,
+                        padding = 0,
+                        ),
+                widget.WidgetBox(
+                        font = regular_font,
+                        fontsize = 20,
+                        background = catppuccin[18],
+                        foreground = catppuccin[13],
+                        text_closed = '',
+                        text_open = '',
+                        close_button_location = 'left',
+                        padding = 8,
+                        padding_x = 0,
+                        padding_y = 4,
+                        widgets=[
+                            widget.TextBox(
+                                **widget_defaults,
+                                text = '',
+                                ),
+                            widget.Memory(
+                                **widget_defaults,
+                                format = '{MemUsed:.1f}G/{MemTotal:.0f}G',
+                                measure_mem = 'G',
+                                ),
+                            widget.Sep(**widget_defaults),
+                            widget.TextBox(
+                                **widget_defaults,
+                                text = '',
+                                ),
+                            widget.CPU(
+                                **widget_defaults,
+                                format = '{freq_current}GHz {load_percent}%'
+                                ),
+                            ]
                         ),
                 widget.TextBox(
                         background = catppuccin[13],
