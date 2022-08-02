@@ -45,7 +45,7 @@ def init_widgets_list():
                         borderwidth = 2,
                         disable_drag = True,
                         font = mono_font,
-                        fontsize = 25,
+                        fontsize = 18,
                         highlight_method = "line",
                         padding_x = 10,
                         padding_y = 16,

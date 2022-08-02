@@ -106,7 +106,7 @@ def init_widgets_list():
                         widgets=[
                             widget.TextBox(
                                 **widget_defaults,
-                                text = '',
+                                text = '',
                                 ),
                             widget.Memory(
                                 **widget_defaults,
@@ -121,6 +121,16 @@ def init_widgets_list():
                             widget.CPU(
                                 **widget_defaults,
                                 format = '{freq_current}GHz {load_percent}%'
+                                ),
+                            widget.Sep(**widget_defaults),
+                            widget.TextBox(
+                                **widget_defaults,
+                                text = '',
+                                ),
+                            widget.DF(
+                                **widget_defaults,
+                                visible_on_warn = False,
+                                format = '{uf}{m}/{s}{m}',
                                 ),
                             ]
                         ),
