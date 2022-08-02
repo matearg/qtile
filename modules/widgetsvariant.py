@@ -25,17 +25,39 @@ def init_widgets_defaults():
                 padding_y = 4,
                 padding_x = 0,
                 foreground = catppuccin[13],
-                background = catppuccin[18],
+                background = catppuccin[0],
                 )
 
 def init_widgets_list():
     widgets_list = [
-                widget.Image(
-                        background=catppuccin[0],
-                        margin_x=14,
-                        margin_y=3,
-                        mouse_callbacks={"Button1": lazy.spawn("alacritty")},
-                        filename="~/.config/qtile/icons/arch.png",
+                widget.WidgetBox(
+                        font = regular_font,
+                        fontsize = 25,
+                        foreground = catppuccin[13],
+                        background = catppuccin[0],
+                        text_closed = '   ',
+                        text_open = '   ',
+                        close_button_location = 'left',
+                        widgets=[
+                            widget.TextBox(
+                                **widget_defaults,
+                                text = '',
+                                ),
+                            widget.Memory(
+                                **widget_defaults,
+                                format = '{MemUsed:.1f}G/{MemTotal:.0f}G',
+                                measure_mem = 'G',
+                                ),
+                            widget.Sep(**widget_defaults),
+                            widget.TextBox(
+                                **widget_defaults,
+                                text = '',
+                                ),
+                            widget.CPU(
+                                **widget_defaults,
+                                format = '{freq_current}GHz {load_percent}%'
+                                ),
+                            ]
                         ),
                 widget.TextBox(
                         background = catppuccin[12],
@@ -66,7 +88,6 @@ def init_widgets_list():
                         padding_y = 16,
                         rounded = False,
                         ),
-                # widget.Spacer(background = catppuccin[13]),
                 widget.TextBox(
                         background = catppuccin[18],
                         foreground = catppuccin[12],
@@ -75,18 +96,9 @@ def init_widgets_list():
                         fontsize = 30,
                         padding = 0,
                         ),
-                # widget.TextBox(
-                #         text = "",
-                #         foreground = catppuccin[18],
-                #         background = catppuccin[13],
-                #         font = mono_font,
-                #         fontsize = 20,
-                #         ),
                 widget.WindowName(
                         font = italic_font,
                         fontsize = font_size,
-                        # foreground = catppuccin[18],
-                        # background = catppuccin[13],
                         background = catppuccin[18],
                         foreground = catppuccin[13],
                         width = bar.CALCULATED,
@@ -96,47 +108,7 @@ def init_widgets_list():
                         ),
                 widget.TextBox(
                         foreground = catppuccin[18],
-                        background = catppuccin[18],
-                        font = mono_font,
-                        text = "",
-                        fontsize = 30,
-                        padding = 0,
-                        ),
-                widget.WidgetBox(
-                        font = regular_font,
-                        fontsize = 20,
-                        background = catppuccin[18],
-                        foreground = catppuccin[13],
-                        text_closed = '',
-                        text_open = '',
-                        close_button_location = 'left',
-                        padding = 8,
-                        padding_x = 0,
-                        padding_y = 4,
-                        widgets=[
-                            widget.TextBox(
-                                **widget_defaults,
-                                text = '',
-                                ),
-                            widget.Memory(
-                                **widget_defaults,
-                                format = '{MemUsed:.1f}G/{MemTotal:.0f}G',
-                                measure_mem = 'G',
-                                ),
-                            widget.Sep(**widget_defaults),
-                            widget.TextBox(
-                                **widget_defaults,
-                                text = '',
-                                ),
-                            widget.CPU(
-                                **widget_defaults,
-                                format = '{freq_current}GHz {load_percent}%'
-                                ),
-                            ]
-                        ),
-                widget.TextBox(
                         background = catppuccin[13],
-                        foreground = catppuccin[18],
                         font = mono_font,
                         text = "",
                         fontsize = 30,
@@ -165,8 +137,6 @@ def init_widgets_list():
                 widget.OpenWeather(
                         font = regular_font,
                         fontsize = font_size,
-                        # background = catppuccin[13],
-                        # foreground = catppuccin[3],
                         background = catppuccin[3],
                         foreground = catppuccin[13],
                         coordinates = {"longitude": "-57.5575", "latitude": "-38.0023"},
@@ -198,8 +168,6 @@ def init_widgets_list():
                 Spotify(
                         font = regular_font,
                         fontsize = font_size,
-                        # foreground = catppuccin[7],
-                        # background = catppuccin[13],
                         background = catppuccin[7],
                         foreground = catppuccin[13],
                         play_icon = "  ",
@@ -228,8 +196,6 @@ def init_widgets_list():
                         ),
                 widget.KeyboardLayout(
                         font = regular_font,
-                        # foreground = catppuccin[4],
-                        # background = catppuccin[13],
                         background = catppuccin[4],
                         foreground = catppuccin[13],
                         padding = 8,
@@ -264,8 +230,6 @@ def init_widgets_list():
                         font = regular_font,
                         fontsize = font_size,
                         format="%b %d, %H:%M",
-                        # foreground=catppuccin[8],
-                        # background=catppuccin[13],
                         foreground=catppuccin[13],
                         background=catppuccin[8],
                         padding=8,
@@ -295,8 +259,6 @@ def init_widgets_list():
                         limit_max_volume="True",
                         padding=8,
                         step = 5,
-                        # foreground=catppuccin[6],
-                        # background=catppuccin[13],
                         foreground=catppuccin[13],
                         background=catppuccin[6],
                         filled=True,
