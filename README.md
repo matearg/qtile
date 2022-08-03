@@ -1,2 +1,4 @@
 # qtile
-Qtile WM configs
+Qtile WM config
+
+## My [dotfiles](https://github.com/matearg/dotfiles/tree/linux)
