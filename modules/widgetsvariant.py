@@ -3,11 +3,11 @@ from libqtile.lazy import lazy
 from .colors import catppuccin
 from .spotify import Spotify
 
-regular_font = "FantasqueSansMono Nerd Font"
+regular_font = "Hack Nerd Font"
 mono_font = regular_font + " Mono"
 italic_font = regular_font + " Italic"
 bold_font = regular_font + " Bold"
-font_size = 16
+font_size = 14
 
 def parse_window_name(text):
     """Simplifies the names of a few windows, to be displayed in the bar"""
@@ -66,6 +66,7 @@ def init_widgets_list():
                                 **widget_defaults,
                                 visible_on_warn = False,
                                 format = '{uf}{m}/{s}{m}',
+                                partition = "/home",
                                 ),
                             ]
                         ),
@@ -158,8 +159,8 @@ def init_widgets_list():
                         ),
                 widget.OpenWeather(
                         font = mono_font,
-                        fontsize = 20,
-                        background = catppuccin[3],
+                        fontsize = 30,
+                        background = catppuccin[5],
                         foreground = catppuccin[13],
                         coordinates = {"longitude": "-57.5575", "latitude": "-38.0023"},
                         format = "{icon}",
@@ -191,13 +192,46 @@ def init_widgets_list():
                 widget.OpenWeather(
                         font = regular_font,
                         fontsize = font_size,
-                        background = catppuccin[3],
+                        background = catppuccin[5],
                         foreground = catppuccin[13],
                         coordinates = {"longitude": "-57.5575", "latitude": "-38.0023"},
                         format = "{main_temp:.0f}°{units_temperature}",
                         padding_y=4,
                         padding_x=0,
                         padding=8,
+                        ),
+                widget.TextBox(
+                        background = catppuccin[13],
+                        foreground = catppuccin[13],
+                        font = mono_font,
+                        text = "",
+                        fontsize = 30,
+                        padding = 0,
+                        ),
+                widget.TextBox(
+                        font = mono_font,
+                        text = "ﰇ",
+                        foreground = catppuccin[13],
+                        background = catppuccin[3],
+                        padding = 8,
+                        padding_x = None,
+                        padding_y = 4,
+                        fontsize = 25,
+                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e yay")},
+                        ),
+                widget.CheckUpdates(
+                        no_update_string = "N/A",
+                        colour_no_updates = catppuccin[13],
+                        colour_have_updates = catppuccin[13],
+                        font = regular_font,
+                        fontsize = font_size,
+                        padding = 8,
+                        padding_y = 4,
+                        padding_x = 0,
+                        background = catppuccin[3],
+                        display_format = "{updates}",
+                        update_interval = 30,
+                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e yay")},
                         ),
                 widget.TextBox(
                         background = catppuccin[13],
