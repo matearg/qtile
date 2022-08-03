@@ -154,7 +154,7 @@ def init_widgets_list():
                         ),
                 widget.OpenWeather(
                         font = mono_font,
-                        fontsize = 20,
+                        fontsize = 40,
                         background = catppuccin[3],
                         foreground = catppuccin[13],
                         coordinates = {"longitude": "-57.5575", "latitude": "-38.0023"},
