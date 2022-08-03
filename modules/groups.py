@@ -4,9 +4,9 @@ groups = []
 
 group_names = ["1", "2", "3", "4", "5",]
 
-group_labels = ["", "", "", "", "",]
+# group_labels = ["", "", "", "", "",]
 # group_labels = ["", "", "", "", "",]
-# group_labels = ["WWW", "DEV", "TERM", "MUSIC", "FILES",]
+group_labels = ["WWW", "DEV", "TERM", "MUSIC", "FILES",]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
 

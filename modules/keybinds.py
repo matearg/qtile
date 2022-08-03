@@ -7,12 +7,13 @@ from .groups import groups
 mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
-terminal = "alacritty"
+# terminal = "alacritty"
+terminal = "kitty"
 home = os.path.expanduser('~')
 
 keys = [
 # SUPER + NORMAL KEYS
-    Key([mod], "Escape", lazy.spawn('xkill')),
+    # Key([mod], "Escape", lazy.spawn('xkill')),
     Key([mod], "Return", lazy.spawn(terminal)),
     Key([mod], "e", lazy.spawn('thunar')),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
@@ -21,7 +22,8 @@ keys = [
     Key([mod], "p", lazy.spawn('rofi -show drun')),
     Key([mod], "q", lazy.window.kill()),
     Key([mod], "v", lazy.spawn(terminal + ' -e nvim')),
-    Key([mod], "x", lazy.spawn('archlinux-logout')),
+    # Key([mod], "x", lazy.spawn('archlinux-logout')),
+    Key([mod], "x", lazy.spawn('rofi -show power-menu -modi power-menu:rofi-power-menu')),
 
 # SUPER + SHIFT KEYS
     Key([mod, "shift"], "c", lazy.window.kill()),
@@ -41,6 +43,8 @@ keys = [
     Key(["mod1", "control"], "s", lazy.spawn('spotify')),
     Key(["mod1", "control"], "t", lazy.spawn(terminal)),
     Key(["mod1", "control"], "v", lazy.spawn('pavucontrol')),
+    Key(["mod1", "control"], "q", lazy.shutdown()),
+    Key(["mod1", "control"], "l", lazy.spawn('slock')),
 
 # QTILE LAYOUT KEYS
     Key([mod, "shift"], "space", lazy.next_layout()),
