@@ -21,7 +21,7 @@ keys = [
     Key([mod], "p", lazy.spawn('rofi -show drun')),
     Key([mod], "q", lazy.window.kill()),
     Key([mod], "v", lazy.spawn(terminal + ' -e nvim')),
-    Key([mod], "x", lazy.spawn('rofi -show power-menu -modi power-menu:rofi-power-menu')),
+    Key([mod], "x", lazy.spawn('rofi -show power-menu -modi power-menu:/home/mateo/github/dotfiles/linux/rofi/rofi-power-menu')),
 
 # SUPER + SHIFT KEYS
     Key([mod, "shift"], "c", lazy.window.kill()),
@@ -42,7 +42,7 @@ keys = [
     Key(["mod1", "control"], "t", lazy.spawn(terminal_var)),
     Key(["mod1", "control"], "v", lazy.spawn('pavucontrol')),
     Key(["mod1", "control"], "q", lazy.shutdown()),
-    Key(["mod1", "control"], "l", lazy.spawn('slock')),
+    Key(["mod1", "control"], "l", lazy.spawn('xflock4')),
 
 # QTILE LAYOUT KEYS
     Key([mod, "shift"], "space", lazy.next_layout()),
