@@ -157,7 +157,7 @@ def init_widgets_list():
                         padding_x = 0,
                         background = catppuccin[13],
                         display_format = "{updates}",
-                        update_interval = 30,
+                        update_interval = 10,
                         mouse_callbacks = {"Button1": lazy.spawn("kitty -e yay")},
                         ),
                 widget.TextBox(
