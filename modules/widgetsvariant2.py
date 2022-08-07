@@ -137,7 +137,7 @@ def init_widgets_list():
                         ),
                 widget.TextBox(
                         font = mono_font,
-                        text = "ﮮ",
+                        text = "",
                         foreground = catppuccin[13],
                         background = catppuccin[3],
                         padding = 8,

@@ -45,7 +45,7 @@ def init_widgets_list():
                         borderwidth = 2,
                         disable_drag = True,
                         font = mono_font,
-                        fontsize = 18,
+                        fontsize = 15,
                         highlight_method = "text",
                         padding_x = 10,
                         padding_y = 16,
@@ -141,7 +141,7 @@ def init_widgets_list():
                 widget.Sep(**widget_defaults),
                 widget.TextBox(
                         font = mono_font,
-                        text = "ﮮ",
+                        text = "",
                         foreground = catppuccin[3],
                         background = catppuccin[13],
                         padding = 8,
