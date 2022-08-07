@@ -17,7 +17,7 @@ cursor_warp = False
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 auto_minimize = False
-wmname = "qtile"
+wmname = "Qtile"
 
 @hook.subscribe.startup_once
 def start_once():
