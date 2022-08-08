@@ -1,12 +1,9 @@
-from libqtile import widget, bar
+from libqtile import widget
 from libqtile.lazy import lazy
 from .colors import catppuccin
 
 regular_font = "Hack Nerd Font"
-mono_font = regular_font + " Mono"
-italic_font = regular_font + " Italic"
-bold_font = regular_font + " Bold"
-font_size = 14
+font_size = 15
 
 def parse_window_name(text):
     """Simplifies the names of a few windows, to be displayed in the bar"""
@@ -40,19 +37,17 @@ def init_widgets_list():
                         foreground = catppuccin[18],
                         borderwidth = 2,
                         disable_drag = True,
-                        font = mono_font,
-                        fontsize = 15,
+                        font = regular_font,
+                        fontsize = font_size,
                         highlight_method = "text",
                         padding_x = 10,
                         padding_y = 16,
                         rounded = False,
                         ),
-                widget.CurrentLayoutIcon(**widget_defaults, scale = 0.7),
                 widget.Spacer(background = catppuccin[13]),
                 widget.TextBox(
                         **widget_defaults,
                         text="墳",
-                        # padding = 8,
                         ),
                 widget.PulseVolume(
                         **widget_defaults,
@@ -62,7 +57,7 @@ def init_widgets_list():
                 widget.Spacer(**widget_defaults, length = 6),
                 widget.TextBox(
                         **widget_defaults,
-                        text = "",
+                        text = "ﮮ",
                         mouse_callbacks = {"Button1": lazy.spawn("kitty -e yay")},
                         padding = 6,
                         ),
@@ -88,14 +83,15 @@ def init_widgets_list():
                         configured_keyboards = ['latam', 'us'],
                         display_map = {'latam': 'LA', 'us': 'US'}
                        ),
-                widget.Spacer(**widget_defaults, length = 8),
+                widget.Spacer(**widget_defaults, length = 6),
                 widget.TextBox(
                         **widget_defaults,
                         text="",
+                        padding = 6,
                         ),
                 widget.Clock(
                         **widget_defaults,
-                        format="%H:%M",
+                        format="%a %d %b %H:%M",
                         ),
     ]
     return widgets_list

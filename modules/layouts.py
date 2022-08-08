@@ -3,7 +3,7 @@ from libqtile.config import Match
 from .colors import catppuccin
 
 def init_layout_theme():
-    return {"margin": 8,
+    return {"margin": 6,
             "border_width": 2,
             "border_focus": catppuccin[0],
             "border_normal": catppuccin[13] 
