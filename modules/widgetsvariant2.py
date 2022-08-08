@@ -36,9 +36,9 @@ def init_widgets_list():
                         this_current_screen_border = catppuccin[0],
                         this_screen_border = catppuccin[0],
                         urgent_border = catppuccin[3],
-                        background = catppuccin[12],  # background is [10-12]
-                        other_current_screen_border = catppuccin[12],
-                        other_screen_border = catppuccin[12],
+                        background = catppuccin[13],  # background is [10-12]
+                        other_current_screen_border = catppuccin[13],
+                        other_screen_border = catppuccin[13],
                         highlight_color = catppuccin[13],
                         inactive = catppuccin[14],
                         foreground = catppuccin[18],

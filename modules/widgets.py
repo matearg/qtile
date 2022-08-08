@@ -38,7 +38,7 @@ def init_widgets_list():
                         filename="~/.config/qtile/icons/arch.png",
                         ),
                 widget.TextBox(
-                        background = catppuccin[12],
+                        background = catppuccin[13],
                         foreground = catppuccin[0],
                         font = mono_font,
                         text = "",
@@ -51,9 +51,9 @@ def init_widgets_list():
                         this_current_screen_border = catppuccin[0],
                         this_screen_border = catppuccin[0],
                         urgent_border = catppuccin[3],
-                        background = catppuccin[12],  # background is [10-12]
-                        other_current_screen_border = catppuccin[12],
-                        other_screen_border = catppuccin[12],
+                        background = catppuccin[13],  # background is [10-12]
+                        other_current_screen_border = catppuccin[13],
+                        other_screen_border = catppuccin[13],
                         highlight_color = catppuccin[13],
                         inactive = catppuccin[14],
                         foreground = catppuccin[18],
@@ -68,7 +68,7 @@ def init_widgets_list():
                         ),
                 widget.TextBox(
                         background = catppuccin[18],
-                        foreground = catppuccin[12],
+                        foreground = catppuccin[13],
                         font = mono_font,
                         text = "",
                         fontsize = 30,
