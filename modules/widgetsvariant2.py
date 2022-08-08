@@ -40,7 +40,7 @@ def init_widgets_list():
                         other_current_screen_border = catppuccin[13],
                         other_screen_border = catppuccin[13],
                         highlight_color = catppuccin[13],
-                        inactive = catppuccin[14],
+                        inactive = catppuccin[15],
                         foreground = catppuccin[18],
                         borderwidth = 2,
                         disable_drag = True,
