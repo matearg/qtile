@@ -20,9 +20,6 @@ def parse_window_name(text):
 def init_widgets_defaults():
     return dict(font = regular_font,
                 fontsize = font_size,
-                padding = 8,
-                padding_y = 4,
-                padding_x = 0,
                 foreground = catppuccin[18],
                 background = catppuccin[13],
                 )
@@ -55,16 +52,19 @@ def init_widgets_list():
                 widget.TextBox(
                         **widget_defaults,
                         text="墳",
+                        # padding = 8,
                         ),
                 widget.PulseVolume(
                         **widget_defaults,
                         limit_max_volume="True",
                         step = 5,
                         ),
+                widget.Spacer(**widget_defaults, length = 6),
                 widget.TextBox(
                         **widget_defaults,
                         text = "",
                         mouse_callbacks = {"Button1": lazy.spawn("kitty -e yay")},
+                        padding = 6,
                         ),
                 widget.CheckUpdates(
                         **widget_defaults,
@@ -75,9 +75,11 @@ def init_widgets_list():
                         update_interval = 10,
                         mouse_callbacks = {"Button1": lazy.spawn("kitty -e yay")},
                         ),
+                widget.Spacer(**widget_defaults, length = 4),
                 widget.TextBox(
                         **widget_defaults,
                         text = "",
+                        padding = 8,
                         mouse_callbacks = {"Button1": lazy.widget["keyboardlayout"].next_keyboard()}
                         ),
                 widget.KeyboardLayout(
@@ -86,6 +88,7 @@ def init_widgets_list():
                         configured_keyboards = ['latam', 'us'],
                         display_map = {'latam': 'LA', 'us': 'US'}
                        ),
+                widget.Spacer(**widget_defaults, length = 8),
                 widget.TextBox(
                         **widget_defaults,
                         text="",
