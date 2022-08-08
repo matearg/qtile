@@ -58,7 +58,7 @@ def init_widgets_list():
                 widget.TextBox(
                         **widget_defaults,
                         text = "ﮮ",
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e yay")},
+                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru")},
                         padding = 6,
                         ),
                 widget.CheckUpdates(
@@ -68,7 +68,7 @@ def init_widgets_list():
                         colour_have_updates = catppuccin[18],
                         display_format = "{updates}",
                         update_interval = 10,
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e yay")},
+                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru")},
                         ),
                 widget.Spacer(**widget_defaults, length = 4),
                 widget.TextBox(
