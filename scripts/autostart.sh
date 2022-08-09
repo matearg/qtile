@@ -10,16 +10,17 @@ function run {
 keybLayout=$(setxkbmap -v | awk -F "+" '/symbols/ {print $2}')
 
 #starting utility applications at boot time
-run nm-applet &
-run pamac-tray &
-run xfce4-power-manager &
-numlockx on &
-# blueberry-tray &
-picom --config $HOME/.config/qtile/scripts/picom.conf &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-# /usr/lib/xfce4/notifyd/xfce4-notifyd &
+nitrogen --restore &
+picom --config $HOME/.config/picom/picom.conf &
 dunst -conf /home/mateo/.config/dunst/dunstrc &
 
-#starting user applications at boot time
-run volumeicon &
-nitrogen --restore &
+#Optional
+# numlockx on &
+# run xfce4-power-manager &
+# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+#systray(optional)
+# run volumeicon &
+# run nm-applet &
+# run pamac-tray &
+# blueberry-tray &
