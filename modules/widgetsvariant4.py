@@ -40,18 +40,14 @@ def init_widgets_list():
                         font = regular_font,
                         fontsize = font_size,
                         highlight_method = "text",
-                        padding_x = 10,
-                        padding_y = 16,
-                        rounded = False,
                         ),
-                widget.Spacer(background = catppuccin[13]),
+                widget.Spacer(**widget_defaults),
                 widget.TextBox(
                         **widget_defaults,
                         text="墳",
                         ),
-                widget.PulseVolume(
+                widget.Volume(
                         **widget_defaults,
-                        limit_max_volume="True",
                         step = 5,
                         ),
                 widget.Spacer(**widget_defaults, length = 6),

@@ -119,7 +119,6 @@ def init_widgets_list():
                         fontsize=25,
                         foreground=catppuccin[13],  # blue
                         background = catppuccin[7],
-                        filled = True,
                         padding_y=4,
                         padding_x=0,
                         padding=8,
@@ -189,8 +188,6 @@ def init_widgets_list():
                         fontsize=25,
                         foreground=catppuccin[10],  # blue
                         background = catppuccin[8],
-                        radius = 4,
-                        filled = True,
                         padding_y=4,
                         padding_x=0,
                         padding=8,
@@ -210,21 +207,18 @@ def init_widgets_list():
                         padding=8,
                         foreground=catppuccin[13],
                         background=catppuccin[6],
-                        filled=True,
                         padding_x=None,
                         padding_y=4,
                         ),
-                widget.PulseVolume(
+                widget.Volume(
                         font = regular_font,
                         fontsize = font_size,
-                        limit_max_volume="True",
-                        padding=8,
-                        step = 5,
                         foreground=catppuccin[6],
                         background=catppuccin[13],
-                        filled=True,
-                        padding_y=4,
-                        padding_x=0,
+                        padding = 8,
+                        padding_x = 0,
+                        padding_y = 4,
+                        step = 5,
                         ),
     ]
     return widgets_list

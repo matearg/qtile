@@ -32,6 +32,7 @@ keys = [
 # SUPER + FUNCTION KEYS
     Key([mod], "F1", lazy.spawn('amixer set Master 5%+')),
     Key([mod], "F2", lazy.spawn('amixer set Master 5%-')),
+    Key([mod], "F3", lazy.spawn('amixer set Master toggle')),
     Key([mod], "F11", lazy.spawn('rofi-theme-selector')),
 
 # CONTROL + ALT KEYS
@@ -43,6 +44,9 @@ keys = [
     Key(["mod1", "control"], "v", lazy.spawn('pavucontrol')),
     Key(["mod1", "control"], "q", lazy.shutdown()),
     Key(["mod1", "control"], "l", lazy.spawn('xflock4')),
+    Key(["mod1", "control"], "k", lazy.spawn('amixer set Master 5%+')),
+    Key(["mod1", "control"], "j", lazy.spawn('amixer set Master 5%-')),
+    Key(["mod1", "control"], "m", lazy.spawn('amixer set Master toggle')),
 
 # QTILE LAYOUT KEYS
     Key([mod, "shift"], "space", lazy.next_layout()),
