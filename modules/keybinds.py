@@ -1,4 +1,4 @@
-import os
+from os import path
 from libqtile.lazy import lazy
 from libqtile.config import Key
 from .groups import groups
@@ -9,7 +9,7 @@ mod1 = "alt"
 mod2 = "control"
 terminal_var = "alacritty"
 terminal = "kitty"
-home = os.path.expanduser('~')
+home = path.expanduser('~')
 
 keys = [
 # SUPER + NORMAL KEYS

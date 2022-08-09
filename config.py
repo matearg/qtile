@@ -1,12 +1,12 @@
 from libqtile import hook
-import os
+from os import path
 import subprocess
 
 from modules.groups import groups
 from modules.keybinds import keys
 from modules.mouse import mouse
 from modules.screens import screens
-from modules.layouts import layouts, floating_layout
+from modules.layouts import *
 
 dgroups_key_binder = None
 dgroups_app_rules = []
@@ -21,6 +21,6 @@ wmname = "Qtile"
 
 @hook.subscribe.startup_once
 def start_once():
-    home = os.path.expanduser('~')
+    home = path.expanduser('~')
     subprocess.call([home + '/.config/qtile/scripts/autostart.sh'])
 
