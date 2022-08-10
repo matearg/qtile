@@ -1,6 +1,7 @@
 from libqtile import widget
 from libqtile.lazy import lazy
 from .colors import catppuccin
+from .spotify import Spotify
 
 regular_font = "JetBrainsMono Nerd Font"
 font_size = 15
@@ -41,6 +42,16 @@ def init_widgets_list():
                         fontsize = font_size,
                         highlight_method = "text",
                         ),
+                widget.Spacer(**widget_defaults, length = 6),
+                widget.TextBox(
+                        **widget_defaults,
+                        text="[阮",
+                        mouse_callbacks={"Button1": lazy.spawn("spotify")},
+                        ),
+                Spotify(
+                    **widget_defaults,
+                    format = '{track}]',
+                    ),
                 widget.Spacer(**widget_defaults),
                 widget.TextBox(
                         **widget_defaults,

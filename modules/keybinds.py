@@ -15,6 +15,7 @@ keys = [
 # SUPER + NORMAL KEYS
     Key([mod], "Escape", lazy.spawn('xkill')),
     Key([mod], "Return", lazy.spawn(terminal)),
+    Key([mod], "b", lazy.spawn('firefox')),
     Key([mod], "c", lazy.spawn('flameshot gui')),
     Key([mod], "e", lazy.spawn('thunar')),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
@@ -27,7 +28,6 @@ keys = [
 # SUPER + SHIFT KEYS
     Key([mod, "shift"], "c", lazy.window.kill()),
     Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#302D41' -nf '#DDB6F2' -sb '#DDB6F2' -sf '#302D41' -fn 'Iosevka Nerd Font Mono:pixelsize=18'")),
-    Key([mod, "shift"], "f", lazy.spawn('firefox')),
     Key([mod, "shift"], "r", lazy.restart()),
 
 # SUPER + FUNCTION KEYS
@@ -161,6 +161,10 @@ keys.extend([
     Key([mod, "mod1"], "Right", lazy.function(window_to_previous_screen, switch_screen=True)),
     Key([mod, "mod1"], "h", lazy.function(window_to_next_screen, switch_screen=False)),
     Key([mod, "mod1"], "l", lazy.function(window_to_previous_screen, switch_screen=False)),
+
+    # Switch focus of monitors
+    Key([mod], "period", lazy.next_screen()),
+    Key([mod], "comma", lazy.prev_screen()),
 ])
 
 for i in groups:
