@@ -2,7 +2,7 @@ from libqtile import widget
 from libqtile.lazy import lazy
 from .colors import catppuccin
 
-regular_font = "Hack Nerd Font"
+regular_font = "JetBrainsMono Nerd Font"
 font_size = 15
 
 def parse_window_name(text):
