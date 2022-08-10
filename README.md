@@ -1,5 +1,5 @@
 # My Dotfiles & Config
-![Screenshot of my desktop](https://github.com/matearg/qtile/blob/main/images/sample.png)
+![Screenshot of my desktop](https://github.com/matearg/qtile/blob/main/images/desktop.png)
 
 ## Hi!
 
