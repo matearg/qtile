@@ -87,7 +87,7 @@ def init_widgets_list():
                         ),
                 widget.Clock(
                         **widget_defaults,
-                        format="%a %d %b %H:%M",
+                        format="%a %b %d - %H:%M",
                         ),
     ]
     return widgets_list
