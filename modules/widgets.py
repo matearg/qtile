@@ -34,7 +34,7 @@ def init_widgets_list():
                         background=catppuccin[0],
                         margin_x=14,
                         margin_y=3,
-                        mouse_callbacks={"Button1": lazy.spawn("kitty")},
+                        mouse_callbacks={"Button1": lazy.spawn("dmenu_run -i -nb '#302D41' -nf '#DDB6F2' -sb '#DDB6F2' -sf '#302D41' -fn 'JetBrainsMono Nerd Font:pixelsize=18'")},
                         filename="~/.config/qtile/icons/arch.png",
                         ),
                 widget.TextBox(

@@ -15,6 +15,7 @@ keys = [
 # SUPER + NORMAL KEYS
     Key([mod], "Escape", lazy.spawn('xkill')),
     Key([mod], "Return", lazy.spawn(terminal)),
+    Key([mod], "c", lazy.spawn('flameshot gui')),
     Key([mod], "e", lazy.spawn('thunar')),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "i", lazy.spawn('lxappearance')),
