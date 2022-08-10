@@ -157,10 +157,10 @@ def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
 
 keys.extend([
     # MOVE WINDOW TO NEXT SCREEN
-    Key([mod, "mod1"], "Left", lazy.function(window_to_next_screen, switch_screen=True)),
-    Key([mod, "mod1"], "Right", lazy.function(window_to_previous_screen, switch_screen=True)),
-    Key([mod, "mod1"], "h", lazy.function(window_to_next_screen, switch_screen=False)),
-    Key([mod, "mod1"], "l", lazy.function(window_to_previous_screen, switch_screen=False)),
+    Key([mod, "mod1"], "Left", lazy.function(window_to_next_screen, switch_screen=False)),
+    Key([mod, "mod1"], "Right", lazy.function(window_to_previous_screen, switch_screen=False)),
+    Key([mod, "mod1"], "h", lazy.function(window_to_next_screen, switch_screen=True)),
+    Key([mod, "mod1"], "l", lazy.function(window_to_previous_screen, switch_screen=True)),
 
     # Switch focus of monitors
     Key([mod], "period", lazy.next_screen()),
