@@ -24,7 +24,7 @@ keys = [
     Key([mod], "p", lazy.spawn('rofi -show drun')),
     Key([mod], "q", lazy.window.kill()),
     Key([mod], "v", lazy.spawn(terminal + ' -e nvim')),
-    Key([mod], "x", lazy.spawn('rofi -show power-menu -modi power-menu:/home/mateo/github/dotfiles/linux/rofi/rofi-power-menu')),
+    Key([mod], "x", lazy.spawn('rofi -show power-menu -modi power-menu:rofi-power-menu')),
 
 # SUPER + SHIFT KEYS
     Key([mod, "shift"], "c", lazy.window.kill()),

@@ -2,11 +2,11 @@ from libqtile import hook
 from os import path
 import subprocess
 
-from modules.groups import groups
-from modules.keybinds import keys
-from modules.mouse import mouse
-from modules.screens import screens
-from modules.layouts import *
+from settings.groups import groups
+from settings.keybinds import keys
+from settings.mouse import mouse
+from settings.screens import screens
+from settings.layouts import *
 
 dgroups_key_binder = None
 dgroups_app_rules = []
