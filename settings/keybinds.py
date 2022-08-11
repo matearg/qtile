@@ -59,7 +59,7 @@ keys = [
     Key(["mod1", "control"], "t", lazy.spawn(terminal_var)),
     Key(["mod1", "control"], "v", lazy.spawn('pavucontrol')),
     Key(["mod1", "control"], "q", lazy.shutdown()),
-    Key(["mod1", "control"], "l", lazy.spawn('xflock4')),
+    Key(["mod1", "control"], "l", lazy.spawn('betterlockscreen -l')),
     Key(["mod1", "control"], "k", lazy.spawn('amixer set Master 5%+')),
     Key(["mod1", "control"], "j", lazy.spawn('amixer set Master 5%-')),
     Key(["mod1", "control"], "m", lazy.spawn('amixer set Master toggle')),
