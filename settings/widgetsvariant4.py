@@ -75,7 +75,7 @@ def init_widgets_list():
                         colour_have_updates = theme[10],
                         display_format = "{updates}",
                         update_interval = 10,
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru")},
+                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru --color=auto")},
                         ),
                 widget.Spacer(**widget_defaults, length = 4),
                 widget.TextBox(
