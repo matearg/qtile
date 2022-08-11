@@ -2,6 +2,7 @@ from os import path
 from libqtile.lazy import lazy
 from libqtile.config import Key
 from .groups import groups
+from .colors import *
 from .traverse import *
 
 #mod4 or mod = super key
@@ -11,6 +12,19 @@ mod2 = "control"
 terminal_var = "alacritty"
 terminal = "kitty"
 home = path.expanduser('~')
+
+
+def dmenu_colors():
+    if(theme == nord):
+        scheme = "dmenu_run -i -nb '#3b4252' -nf '#81a1c1' -sb '#81a1c1' -sf '#3b4252' -fn 'JetBrainsMono Nerd Font:pixelsize=20'"
+    elif(theme == catppuccin):
+        scheme ="dmenu_run -i -nb '#302D41' -nf '#DDB6F2' -sb '#DDB6F2' -sf '#302D41' -fn 'JetBrainsMono Nerd Font:pixelsize=20'"
+    else:
+        scheme ="dmenu_run -i -fn 'monospace:pixelsize=20'"
+
+    return scheme
+dmenu = dmenu_colors()
+
 
 keys = [
 # SUPER + NORMAL KEYS
@@ -28,7 +42,7 @@ keys = [
 
 # SUPER + SHIFT KEYS
     Key([mod, "shift"], "c", lazy.window.kill()),
-    Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#302D41' -nf '#DDB6F2' -sb '#DDB6F2' -sf '#302D41' -fn 'Iosevka Nerd Font Mono:pixelsize=18'")),
+    Key([mod, "shift"], "d", lazy.spawn(dmenu)),
     Key([mod, "shift"], "r", lazy.restart()),
 
 # SUPER + FUNCTION KEYS
