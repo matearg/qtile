@@ -1,6 +1,6 @@
 from libqtile import widget
 from libqtile.lazy import lazy
-from .colors import catppuccin
+from .colors import theme
 from .spotify import Spotify
 
 regular_font = "JetBrainsMono Nerd Font"
@@ -18,24 +18,24 @@ def parse_window_name(text):
 def init_widgets_defaults():
     return dict(font = regular_font,
                 fontsize = font_size,
-                foreground = catppuccin[18],
-                background = catppuccin[13],
+                foreground = theme[10],
+                background = theme[8],
                 )
 
 def init_widgets_list():
     widgets_list = [
                 widget.GroupBox(
-                        active = catppuccin[0],
-                        block_highlight_text_color = catppuccin[0],
-                        this_current_screen_border = catppuccin[0],
-                        this_screen_border = catppuccin[0],
-                        urgent_border = catppuccin[3],
-                        background = catppuccin[13],  # background is [10-12]
-                        other_current_screen_border = catppuccin[13],
-                        other_screen_border = catppuccin[13],
-                        highlight_color = catppuccin[13],
-                        inactive = catppuccin[18],
-                        foreground = catppuccin[18],
+                        active = theme[0],
+                        block_highlight_text_color = theme[0],
+                        this_current_screen_border = theme[0],
+                        this_screen_border = theme[0],
+                        urgent_border = theme[1],
+                        background = theme[8],  # background is [10-12]
+                        other_current_screen_border = theme[8],
+                        other_screen_border = theme[8],
+                        highlight_color = theme[8],
+                        inactive = theme[10],
+                        foreground = theme[10],
                         borderwidth = 2,
                         disable_drag = True,
                         font = regular_font,
@@ -71,8 +71,8 @@ def init_widgets_list():
                 widget.CheckUpdates(
                         **widget_defaults,
                         no_update_string = "N/A",
-                        colour_no_updates = catppuccin[18],
-                        colour_have_updates = catppuccin[18],
+                        colour_no_updates = theme[10],
+                        colour_have_updates = theme[10],
                         display_format = "{updates}",
                         update_interval = 10,
                         mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru")},

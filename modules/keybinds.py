@@ -2,6 +2,7 @@ from os import path
 from libqtile.lazy import lazy
 from libqtile.config import Key
 from .groups import groups
+from .traverse import *
 
 #mod4 or mod = super key
 mod = "mod4"
@@ -58,10 +59,14 @@ keys = [
     Key([mod], "Down", lazy.layout.down()),
     Key([mod], "Left", lazy.layout.left()),
     Key([mod], "Right", lazy.layout.right()),
-    Key([mod], "k", lazy.layout.up()),
-    Key([mod], "j", lazy.layout.down()),
-    Key([mod], "h", lazy.layout.left()),
-    Key([mod], "l", lazy.layout.right()),
+    # Key([mod], "k", lazy.layout.up()),
+    # Key([mod], "j", lazy.layout.down()),
+    # Key([mod], "h", lazy.layout.left()),
+    # Key([mod], "l", lazy.layout.right()),
+    Key([mod], 'k', lazy.function(up)),
+    Key([mod], 'j', lazy.function(down)),
+    Key([mod], 'h', lazy.function(left)),
+    Key([mod], 'l', lazy.function(right)),
 
 # SHUFLE WINDOWS ORDER
     Key([mod, "shift"], "k", lazy.layout.shuffle_up()),

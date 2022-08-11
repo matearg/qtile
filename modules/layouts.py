@@ -1,12 +1,12 @@
 from libqtile import layout, hook
 from libqtile.config import Match
-from .colors import catppuccin
+from .colors import theme
 
 def init_layout_theme():
     return {"margin": 10,
             "border_width": 2,
-            "border_focus": catppuccin[0],
-            "border_normal": catppuccin[13] 
+            "border_focus": theme[0],
+            "border_normal": theme[8] 
             }
 
 layout_theme = init_layout_theme()
