@@ -56,6 +56,7 @@ def init_widgets_list():
                 widget.TextBox(
                         **widget_defaults,
                         text="墳",
+                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e alsamixer")},
                         ),
                 widget.Volume(
                         **widget_defaults,

@@ -29,4 +29,4 @@ nord = [
     ["#f1ffff", "#f1ffff"], # 10
 ]
 
-theme = nord
+theme = catppuccin

@@ -13,6 +13,7 @@ keybLayout=$(setxkbmap -v | awk -F "+" '/symbols/ {print $2}')
 nitrogen --restore &
 picom --config $HOME/.config/picom/picom.conf &
 dunst -conf /home/mateo/.config/dunst/dunstrc &
+lxsession &
 
 #Optional
 # numlockx on &

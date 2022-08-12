@@ -176,6 +176,7 @@ def init_widgets_list():
                         filled=True,
                         padding_x=None,
                         padding_y=4,
+                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e alsamixer")},
                         ),
                 widget.Volume(
                         font = regular_font,

@@ -265,6 +265,7 @@ def init_widgets_list():
                         padding_x = 0,
                         padding_y = 4,
                         step = 5,
+                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e alsamixer")},
                         ),
                 widget.TextBox(
                         background = theme[8],
