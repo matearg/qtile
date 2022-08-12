@@ -65,7 +65,8 @@ keys = [
     Key(["mod1", "control"], "m", lazy.spawn('amixer set Master toggle')),
 
 # QTILE LAYOUT KEYS
-    Key([mod, "shift"], "space", lazy.next_layout()),
+    Key([mod], "Tab", lazy.next_layout()),
+    Key([mod, "shift" ], "Tab", lazy.prev_layout()),
     Key([mod], "n", lazy.layout.normalize()),
 
 # CHANGE FOCUS
@@ -190,8 +191,6 @@ for i in groups:
     keys.extend([
 #CHANGE WORKSPACES
         Key([mod], i.name, lazy.group[i.name].toscreen()),
-        Key([mod], "Tab", lazy.screen.next_group()),
-        Key([mod, "shift" ], "Tab", lazy.screen.prev_group()),
         Key([mod, "mod1"], "k", lazy.screen.next_group()),
         Key([mod, "mod1" ], "j", lazy.screen.prev_group()),
 
