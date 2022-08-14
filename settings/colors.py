@@ -29,4 +29,19 @@ nord = [
     ["#f1ffff", "#f1ffff"], # 10
 ]
 
-theme = catppuccin
+# Theme name : Monokai
+monokai = [
+    ["#ff6188", "#ff6188"], # 0
+    ["#ab9df2", "#ab9df2"], # 1
+    ["#fc9867", "#fc9867"], # 2
+    ["#56b6c2", "#56b6c2"], # 3
+    ["#78dce8", "#78dce8"], # 4
+    ["#a9dc76", "#a9dc76"], # 5
+    ["#ffd866", "#ffd866"], # 6
+    ["#2d2a2e", "#2d2a2e"], # 7
+    ["#403e41", "#403e41"], # 8
+    ["#727072", "#727072"], # 9
+    ["#fcfcfa", "#fcfcfa"], # 10
+]
+
+theme = monokai
