@@ -19,6 +19,10 @@ def dmenu_colors():
         scheme = "dmenu_run -i -nb '#3b4252' -nf '#81a1c1' -sb '#81a1c1' -sf '#3b4252' -fn 'JetBrainsMono Nerd Font:pixelsize=20'"
     elif(theme == catppuccin):
         scheme ="dmenu_run -i -nb '#302D41' -nf '#DDB6F2' -sb '#DDB6F2' -sf '#302D41' -fn 'JetBrainsMono Nerd Font:pixelsize=20'"
+    elif(theme == monokai):
+        scheme ="dmenu_run -i -nb '#2d2a2e' -nf '#ff6188' -sb '#ff6188' -sf '#2d2a2e' -fn 'JetBrainsMono Nerd Font:pixelsize=20'"
+    elif(theme == rosepine):
+        scheme ="dmenu_run -i -nb '#393552' -nf '#ea9a97' -sb '#ea9a97' -sf '#393552' -fn 'JetBrainsMono Nerd Font:pixelsize=20'"
     else:
         scheme ="dmenu_run -i -fn 'monospace:pixelsize=20'"
 
@@ -44,6 +48,7 @@ keys = [
     Key([mod, "shift"], "c", lazy.window.kill()),
     Key([mod, "shift"], "d", lazy.spawn(dmenu)),
     Key([mod, "shift"], "r", lazy.restart()),
+    Key([mod, "shift"], "e", lazy.spawn(terminal + ' -e ranger')),
 
 # SUPER + FUNCTION KEYS
     Key([mod], "F1", lazy.spawn('amixer set Master 5%+')),

@@ -44,4 +44,19 @@ monokai = [
     ["#fcfcfa", "#fcfcfa"], # 10
 ]
 
-theme = monokai
+# Theme name : Rose Pine
+rosepine = [
+    ["#ea9a97", "#ea9a97"], # 0
+    ["#eb6f92", "#eb6f92"], # 1
+    ["#9ccfd8", "#9ccfd8"], # 2
+    ["#a9dc76", "#a9dc76"], # 3
+    ["#c4a7e7", "#c4a7e7"], # 4
+    ["#3e8fb0", "#3e8fb0"], # 5
+    ["#f6c177", "#f6c177"], # 6
+    ["#232136", "#232136"], # 7
+    ["#393552", "#393552"], # 8
+    ["#6e6a86", "#6e6a86"], # 9
+    ["#e0def4", "#e0def4"], # 10
+]
+
+theme = rosepine
