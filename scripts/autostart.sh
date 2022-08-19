@@ -10,7 +10,8 @@ function run {
 keybLayout=$(setxkbmap -v | awk -F "+" '/symbols/ {print $2}')
 
 #starting utility applications at boot time
-nitrogen --restore &
+# nitrogen --restore &
+~/.fehbg &
 
 picom --config $HOME/.config/picom/picom.conf &
 # picom --config $HOME/.config/picom/picom-pijulius.conf &
