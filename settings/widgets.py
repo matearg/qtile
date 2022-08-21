@@ -3,7 +3,7 @@ from libqtile.lazy import lazy
 from .colors import theme
 from .spotify import Spotify
 
-regular_font = "JetBrainsMono Nerd Font"
+regular_font = "FiraCode Nerd Font"
 mono_font = regular_font + " Mono"
 italic_font = regular_font + " Italic"
 bold_font = regular_font + " Bold"
