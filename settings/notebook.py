@@ -109,6 +109,8 @@ def init_widgets_list():
                         display_map = {'latam': 'LA', 'us': 'US'}
                        ),
                 widget.Spacer(**widget_defaults, length = 6),
+                widget.Systray(**widget_defaults),
+                widget.Spacer(**widget_defaults, length = 6),
     ]
     return widgets_list
 
