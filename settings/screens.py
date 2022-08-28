@@ -1,6 +1,6 @@
 from libqtile import bar
 from libqtile.config import Screen
-from .widgetsvariant4 import widgets_screen1
+from .notebook import widgets_screen1
 
 def init_screens():
     return [

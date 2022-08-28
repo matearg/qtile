@@ -13,8 +13,8 @@ keybLayout=$(setxkbmap -v | awk -F "+" '/symbols/ {print $2}')
 # nitrogen --restore &
 ~/.fehbg &
 
-# picom --config $HOME/.config/picom/picom.conf &
-picom --config $HOME/.config/picom/picom-pijulius.conf &
+picom --config $HOME/.config/picom/picom.conf &
+# picom --config $HOME/.config/picom/picom-pijulius.conf &
 # picom --config $HOME/.config/picom/picom-jonaburg.conf &
 
 dunst -conf /home/mateo/.config/dunst/dunstrc.nord &
@@ -26,11 +26,12 @@ lxsession &
 
 #Optional
 # numlockx on &
-# run xfce4-power-manager &
+run xfce4-power-manager &
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 #systray(optional)
 # run volumeicon &
-# run nm-applet &
+run nm-applet &
 # run pamac-tray &
-# blueberry-tray &
+blueberry-tray &
+

@@ -73,7 +73,13 @@ def init_widgets_list():
                         step = 5,
                         ),
                 widget.Spacer(**widget_defaults, length = 6),
-                widget.Battery(**widget_defaults),
+                widget.TextBox(
+                        **widget_defaults,
+                        text = "",
+                        padding = 8,
+                        ),
+                widget.Battery(**widget_defaults, format = '{char}{percent:2.0%}'),
+                widget.Spacer(**widget_defaults, length = 4),
                 widget.TextBox(
                         **widget_defaults,
                         text = "ﮮ",
@@ -103,15 +109,6 @@ def init_widgets_list():
                         display_map = {'latam': 'LA', 'us': 'US'}
                        ),
                 widget.Spacer(**widget_defaults, length = 6),
-                # widget.TextBox(
-                #         **widget_defaults,
-                #         text="",
-                #         padding = 6,
-                #         ),
-                # widget.Clock(
-                #         **widget_defaults,
-                #         format="%a %b %d - %H:%M",
-                #         ),
     ]
     return widgets_list
 
