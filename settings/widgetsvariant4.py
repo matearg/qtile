@@ -45,13 +45,23 @@ def init_widgets_list():
                 widget.Spacer(**widget_defaults, length = 6),
                 widget.TextBox(
                         **widget_defaults,
-                        text="阮",
+                        text=" ",
                         mouse_callbacks={"Button1": lazy.spawn("spotify")},
                         ),
                 Spotify(
                     **widget_defaults,
                     format = '{track}',
                     ),
+                widget.Spacer(**widget_defaults),
+                widget.TextBox(
+                        **widget_defaults,
+                        text="",
+                        padding = 6,
+                        ),
+                widget.Clock(
+                        **widget_defaults,
+                        format="%a %b %d - %H:%M",
+                        ),
                 widget.Spacer(**widget_defaults),
                 widget.TextBox(
                         **widget_defaults,
@@ -92,15 +102,15 @@ def init_widgets_list():
                         display_map = {'latam': 'LA', 'us': 'US'}
                        ),
                 widget.Spacer(**widget_defaults, length = 6),
-                widget.TextBox(
-                        **widget_defaults,
-                        text="",
-                        padding = 6,
-                        ),
-                widget.Clock(
-                        **widget_defaults,
-                        format="%a %b %d - %H:%M",
-                        ),
+                # widget.TextBox(
+                #         **widget_defaults,
+                #         text="",
+                #         padding = 6,
+                #         ),
+                # widget.Clock(
+                #         **widget_defaults,
+                #         format="%a %b %d - %H:%M",
+                #         ),
     ]
     return widgets_list
 

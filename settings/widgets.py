@@ -290,7 +290,7 @@ def init_widgets_list():
                         font=mono_font,
                         fontsize=20,
                         padding=16,
-                        mouse_callbacks={"Button1": lazy.spawn("rofi -show power-menu -modi power-menu:/home/mateo/github/dotfiles/linux/rofi/rofi-power-menu")},
+                        mouse_callbacks={"Button1": lazy.spawn("rofi -show power-menu -modi power-menu:rofi-power-menu")},
                         ),
     ]
     return widgets_list
