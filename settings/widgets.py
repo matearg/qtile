@@ -81,6 +81,8 @@ def init_widgets_list():
                         charge_char = '',
                         discharge_char = '',
                         full_char = '',
+                        update_interval = 10,
+                        show_short_text = False,
                         ),
                 widget.Spacer(**widget_defaults, length = 4),
                 widget.TextBox(

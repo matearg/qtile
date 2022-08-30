@@ -274,6 +274,8 @@ def init_widgets_list():
                         charge_char = '',
                         discharge_char = '',
                         full_char = '',
+                        update_interval = 10,
+                        show_short_text = False,
                         ),
                 widget.TextBox(
                         text="⏻",
