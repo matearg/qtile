@@ -18,8 +18,8 @@ picom --config $HOME/.config/picom/picom.conf &
 # picom --config $HOME/.config/picom/picom-jonaburg.conf &
 
 # dunst -conf /home/mateo/.config/dunst/dunstrc.nord &
-dunst -conf /home/mateo/.config/dunst/dunstrc.catppuccin &
-# dunst -conf /home/mateo/.config/dunst/dunstrc.monokai &
+# dunst -conf /home/mateo/.config/dunst/dunstrc.catppuccin &
+dunst -conf /home/mateo/.config/dunst/dunstrc.monokai &
 # dunst -conf /home/mateo/.config/dunst/dunstrc.rosepine &
 
 lxsession &
