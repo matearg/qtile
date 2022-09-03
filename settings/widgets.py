@@ -25,21 +25,18 @@ def init_widgets_defaults():
 def init_widgets_list():
     widgets_list = [
                 widget.GroupBox(
+                        **widget_defaults,
                         active = theme[0],
                         block_highlight_text_color = theme[0],
                         this_current_screen_border = theme[0],
                         this_screen_border = theme[0],
                         urgent_border = theme[1],
-                        background = theme[8],  # background is [10-12]
                         other_current_screen_border = theme[8],
                         other_screen_border = theme[8],
                         highlight_color = theme[8],
                         inactive = theme[10],
-                        foreground = theme[10],
                         borderwidth = 2,
                         disable_drag = True,
-                        font = regular_font,
-                        fontsize = font_size,
                         highlight_method = "text",
                         ),
                 widget.Spacer(**widget_defaults, length = 6),
@@ -88,7 +85,7 @@ def init_widgets_list():
                 widget.TextBox(
                         **widget_defaults,
                         text = "ﮮ",
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru")},
+                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru -Syyu --color=auto")},
                         padding = 6,
                         ),
                 widget.CheckUpdates(
@@ -98,7 +95,7 @@ def init_widgets_list():
                         colour_have_updates = theme[10],
                         display_format = "{updates}",
                         update_interval = 10,
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru --color=auto")},
+                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru -Syyu --color=auto")},
                         ),
                 widget.Spacer(**widget_defaults, length = 4),
                 widget.TextBox(
