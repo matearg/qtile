@@ -13,7 +13,6 @@ layout_theme = init_layout_theme()
 
 layouts = [
     layout.MonadTall(**layout_theme),
-    layout.MonadWide(**layout_theme),
     layout.Max(**layout_theme),
 ]
 
