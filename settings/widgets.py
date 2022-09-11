@@ -1,4 +1,4 @@
-from libqtile import widget
+from qtile_extras import widget
 from libqtile.lazy import lazy
 from .colors import theme
 from .spotify import Spotify
@@ -60,7 +60,9 @@ def init_widgets_list():
                         format="%a %b %d - %H:%M",
                         ),
                 widget.Spacer(**widget_defaults),
-                widget.Systray(**widget_defaults),
+                widget.Systray(
+                        **widget_defaults
+                        ),
                 widget.Spacer(**widget_defaults, length = 6),
                 widget.TextBox(
                         **widget_defaults,
@@ -72,9 +74,13 @@ def init_widgets_list():
                         step = 5,
                         ),
                 widget.Spacer(**widget_defaults, length = 6),
+                widget.UPowerWidget(
+                        **widget_defaults,
+                        ),
                 widget.Battery(
                         **widget_defaults,
-                        format = '{char} {percent:2.0%}',
+                        # format = '{char} {percent:2.0%}',
+                        format = '{percent:2.0%}',
                         charge_char = '',
                         discharge_char = '',
                         full_char = '',

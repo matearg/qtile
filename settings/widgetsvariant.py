@@ -1,4 +1,5 @@
-from libqtile import widget, bar
+from libqtile import bar
+from qtile_extras import widget
 from libqtile.lazy import lazy
 from .colors import theme
 from .spotify import Spotify
@@ -268,9 +269,20 @@ def init_widgets_list():
                         fontsize = 30,
                         padding = 0,
                         ),
+                widget.UPowerWidget(
+                        font = regular_font,
+                        fontsize = font_size,
+                        foreground=theme[8],
+                        background=theme[0],
+                        border_charge_colour = theme[8],
+                        border_colour = theme[8],
+                        fill_charge = theme[8],
+                        fill_normal = theme[8],
+                        ),
                 widget.Battery(
                         **widget_defaults,
-                        format = '{char} {percent:2.0%}',
+                        # format = '{char} {percent:2.0%}',
+                        format = '{percent:2.0%}',
                         charge_char = '',
                         discharge_char = '',
                         full_char = '',
