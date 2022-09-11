@@ -59,4 +59,4 @@ rosepine = [
     ["#e0def4", "#e0def4"], # 10
 ]
 
-theme = monokai
+theme = nord
