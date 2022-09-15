@@ -100,7 +100,7 @@ def init_widgets_list():
                         padding_x = None,
                         padding_y = 4,
                         fontsize = 25,
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru --color=auto")},
+                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru -Syyu --color=auto")},
                         ),
                 widget.CheckUpdates(
                         no_update_string = "N/A",
@@ -114,7 +114,7 @@ def init_widgets_list():
                         background = theme[8],
                         display_format = "{updates}",
                         update_interval = 10,
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru")},
+                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru -Syyu --color=auto")},
                         ),
                 widget.TextBox(
                         font = mono_font,
