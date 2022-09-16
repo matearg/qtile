@@ -3,6 +3,8 @@ from libqtile.lazy import lazy
 from .colors import theme
 from .spotify import Spotify
 
+terminal = "alacritty"
+
 regular_font = "FiraCode Nerd Font"
 font_size = 17
 
@@ -67,7 +69,7 @@ def init_widgets_list():
                 widget.TextBox(
                         **widget_defaults,
                         text="墳",
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e alsamixer")},
+                        mouse_callbacks = {"Button1": lazy.spawn(terminal + " -e alsamixer")},
                         ),
                 widget.Volume(
                         **widget_defaults,
@@ -91,7 +93,7 @@ def init_widgets_list():
                 widget.TextBox(
                         **widget_defaults,
                         text = "ﮮ",
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru -Syyu --color=auto")},
+                        mouse_callbacks = {"Button1": lazy.spawn(terminal + " -e sudo paru -Syyu --color=auto")},
                         padding = 6,
                         ),
                 widget.CheckUpdates(
@@ -101,7 +103,7 @@ def init_widgets_list():
                         colour_have_updates = theme[10],
                         display_format = "{updates}",
                         update_interval = 10,
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru -Syyu --color=auto")},
+                        mouse_callbacks = {"Button1": lazy.spawn(terminal + " -e sudo paru -Syyu --color=auto")},
                         ),
                 widget.Spacer(**widget_defaults, length = 4),
                 widget.TextBox(

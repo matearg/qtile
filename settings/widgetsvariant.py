@@ -4,6 +4,8 @@ from libqtile.lazy import lazy
 from .colors import theme
 from .spotify import Spotify
 
+terminal = "alacritty"
+
 regular_font = "FiraCode Nerd Font"
 mono_font = regular_font + " Mono"
 italic_font = regular_font + " Italic"
@@ -45,14 +47,14 @@ def init_widgets_list():
                             widget.TextBox(
                                 **widget_defaults,
                                 text = '',
-                                mouse_callbacks = {"Button1": lazy.spawn("kitty -e htop")},
+                                mouse_callbacks = {"Button1": lazy.spawn(terminal + " -e htop")},
                                 ),
                             widget.DF(
                                 **widget_defaults,
                                 visible_on_warn = False,
                                 format = '{uf}{m}/{s}{m}',
                                 partition = "/home",
-                                mouse_callbacks = {"Button1": lazy.spawn("kitty -e htop")},
+                                mouse_callbacks = {"Button1": lazy.spawn(terminal + " -e htop")},
                                 ),
                             ]
                         ),
@@ -159,7 +161,7 @@ def init_widgets_list():
                         padding_x = None,
                         padding_y = 4,
                         fontsize = 25,
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e paru -Syyu --color=auto")},
+                        mouse_callbacks = {"Button1": lazy.spawn(terminal + " -e paru -Syyu --color=auto")},
                         ),
                 widget.CheckUpdates(
                         no_update_string = "N/A",
@@ -173,7 +175,7 @@ def init_widgets_list():
                         background = theme[1],
                         display_format = "{updates}",
                         update_interval = 10,
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e paru -Syyu --color=auto")},
+                        mouse_callbacks = {"Button1": lazy.spawn(terminal + " -e paru -Syyu --color=auto")},
                         ),
                 widget.TextBox(
                         background = theme[1],
@@ -249,7 +251,7 @@ def init_widgets_list():
                         padding=8,
                         padding_x=None,
                         padding_y=4,
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e alsamixer")},
+                        mouse_callbacks = {"Button1": lazy.spawn(terminal + " -e alsamixer")},
                         ),
                 widget.Volume(
                         font = regular_font,
