@@ -13,9 +13,9 @@ keybLayout=$(setxkbmap -v | awk -F "+" '/symbols/ {print $2}')
 # nitrogen --restore &
 ~/.fehbg &
 
-# picom --config $HOME/.config/picom/picom.conf &
+picom --config $HOME/.config/picom/picom.conf &
 # picom --config $HOME/.config/picom/picom-pijulius.conf &
-picom --config $HOME/.config/picom/picom-jonaburg.conf &
+# picom --config $HOME/.config/picom/picom-jonaburg.conf &
 
 # dunst -conf /home/mateo/.config/dunst/dunstrc.nord &
 dunst -conf /home/mateo/.config/dunst/dunstrc.catppuccin &
