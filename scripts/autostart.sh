@@ -13,15 +13,18 @@ keybLayout=$(setxkbmap -v | awk -F "+" '/symbols/ {print $2}')
 # nitrogen --restore &
 ~/.fehbg &
 
-# picom --config $HOME/.config/picom/picom.conf &
-picom --config $HOME/.config/picom/picom-pijulius.conf &
+#conpiler
+picom --config $HOME/.config/picom/picom.conf &
+# picom --config $HOME/.config/picom/picom-pijulius.conf &
 # picom --config $HOME/.config/picom/picom-jonaburg.conf &
 
+#notification daemon
 # dunst -conf /home/mateo/.config/dunst/dunstrc.nord &
 dunst -conf /home/mateo/.config/dunst/dunstrc.catppuccin &
 # dunst -conf /home/mateo/.config/dunst/dunstrc.monokai &
 # dunst -conf /home/mateo/.config/dunst/dunstrc.rosepine &
 
+#session manager
 lxsession &
 
 #Optional

@@ -143,7 +143,7 @@ keys = [
 # FLIP LAYOUT FOR MONADTALL/MONADWIDE
     Key([mod, "mod1"], "f", lazy.layout.flip()),
 
-# TOGGLE FLOATIN LAYOUT
+# TOGGLE FLOATING LAYOUT
     Key([mod, "mod1"], "space", lazy.window.toggle_floating()),
 
 # CHANGE KEYBOARD LAYOUT
@@ -196,8 +196,8 @@ for i in groups:
     keys.extend([
 #CHANGE WORKSPACES
         Key([mod], i.name, lazy.group[i.name].toscreen()),
-        Key([mod, "mod1"], "k", lazy.screen.next_group()),
-        Key([mod, "mod1" ], "j", lazy.screen.prev_group()),
+        Key([mod, "mod1"], "j", lazy.screen.next_group()),
+        Key([mod, "mod1" ], "k", lazy.screen.prev_group()),
 
 # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
