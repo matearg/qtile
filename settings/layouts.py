@@ -44,7 +44,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='splash'),
     Match(wm_class='toolbar'),
     Match(wm_class='Arandr'),
-    Match(wm_class='feh'),
+    # Match(wm_class='feh'),
     Match(wm_class='Galculator'),
     Match(wm_class='archlinux-logout'),
     Match(wm_class='xfce4-terminal'),
