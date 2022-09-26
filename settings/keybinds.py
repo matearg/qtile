@@ -143,7 +143,7 @@ keys = [
 # FLIP LAYOUT FOR MONADTALL/MONADWIDE
     Key([mod, "mod1"], "f", lazy.layout.flip()),
 
-# TOGGLE FLOATIN LAYOUT
+# TOGGLE FLOATING LAYOUT
     Key([mod, "mod1"], "space", lazy.window.toggle_floating()),
 
 # CHANGE KEYBOARD LAYOUT
