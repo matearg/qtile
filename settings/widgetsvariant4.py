@@ -63,6 +63,8 @@ def init_widgets_list():
                         format="%a %b %d - %H:%M",
                         ),
                 widget.Spacer(**widget_defaults),
+                widget.Systray(**widget_defaults),
+                widget.Spacer(**widget_defaults, length = 6),
                 widget.TextBox(
                         **widget_defaults,
                         text="墳",
