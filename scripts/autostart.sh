@@ -29,7 +29,7 @@ lxsession &
 
 #Optional
 # numlockx on &
-run xfce4-power-manager &
+# run xfce4-power-manager &
 xbindkeys &
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
