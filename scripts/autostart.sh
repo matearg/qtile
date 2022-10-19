@@ -20,8 +20,8 @@ picom --config $HOME/.config/picom/picom.conf &
 
 #notification daemon
 # dunst -conf /home/mateo/.config/dunst/dunstrc.nord &
-# dunst -conf /home/mateo/.config/dunst/dunstrc.catppuccin &
-dunst -conf /home/mateo/.config/dunst/dunstrc.monokai &
+dunst -conf /home/mateo/.config/dunst/dunstrc.catppuccin &
+# dunst -conf /home/mateo/.config/dunst/dunstrc.monokai &
 # dunst -conf /home/mateo/.config/dunst/dunstrc.rosepine &
 
 #session manager
