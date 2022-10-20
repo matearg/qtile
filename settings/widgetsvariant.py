@@ -4,7 +4,7 @@ from libqtile.lazy import lazy
 from .colors import theme
 from .spotify import Spotify
 
-terminal = "alacritty"
+terminal = "kitty"
 
 regular_font = "FiraCode Nerd Font"
 mono_font = regular_font + " Mono"

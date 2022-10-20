@@ -3,7 +3,7 @@ from libqtile.lazy import lazy
 from .colors import theme
 from .spotify import Spotify
 
-terminal = "alacritty"
+terminal = "kitty"
 
 regular_font = "FiraCode Nerd Font"
 font_size = 17
@@ -81,7 +81,6 @@ def init_widgets_list():
                         ),
                 widget.Battery(
                         **widget_defaults,
-                        # format = '{char} {percent:2.0%}',
                         format = '{percent:2.0%}',
                         charge_char = '',
                         discharge_char = '',
