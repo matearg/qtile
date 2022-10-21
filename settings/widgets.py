@@ -5,7 +5,7 @@ from .spotify import Spotify
 
 terminal = "kitty"
 
-regular_font = "FiraCode Nerd Font"
+regular_font = "Cascadia Code PL"
 font_size = 17
 
 def parse_window_name(text):
@@ -91,7 +91,7 @@ def init_widgets_list():
                 widget.Spacer(**widget_defaults, length = 4),
                 widget.TextBox(
                         **widget_defaults,
-                        text = "ﮮ",
+                        text = "",
                         mouse_callbacks = {"Button1": lazy.spawn(terminal + " -e sudo paru -Syyu --color=auto")},
                         padding = 6,
                         ),

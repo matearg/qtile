@@ -12,17 +12,18 @@ mod2 = "control"
 terminal_var = "alacritty"
 terminal = "kitty"
 home = path.expanduser('~')
+font = "Cascadia Code PL"
 
 
 def dmenu_colors():
     if(theme == nord):
-        scheme = "dmenu_run -i -nb '#3b4252' -nf '#81a1c1' -sb '#81a1c1' -sf '#3b4252' -fn 'FiraCode Nerd Font:pixelsize=24'"
+        scheme = "dmenu_run -i -nb '#3b4252' -nf '#81a1c1' -sb '#81a1c1' -sf '#3b4252' -fn '" + font + ":pixelsize=24'"
     elif(theme == catppuccin):
-        scheme ="dmenu_run -i -nb '#302D41' -nf '#DDB6F2' -sb '#DDB6F2' -sf '#302D41' -fn 'FiraCode Nerd Font:pixelsize=24'"
+        scheme ="dmenu_run -i -nb '#302D41' -nf '#DDB6F2' -sb '#DDB6F2' -sf '#302D41' -fn '" + font + ":pixelsize=24'"
     elif(theme == monokai):
-        scheme ="dmenu_run -i -nb '#2d2a2e' -nf '#ff6188' -sb '#ff6188' -sf '#2d2a2e' -fn 'FiraCode Nerd Font:pixelsize=24'"
+        scheme ="dmenu_run -i -nb '#2d2a2e' -nf '#ff6188' -sb '#ff6188' -sf '#2d2a2e' -fn '" + font + ":pixelsize=24'"
     elif(theme == rosepine):
-        scheme ="dmenu_run -i -nb '#393552' -nf '#ea9a97' -sb '#ea9a97' -sf '#393552' -fn 'FiraCode Nerd Font:pixelsize=24'"
+        scheme ="dmenu_run -i -nb '#393552' -nf '#ea9a97' -sb '#ea9a97' -sf '#393552' -fn '" + font + ":pixelsize=24'"
     else:
         scheme ="dmenu_run -i -fn 'monospace:pixelsize=20'"
 

@@ -3,10 +3,11 @@ from qtile_extras import widget
 from libqtile.lazy import lazy
 from .colors import theme
 from .spotify import Spotify
+from .keybinds import dmenu
 
 terminal = "kitty"
 
-regular_font = "FiraCode Nerd Font"
+regular_font = "Cascadia Code PL"
 mono_font = regular_font + " Mono"
 italic_font = regular_font + " Italic"
 bold_font = regular_font + " Bold"
@@ -104,7 +105,7 @@ def init_widgets_list():
                         empty_group_string = "Desktop",
                         max_chars = 40,
                         parse_text = parse_window_name,
-                        mouse_callbacks={"Button1": lazy.spawn("dmenu_run -i -nb '#302D41' -nf '#DDB6F2' -sb '#DDB6F2' -sf '#302D41' -fn 'JetBrainsMono Nerd Font:pixelsize=18'")},
+                        mouse_callbacks={"Button1": lazy.spawn(dmenu)},
                         ),
                 widget.TextBox(
                         background = theme[8],
