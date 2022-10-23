@@ -52,4 +52,4 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='ristretto'),
     Match(wm_class='pavucontrol'),
 
-],  fullscreen_border_width = 0, border_width = 2, border_focus = theme[0], border_normal = theme[8])
+],  fullscreen_border_width = 1, border_width = 2, border_focus = theme[0], border_normal = theme[8])

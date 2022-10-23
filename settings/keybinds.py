@@ -12,7 +12,7 @@ mod2 = "control"
 terminal_var = "alacritty"
 terminal = "kitty"
 home = path.expanduser('~')
-font = "Cascadia Code PL"
+font = "CaskaydiaCove Nerd Font"
 
 
 def dmenu_colors():

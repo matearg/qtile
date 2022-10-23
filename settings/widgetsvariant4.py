@@ -3,7 +3,7 @@ from libqtile.lazy import lazy
 from .colors import theme
 from .spotify import Spotify
 
-regular_font = "FiraCode Nerd Font"
+regular_font = "CaskaydiaCove Nerd Font"
 font_size = 15
 
 def parse_window_name(text):
@@ -77,7 +77,7 @@ def init_widgets_list():
                 widget.Spacer(**widget_defaults, length = 6),
                 widget.TextBox(
                         **widget_defaults,
-                        text = "ﮮ",
+                        text = "",
                         mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru -Syyu --color=auto")},
                         padding = 6,
                         ),
