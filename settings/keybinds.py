@@ -69,6 +69,7 @@ keys = [
     Key(["mod1", "control"], "k", lazy.spawn('amixer set Master 5%+')),
     Key(["mod1", "control"], "j", lazy.spawn('amixer set Master 5%-')),
     Key(["mod1", "control"], "m", lazy.spawn('amixer set Master toggle')),
+    Key(["mod1", "control"], "w", lazy.spawn('whatsapp-for-linux')),
 
 # QTILE LAYOUT KEYS
     Key([mod], "Tab", lazy.next_layout()),
