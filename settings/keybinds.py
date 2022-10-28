@@ -66,8 +66,6 @@ keys = [
     Key(["mod1", "control"], "v", lazy.spawn('pavucontrol')),
     Key(["mod1", "control"], "q", lazy.shutdown()),
     Key(["mod1", "control"], "l", lazy.spawn('betterlockscreen -l -q')),
-    Key(["mod1", "control"], "k", lazy.spawn('amixer set Master 5%+')),
-    Key(["mod1", "control"], "j", lazy.spawn('amixer set Master 5%-')),
     Key(["mod1", "control"], "m", lazy.spawn('amixer set Master toggle')),
     Key(["mod1", "control"], "w", lazy.spawn('whatsapp-for-linux')),
 
@@ -154,17 +152,20 @@ keys = [
 ]
 
 @lazy.function
-def window_to_prev_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
+def window_to_prev_group(qtile, switch_screen=False):
+    i = qtile.groups.index(qtile.current_group)
+    if qtile.current_window is not None and i != 0:
+        qtile.current_window.togroup(qtile.groups[i - 1].name)
+        if switch_screen == True:
+            qtile.current_screen.toggle_group(qtile.groups[i - 1])
 
 @lazy.function
-def window_to_next_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
-
+def window_to_next_group(qtile, switch_screen=False):
+    i = qtile.groups.index(qtile.current_group)
+    if qtile.current_window is not None and i != 6:
+        qtile.current_window.togroup(qtile.groups[i + 1].name)
+        if switch_screen == True:
+            qtile.current_screen.toggle_group(qtile.groups[i + 1])
 
 def window_to_previous_screen(qtile, switch_group=False, switch_screen=False):
     i = qtile.screens.index(qtile.current_screen)
@@ -196,11 +197,17 @@ keys.extend([
 
 for i in groups:
     keys.extend([
-#CHANGE WORKSPACES
+        #CHANGE WORKSPACES
         Key([mod], i.name, lazy.group[i.name].toscreen()),
         Key([mod, "mod1"], "j", lazy.screen.next_group()),
         Key([mod, "mod1"], "k", lazy.screen.prev_group()),
 
-# MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
+        # MOVE WINDOW TO NEXT/PREV GROUP
+        Key(["mod1", "control"], "j", window_to_next_group(switch_screen=True)),
+        Key(["mod1", "control"], "k", window_to_prev_group(switch_screen=True)),
+        Key(["mod1", "control"], "Right", window_to_next_group(switch_screen=False)),
+        Key(["mod1", "control"], "Left", window_to_prev_group(switch_screen=False)),
+
+        # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
     ])
