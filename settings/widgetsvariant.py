@@ -7,7 +7,7 @@ from .keybinds import dmenu
 
 terminal = "kitty"
 
-regular_font = "Cascadia Code PL"
+regular_font = "CaskaydiaCove Nerd Font"
 mono_font = regular_font + " Mono"
 italic_font = regular_font + " Italic"
 bold_font = regular_font + " Bold"

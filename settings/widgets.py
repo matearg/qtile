@@ -5,7 +5,7 @@ from .spotify import Spotify
 
 terminal = "kitty"
 
-regular_font = "Cascadia Code PL"
+regular_font = "CaskaydiaCove Nerd Font"
 font_size = 17
 
 def parse_window_name(text):
