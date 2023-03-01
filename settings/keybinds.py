@@ -9,7 +9,6 @@ from .traverse import *
 mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
-terminal_var = "kitty"
 terminal = "alacritty"
 home = path.expanduser('~')
 font = "JetBrainsMono Nerd Font"
@@ -29,53 +28,23 @@ keys = [
 # SUPER + NORMAL KEYS
     Key([mod], "Escape", lazy.spawn('xkill')),
     Key([mod], "Return", lazy.spawn(terminal)),
-    Key([mod], "b", lazy.spawn('firefox')),
-    Key([mod], "c", lazy.spawn('flameshot gui')),
-    Key([mod], "e", lazy.spawn('thunar')),
+    Key([mod, "shift"], "w", lazy.spawn('firefox')),
+    Key([mod, "shift"], "f", lazy.spawn('thunar')),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
-    Key([mod], "i", lazy.spawn('lxappearance')),
     Key([mod], "p", lazy.spawn('rofi -show drun')),
     Key([mod], "q", lazy.window.kill()),
-    Key([mod], "v", lazy.spawn(terminal + ' -e nvim')),
     Key([mod], "x", lazy.spawn('rofi -show power-menu -modi power-menu:rofi-power-menu')),
 
 # SUPER + SHIFT KEYS
-    Key([mod, "shift"], "c", lazy.window.kill()),
+    Key([mod], "c", lazy.window.kill()),
     Key([mod, "shift"], "d", lazy.spawn(dmenu)),
-    Key([mod, "shift"], "r", lazy.restart()),
-    Key([mod, "shift"], "e", lazy.spawn(terminal + ' -e ranger')),
+    Key(["control", "shift"], "r", lazy.restart()),
 
-# SUPER + FUNCTION KEYS
-    Key([mod], "F1", lazy.spawn('amixer set Master 5%+')),
-    Key([mod], "F2", lazy.spawn('amixer set Master 5%-')),
-    Key([mod], "F3", lazy.spawn('amixer set Master toggle')),
-    Key([mod], "F11", lazy.spawn('rofi-theme-selector')),
-
-# CONTROL + ALT KEYS
-    Key(["mod1", "control"], "h", lazy.spawn(terminal + ' -e htop')),
-    Key(["mod1", "control"], "i", lazy.spawn('nitrogen')),
-    Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
-    Key(["mod1", "control"], "s", lazy.spawn('spotify')),
-    Key(["mod1", "control"], "t", lazy.spawn(terminal_var)),
     Key(["mod1", "control"], "v", lazy.spawn('pavucontrol')),
     Key(["mod1", "control"], "q", lazy.shutdown()),
     Key(["mod1", "control"], "l", lazy.spawn('betterlockscreen -l -q')),
-    Key(["mod1", "control"], "m", lazy.spawn('amixer set Master toggle')),
-
-# QTILE LAYOUT KEYS
-    Key([mod], "Tab", lazy.next_layout()),
-    Key([mod, "shift" ], "Tab", lazy.prev_layout()),
-    Key([mod], "n", lazy.layout.normalize()),
 
 # CHANGE FOCUS
-    Key([mod], "Up", lazy.layout.up()),
-    Key([mod], "Down", lazy.layout.down()),
-    Key([mod], "Left", lazy.layout.left()),
-    Key([mod], "Right", lazy.layout.right()),
-    # Key([mod], "k", lazy.layout.up()),
-    # Key([mod], "j", lazy.layout.down()),
-    # Key([mod], "h", lazy.layout.left()),
-    # Key([mod], "l", lazy.layout.right()),
     Key([mod], 'k', lazy.function(up)),
     Key([mod], 'j', lazy.function(down)),
     Key([mod], 'h', lazy.function(left)),
@@ -88,23 +57,11 @@ keys = [
     Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
 
 # RESIZE UP, DOWN, LEFT, RIGHT
-    Key([mod, "control"], "l",
-        lazy.layout.grow_right(),
-        lazy.layout.grow(),
-        lazy.layout.increase_ratio(),
-        lazy.layout.delete(),
-        ),
     Key([mod, "control"], "Right",
         lazy.layout.grow_right(),
         lazy.layout.grow(),
         lazy.layout.increase_ratio(),
         lazy.layout.delete(),
-        ),
-    Key([mod, "control"], "h",
-        lazy.layout.grow_left(),
-        lazy.layout.shrink(),
-        lazy.layout.decrease_ratio(),
-        lazy.layout.add(),
         ),
     Key([mod, "control"], "Left",
         lazy.layout.grow_left(),
@@ -112,32 +69,16 @@ keys = [
         lazy.layout.decrease_ratio(),
         lazy.layout.add(),
         ),
-    Key([mod, "control"], "k",
-        lazy.layout.grow_up(),
-        lazy.layout.grow(),
-        lazy.layout.decrease_nmaster(),
-        ),
     Key([mod, "control"], "Up",
         lazy.layout.grow_up(),
         lazy.layout.grow(),
         lazy.layout.decrease_nmaster(),
-        ),
-    Key([mod, "control"], "j",
-        lazy.layout.grow_down(),
-        lazy.layout.shrink(),
-        lazy.layout.increase_nmaster(),
         ),
     Key([mod, "control"], "Down",
         lazy.layout.grow_down(),
         lazy.layout.shrink(),
         lazy.layout.increase_nmaster(),
         ),
-
-# FLIP LAYOUT FOR MONADTALL/MONADWIDE
-    Key([mod, "mod1"], "f", lazy.layout.flip()),
-
-# TOGGLE FLOATING LAYOUT
-    Key([mod, "mod1"], "space", lazy.window.toggle_floating()),
 
 # CHANGE KEYBOARD LAYOUT
     Key([mod], "space", lazy.widget["keyboardlayout"].next_keyboard()),

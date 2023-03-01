@@ -1,10 +1,12 @@
-from libqtile import widget
+from qtile_extras import widget
 from libqtile.lazy import lazy
 from .colors import theme
 from .spotify import Spotify
 
+terminal = "alacritty"
+
 regular_font = "JetBrainsMono Nerd Font"
-font_size = 15
+font_size = 17
 
 def parse_window_name(text):
     """Simplifies the names of a few windows, to be displayed in the bar"""
@@ -25,23 +27,30 @@ def init_widgets_defaults():
 def init_widgets_list():
     widgets_list = [
                 widget.GroupBox(
+                        **widget_defaults,
                         active = theme[0],
                         block_highlight_text_color = theme[0],
                         this_current_screen_border = theme[0],
                         this_screen_border = theme[0],
                         urgent_border = theme[1],
-                        background = theme[8],  # background is [10-12]
                         other_current_screen_border = theme[8],
                         other_screen_border = theme[8],
                         highlight_color = theme[8],
                         inactive = theme[10],
-                        foreground = theme[10],
                         borderwidth = 2,
                         disable_drag = True,
-                        font = regular_font,
-                        fontsize = font_size,
                         highlight_method = "text",
                         ),
+                widget.Spacer(**widget_defaults, length = 6),
+                widget.TextBox(
+                        **widget_defaults,
+                        text=" ",
+                        mouse_callbacks={"Button1": lazy.spawn("spotify")},
+                        ),
+                Spotify(
+                    **widget_defaults,
+                    format = '{track}',
+                    ),
                 widget.Spacer(**widget_defaults),
                 widget.TextBox(
                         **widget_defaults,
@@ -53,22 +62,37 @@ def init_widgets_list():
                         format="%a %b %d - %H:%M",
                         ),
                 widget.Spacer(**widget_defaults),
-                widget.Systray(**widget_defaults),
+                widget.Systray(
+                        **widget_defaults
+                        ),
                 widget.Spacer(**widget_defaults, length = 6),
                 widget.TextBox(
                         **widget_defaults,
                         text="墳",
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e alsamixer")},
+                        mouse_callbacks = {"Button1": lazy.spawn(terminal + " -e alsamixer")},
                         ),
                 widget.Volume(
                         **widget_defaults,
                         step = 5,
                         ),
                 widget.Spacer(**widget_defaults, length = 6),
+                widget.UPowerWidget(
+                        **widget_defaults,
+                        ),
+                widget.Battery(
+                        **widget_defaults,
+                        format = '{percent:2.0%}',
+                        charge_char = '',
+                        discharge_char = '',
+                        full_char = '',
+                        update_interval = 10,
+                        show_short_text = False,
+                        ),
+                widget.Spacer(**widget_defaults, length = 4),
                 widget.TextBox(
                         **widget_defaults,
-                        text = "",
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru -Syyu --color=auto")},
+                        text = "",
+                        mouse_callbacks = {"Button1": lazy.spawn(terminal + " -e sudo paru -Syyu --color=auto")},
                         padding = 6,
                         ),
                 widget.CheckUpdates(
@@ -78,7 +102,7 @@ def init_widgets_list():
                         colour_have_updates = theme[10],
                         display_format = "{updates}",
                         update_interval = 10,
-                        mouse_callbacks = {"Button1": lazy.spawn("kitty -e sudo paru -Syyu --color=auto")},
+                        mouse_callbacks = {"Button1": lazy.spawn(terminal + " -e sudo paru -Syyu --color=auto")},
                         ),
                 widget.Spacer(**widget_defaults, length = 4),
                 widget.TextBox(
