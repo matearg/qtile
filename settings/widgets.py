@@ -3,7 +3,7 @@ from libqtile.lazy import lazy
 from .colors import theme
 from .spotify import Spotify
 
-regular_font = "CaskaydiaCove Nerd Font"
+regular_font = "JetBrainsMono Nerd Font"
 font_size = 15
 
 def parse_window_name(text):
@@ -42,16 +42,6 @@ def init_widgets_list():
                         fontsize = font_size,
                         highlight_method = "text",
                         ),
-                widget.Spacer(**widget_defaults, length = 6),
-                widget.TextBox(
-                        **widget_defaults,
-                        text=" ",
-                        mouse_callbacks={"Button1": lazy.spawn("spotify")},
-                        ),
-                Spotify(
-                    **widget_defaults,
-                    format = '{track}',
-                    ),
                 widget.Spacer(**widget_defaults),
                 widget.TextBox(
                         **widget_defaults,
@@ -104,15 +94,6 @@ def init_widgets_list():
                         display_map = {'latam': 'LA', 'us': 'US'}
                        ),
                 widget.Spacer(**widget_defaults, length = 6),
-                # widget.TextBox(
-                #         **widget_defaults,
-                #         text="",
-                #         padding = 6,
-                #         ),
-                # widget.Clock(
-                #         **widget_defaults,
-                #         format="%a %b %d - %H:%M",
-                #         ),
     ]
     return widgets_list
 

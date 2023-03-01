@@ -2,32 +2,15 @@
 
 ## Qtile config file for Minimal Setup
 
-## General ---------------------------------------------------#
-
-## Bspwm config directory
-BSPDIR="$HOME/.config/bspwm"
-
-## Export bspwm/bin dir to PATH
-export PATH="${PATH}:$BSPDIR/scripts"
-
-## Run java applications without issues
-export _JAVA_AWT_WM_NONREPARENTING=1
-
 ## Autostart -------------------------------------------------#
 
 # Kill if already running
-killall -9 xsettingsd sxhkd dunst ksuperkey xfce4-power-manager bspc
-
-# Lauch xsettingsd daemon
-xsettingsd --config="$BSPDIR"/xsettingsd &
+killall -9 xsettingsd sxhkd dunst ksuperkey xfce4-power-manager bspc picom dunst
 
 # polkit agent
 if [[ ! `pidof xfce-polkit` ]]; then
 	/usr/lib/xfce-polkit/xfce-polkit &
 fi
-
-# Lauch keybindings daemon
-sxhkd -c "$BSPDIR"/sxhkdrc &
 
 # Enable Super Keys For Menu
 ksuperkey -e 'Super_L=Alt_L|F1' &
@@ -45,9 +28,8 @@ bash ~/.fehbg
 # Start mpd
 exec mpd &
 
-# Screen layout
-bash $HOME/.screenlayout/mylayout.sh &
-
 # Start bspwm scritps
-bspcomp
-bspdunst
+picom --config ~/.config/picom.conf &
+dunst -config ~/.config/dunst/dunstrc &
+
+

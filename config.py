@@ -22,5 +22,5 @@ wmname = "Qtile"
 @hook.subscribe.startup_once
 def start_once():
     home = path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/scripts/autostart.sh'])
+    subprocess.call([home + '/.config/qtile/scripts/autostart'])
 
