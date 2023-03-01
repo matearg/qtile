@@ -9,8 +9,8 @@ from .traverse import *
 mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
-terminal_var = "alacritty"
-terminal = "kitty"
+terminal_var = "kitty"
+terminal = "alacritty"
 home = path.expanduser('~')
 font = "CaskaydiaCove Nerd Font"
 
@@ -33,40 +33,9 @@ dmenu = dmenu_colors()
 
 keys = [
 # SUPER + NORMAL KEYS
-    Key([mod], "Escape", lazy.spawn('xkill')),
-    Key([mod], "Return", lazy.spawn(terminal)),
-    Key([mod], "b", lazy.spawn('firefox')),
-    Key([mod], "c", lazy.spawn('flameshot gui')),
-    Key([mod], "e", lazy.spawn('thunar')),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
-    Key([mod], "i", lazy.spawn('lxappearance')),
-    Key([mod], "p", lazy.spawn('rofi -show drun')),
     Key([mod], "q", lazy.window.kill()),
-    Key([mod], "v", lazy.spawn(terminal + ' -e nvim')),
-    Key([mod], "x", lazy.spawn('rofi -show power-menu -modi power-menu:rofi-power-menu')),
-
-# SUPER + SHIFT KEYS
-    Key([mod, "shift"], "c", lazy.window.kill()),
-    Key([mod, "shift"], "d", lazy.spawn(dmenu)),
     Key([mod, "shift"], "r", lazy.restart()),
-    Key([mod, "shift"], "e", lazy.spawn(terminal + ' -e ranger')),
-
-# SUPER + FUNCTION KEYS
-    Key([mod], "F1", lazy.spawn('amixer set Master 5%+')),
-    Key([mod], "F2", lazy.spawn('amixer set Master 5%-')),
-    Key([mod], "F3", lazy.spawn('amixer set Master toggle')),
-    Key([mod], "F11", lazy.spawn('rofi-theme-selector')),
-
-# CONTROL + ALT KEYS
-    Key(["mod1", "control"], "h", lazy.spawn(terminal + ' -e htop')),
-    Key(["mod1", "control"], "i", lazy.spawn('nitrogen')),
-    Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
-    Key(["mod1", "control"], "s", lazy.spawn('spotify')),
-    Key(["mod1", "control"], "t", lazy.spawn(terminal_var)),
-    Key(["mod1", "control"], "v", lazy.spawn('pavucontrol')),
-    Key(["mod1", "control"], "q", lazy.shutdown()),
-    Key(["mod1", "control"], "l", lazy.spawn('betterlockscreen -l -q')),
-    Key(["mod1", "control"], "m", lazy.spawn('amixer set Master toggle')),
 
 # QTILE LAYOUT KEYS
     Key([mod], "Tab", lazy.next_layout()),
@@ -74,14 +43,6 @@ keys = [
     Key([mod], "n", lazy.layout.normalize()),
 
 # CHANGE FOCUS
-    Key([mod], "Up", lazy.layout.up()),
-    Key([mod], "Down", lazy.layout.down()),
-    Key([mod], "Left", lazy.layout.left()),
-    Key([mod], "Right", lazy.layout.right()),
-    # Key([mod], "k", lazy.layout.up()),
-    # Key([mod], "j", lazy.layout.down()),
-    # Key([mod], "h", lazy.layout.left()),
-    # Key([mod], "l", lazy.layout.right()),
     Key([mod], 'k', lazy.function(up)),
     Key([mod], 'j', lazy.function(down)),
     Key([mod], 'h', lazy.function(left)),
